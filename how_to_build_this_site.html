@@ -588,7 +588,22 @@ output:
     highlight: zenburn</code></pre>
 <p>There are other ways you can use the YAML file to modify the look of your site. To figure out all(?) of the YAML options available for html documents, I encourage you to check out the help page:</p>
 <pre><code>?rmarkdown::html_document</code></pre>
+<p>Or see this <a href="https://cran.r-project.org/web/packages/ymlthis/vignettes/yaml-fieldguide.html" target="_blank">site</a> for YAML options.</p>
 <p>For an intro to the topic of modifying the YAML file, see the awesome book <a href="https://bookdown.org/yihui/rmarkdown/html-document.html#appearance_and_style">R Markdown: The Definitive Guide</a> by <em>Yihui Xie, J. J. Allaire, Garrett Grolemund</em>. If you dig deep enough however, you may soon reach the limits of using the YAML file to modify your site.</p>
+<div class="warning">
+YAML file notes:
+<ul>
+<li>
+Use <code>include: [file_name]</code> or <code>exclude: [file_name]</code> to include or exclude files in the render directory. If specifying an entire directory DO NOT use a backslash. Quotes seem options.
+</li>
+<li>
+Not sure but I think the <code>_site.yml</code> file needs to be specifically included (<code>include: [_site.yml]</code>).
+</li>
+<li>
+I have no idea what <code>type: inverse</code> means under the navbar.
+</li>
+</ul>
+</div>
 </div>
 <div id="a-custom-css-file" class="section level3">
 <h3>A Custom CSS file</h3>
@@ -638,6 +653,7 @@ output:
 <p>I chose to host this site on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> because I thought it would be pretty straightforward. The only thing you really need is a GitHub account (which is free) and away you go. There is a complete walkthrough on set up on the GitHub Pages website. Of course there are many other hosting options out there and you may find something more suited to your needs.</p>
 <p>At some point I may make this a more complete tutorial with step-by-step instructions that include setup on GitHub. But at this moment (1621 hours on a Thursday) I can’t do battle with GitHub anymore. That creepy silhouetted cat beat me for now…</p>
 <p><a target="_blank" href="todo.html"> <i class="fas fa-tasks fa-xs"></i> </a></p>
+<p><a target="_blank" href="data_files_needed_for_pipeline.txt"> <i class="fas fa-file fa-xs"></i> </a></p>
 </div>
 
 <footer role="contentinfo" id="site-footer">
