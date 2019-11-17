@@ -12,7 +12,7 @@
 
 
 
-<title>Part 1: Field Observations</title>
+<title>No 1. Field Observations</title>
 
 <script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -481,17 +481,13 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Part 1: Field Observations</h1>
+<h1 class="title toc-ignore">N<sup><u>o</u></sup> 1. Field Observations</h1>
 
 </div>
 
 
-<p><a href="0_pw_intro.html#workflow_overview">Back to Introduction</a></p>
-<hr />
-<div class="notice">
-<p>To characterize the foraging ecology of the different species of herbivorous fishes, we characterized in detail individual bites by each species at three sites in the Florida Keys (Conch, French, Molasses reefs) during the Boreal summers of 2014 and 2016.</p>
-</div>
-<p>
+<p id="opennote">
+<font size="5">We characterized the foraging ecology</font> of the different herbivorous fish species by gathering observational details about individual bites at three sites in the Florida Keys (Conch, French, Molasses reefs) during the Boreal summers of 2014 and 2016.
 </p>
 <pre class="r"><code>leaflet() %&gt;%
   setView(lat = 25.2, lng = -81.676177, zoom = 8) %&gt;%
@@ -504,11 +500,15 @@ div.tocify {
 Florida Keys &amp; Pickles Reef
 </p>
 </div>
-<hr />
+<p><br/></p>
+<div id="observational-methods" class="section level2">
+<h2>Observational Methods</h2>
 <p>At each site, we haphazardly selected focal fish over a wide range of sizes and then randomly selected a single bite by each individual to describe (see Supplementary Table 2 for sample sizes). For each bite, we identified the food item(s) targeted as well as characteristics of the substrate (e.g., hard bottom vs. other common substrates such as sponges, gorgonians, etc.) at the precise location of the bite. For hard substrates, we recorded whether a bite was on a convex, concave, or flat surface, and whether that surface was oriented horizontally (&lt; 45 degrees) or vertically (&gt; 45 degrees). In addition, we framed each bite within a 5 x 5 cm micro-quadrat and measured the depth of the sediment and height of the algae at several points to determine the average sediment depth and algal height within the vicinity of the bite. We then manually removed sediments and determined whether the fish left a distinct grazing scar (i.e., where calcium carbonate had been removed from the reef framework in addition to epilithic algae).</p>
+<p><br/></p>
+</div>
+<div id="observational-data-analyses" class="section level2">
+<h2>Observational Data &amp; Analyses</h2>
 <p>To visualize the multivariate patterns of herbivory we used non-metric multidimensional scaling (NMDS) as implemented via the metaMDS function in the vegan package. For each species of herbivorous fish at each site we calculated the proportion of bites focused on each prey item (‘prey variables’) as well as the proportion of bites targeting substrates with different characteristics (e.g., convex vs. concave vs. flat). We also calculated the proportion of bites resulting in a grazing scar. For bites on turf assemblages, we calculated the mean turf height and sediment depth directly adjacent to each bite. Prior to analysis, quantitative variables (e.g., sediment depth and turf height) were rescaled to the range of 0 to 1. In addition, quantitative and categorical variables were rescaled such that they would have similar influence to the ‘prey variables’ by dividing each variable by the number of prey categories. Rescaled data were then analysed via NMDS using a Bray-Curtis dissimilarity matrix.</p>
-<div id="observational-data" class="section level2">
-<h2>Observational Data</h2>
 <p>First, we read in and display the table describing the foraging ecology of these fish.</p>
 <div class="paper">
 Table S1
@@ -537,22 +537,23 @@ datatable(all_traits, rownames = FALSE, width = &quot;100%&quot;,
           caption = htmltools::tags$caption(
             style = &quot;caption-side: bottom; text-align: left;&quot;,
             &quot;Supplementary Table 1: &quot;,
-            htmltools::em(&quot;INSERT DESCRIPTION.&quot;)),
+            htmltools::em(&quot;Observational data types and results.&quot;)),
           extensions = &quot;Buttons&quot;,
           options = list(columnDefs = list(list(
             className = &quot;dt-left&quot;, targets = 0)), dom = &quot;Blrtip&quot;,
             pageLength = 5, lengthMenu = c(5, 10, 15),
             buttons = c(&quot;csv&quot;, &quot;copy&quot;), scrollX = TRUE,
             scrollCollapse = TRUE))</code></pre>
-<div id="htmlwidget-32e1ea2669427cdee0e8" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-32e1ea2669427cdee0e8">{"x":{"filter":"none","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align: left;\">\n  Supplementary Table 1: \n  <em>INSERT DESCRIPTION.<\/em>\n<\/caption>","data":[["Acanthurus coeruleus","Acanthurus coeruleus","Acanthurus coeruleus","Acanthurus tractus","Acanthurus tractus","Acanthurus tractus","Scarus taeniopterus","Scarus taeniopterus","Scarus taeniopterus","Sparisoma aurofrenatum","Sparisoma aurofrenatum","Sparisoma aurofrenatum","Sparisoma viride","Sparisoma viride","Sparisoma viride"],["Conch","French","Molasses","Conch","French","Molasses","Conch","French","Molasses","Conch","French","Molasses","Conch","French","Molasses"],[4.867924528,0.64516129,1.476470588,5.68,1.208333333,0.817307692,0.818181818,1.689655172,1.118421053,2.822916667,1.659090909,1.434210526,0.942307692,0.533333333,0.463636364],[5.923076923,2.333333333,2.851190476,6.375,2.7,2.740384615,1.25,3.568965517,2.769230769,5.010416667,4.692307692,4.666666667,3.45890411,2.255555556,1.857142857],[0,0,0,0,0,0,0.25,0.294117647,0.365853659,0.039215686,0.084745763,0.219178082,0.722891566,0.802816901,0.753846154],[0.195121951,0.564102564,0.323809524,0.302631579,0.357142857,0.300884956,0.2,0.5,0.414634146,0.294117647,0.456140351,0.611940299,0.5625,0.549295775,0.603174603],[0.117647059,0.289473684,0.133333333,0.084507042,0.261904762,0.132743363,0.266666667,0.060606061,0.048780488,0.118811881,0.224137931,0.181818182,0.192771084,0.154929577,0.047619048],[0.047058824,0,0.047619048,0,0.023809524,0.044247788,0.133333333,0.090909091,0.146341463,0.059405941,0.034482759,0.272727273,0.421686747,0.352112676,0.507936508],[0.017094017,0,0.009009009,0.008264463,0,0,0,0,0.024390244,0.14,0.084745763,0.075757576,0.024096386,0,0.015625],[0,0.340425532,0.198198198,0,0.130434783,0.049180328,0.0625,0.117647059,0.243902439,0,0.016949153,0.03030303,0.614457831,0.411764706,0.375],[0.230769231,0.191489362,0.162162162,0.404958678,0.369565217,0.508196721,0.125,0.147058824,0.024390244,0.34,0.457627119,0.287878788,0.024096386,0.088235294,0.09375],[0.222222222,0.127659574,0.054054054,0.32231405,0.086956522,0.06557377,0,0,0,0,0,0,0,0,0],[0.008547009,0.021276596,0.009009009,0,0,0,0,0,0,0,0,0.015151515,0,0,0],[0,0,0,0,0.02173913,0,0,0,0,0,0.084745763,0.015151515,0,0.029411765,0],[0.068376068,0,0,0.049586777,0,0,0,0,0,0.02,0,0,0,0,0],[0,0,0,0,0,0,0.0625,0,0,0,0,0.03030303,0,0,0.015625],[0,0,0,0.008264463,0,0,0.125,0,0,0.02,0,0,0,0,0],[0.452991453,0.319148936,0.567567568,0.20661157,0.391304348,0.37704918,0.625,0.735294118,0.707317073,0.48,0.355932203,0.545454545,0.337349398,0.470588235,0.5]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Host species<\/th>\n      <th>Site<\/th>\n      <th>Sediment depth (mm)<\/th>\n      <th>Turf height(mm)<\/th>\n      <th>Prop. mark on substrate<\/th>\n      <th>Prop. vertical<\/th>\n      <th>Prop. concave<\/th>\n      <th>Prop. convex<\/th>\n      <th>Articulated red coralline<\/th>\n      <th>CCA/Turf on CCA<\/th>\n      <th>Dictyota<\/th>\n      <th>Epiphytes<\/th>\n      <th>Gorgonian<\/th>\n      <th>Halimeda<\/th>\n      <th>Laurencia<\/th>\n      <th>Sponge<\/th>\n      <th>Stypopodium<\/th>\n      <th>turf<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]}],"dom":"Blrtip","pageLength":5,"lengthMenu":[5,10,15],"buttons":["csv","copy"],"scrollX":true,"scrollCollapse":true,"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-<div class="warning">
-<p>This table also scrolls horizontally.</p>
-</div>
+<div id="htmlwidget-e1ea2669427cdee0e820" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e1ea2669427cdee0e820">{"x":{"filter":"none","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align: left;\">\n  Supplementary Table 1: \n  <em>Observational data types and results.<\/em>\n<\/caption>","data":[["Acanthurus coeruleus","Acanthurus coeruleus","Acanthurus coeruleus","Acanthurus tractus","Acanthurus tractus","Acanthurus tractus","Scarus taeniopterus","Scarus taeniopterus","Scarus taeniopterus","Sparisoma aurofrenatum","Sparisoma aurofrenatum","Sparisoma aurofrenatum","Sparisoma viride","Sparisoma viride","Sparisoma viride"],["Conch","French","Molasses","Conch","French","Molasses","Conch","French","Molasses","Conch","French","Molasses","Conch","French","Molasses"],[4.867924528,0.64516129,1.476470588,5.68,1.208333333,0.817307692,0.818181818,1.689655172,1.118421053,2.822916667,1.659090909,1.434210526,0.942307692,0.533333333,0.463636364],[5.923076923,2.333333333,2.851190476,6.375,2.7,2.740384615,1.25,3.568965517,2.769230769,5.010416667,4.692307692,4.666666667,3.45890411,2.255555556,1.857142857],[0,0,0,0,0,0,0.25,0.294117647,0.365853659,0.039215686,0.084745763,0.219178082,0.722891566,0.802816901,0.753846154],[0.195121951,0.564102564,0.323809524,0.302631579,0.357142857,0.300884956,0.2,0.5,0.414634146,0.294117647,0.456140351,0.611940299,0.5625,0.549295775,0.603174603],[0.117647059,0.289473684,0.133333333,0.084507042,0.261904762,0.132743363,0.266666667,0.060606061,0.048780488,0.118811881,0.224137931,0.181818182,0.192771084,0.154929577,0.047619048],[0.047058824,0,0.047619048,0,0.023809524,0.044247788,0.133333333,0.090909091,0.146341463,0.059405941,0.034482759,0.272727273,0.421686747,0.352112676,0.507936508],[0.017094017,0,0.009009009,0.008264463,0,0,0,0,0.024390244,0.14,0.084745763,0.075757576,0.024096386,0,0.015625],[0,0.340425532,0.198198198,0,0.130434783,0.049180328,0.0625,0.117647059,0.243902439,0,0.016949153,0.03030303,0.614457831,0.411764706,0.375],[0.230769231,0.191489362,0.162162162,0.404958678,0.369565217,0.508196721,0.125,0.147058824,0.024390244,0.34,0.457627119,0.287878788,0.024096386,0.088235294,0.09375],[0.222222222,0.127659574,0.054054054,0.32231405,0.086956522,0.06557377,0,0,0,0,0,0,0,0,0],[0.008547009,0.021276596,0.009009009,0,0,0,0,0,0,0,0,0.015151515,0,0,0],[0,0,0,0,0.02173913,0,0,0,0,0,0.084745763,0.015151515,0,0.029411765,0],[0.068376068,0,0,0.049586777,0,0,0,0,0,0.02,0,0,0,0,0],[0,0,0,0,0,0,0.0625,0,0,0,0,0.03030303,0,0,0.015625],[0,0,0,0.008264463,0,0,0.125,0,0,0.02,0,0,0,0,0],[0.452991453,0.319148936,0.567567568,0.20661157,0.391304348,0.37704918,0.625,0.735294118,0.707317073,0.48,0.355932203,0.545454545,0.337349398,0.470588235,0.5]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Host species<\/th>\n      <th>Site<\/th>\n      <th>Sediment depth (mm)<\/th>\n      <th>Turf height(mm)<\/th>\n      <th>Prop. mark on substrate<\/th>\n      <th>Prop. vertical<\/th>\n      <th>Prop. concave<\/th>\n      <th>Prop. convex<\/th>\n      <th>Articulated red coralline<\/th>\n      <th>CCA/Turf on CCA<\/th>\n      <th>Dictyota<\/th>\n      <th>Epiphytes<\/th>\n      <th>Gorgonian<\/th>\n      <th>Halimeda<\/th>\n      <th>Laurencia<\/th>\n      <th>Sponge<\/th>\n      <th>Stypopodium<\/th>\n      <th>turf<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]}],"dom":"Blrtip","pageLength":5,"lengthMenu":[5,10,15],"buttons":["csv","copy"],"scrollX":true,"scrollCollapse":true,"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p id="notice">
+This table scrolls horizontally.
+</p>
+<p><br/></p>
 </div>
 <div id="data-scaling" class="section level2">
 <h2>Data Scaling</h2>
-<p>Next we conduct the <strong>NMDS analysis</strong> of the feeding data using <strong>standardize the variables</strong> so that they have similar weights. Our process is as follows: <strong>a</strong>) rescale quantitative traits to be in the range 0 to 1 and divide by the number of diet categories to have similar influence as the diet variables; <strong>b</strong>) rescale all ‘non diet’ traits to have similar influence to the diet traits by dividing by the number of diet categories divided by the number of categories for each substrate characteristic; <strong>c</strong>) combine these data into a single data frame for NMDS analysis; <strong>d</strong>) run <strong>NMDS analysis</strong></p>
+<p>Next we conduct the <strong>NMDS analysis</strong> of the feeding data using <strong>standardize variables</strong> so that they have similar weights. Our process is as follows: <strong>a</strong>) rescale quantitative traits to be in the range 0 to 1 and divide by the number of diet categories to have similar influence as the diet variables; <strong>b</strong>) rescale all ‘non diet’ traits to have similar influence to the diet traits by dividing by the number of diet categories divided by the number of categories for each substrate characteristic; <strong>c</strong>) combine these data into a single data frame for NMDS analysis; <strong>d</strong>) run <strong>NMDS analysis</strong></p>
 <pre class="r"><code># First
 quant_traits_std &lt;- decostand(all_traits[, 3:4], &quot;range&quot;) / 10
 # Second
@@ -579,6 +580,8 @@ vec_sp &lt;- envfit(nmds$points, all_traits[, 3:18],
 spp_scrs &lt;- as.data.frame(scores(vec_sp, display = &quot;vectors&quot;))
 spp_scrs$species &lt;- rownames(spp_scrs)
 colnames(spp_scrs) &lt;- c(&quot;S_MDS1&quot;, &quot;S_MDS2&quot;, &quot;SMDS3&quot;, &quot;species&quot;)</code></pre>
+<p><br/></p>
+<p><br/></p>
 </div>
 <div id="nmds-analysis" class="section level2">
 <h2>NMDS Analysis</h2>
@@ -639,12 +642,8 @@ Figure 1: Bray curtis distance on all traits; stress = 0.04
 fig_1
 invisible(dev.off())</code></pre>
 <p></br></p>
-<div style="text-align:center">
-<h4>
-<button class="favorite styled" type="button">
-<a href="2_dada2.html">Go to Part 2, DADA2 Workflow</a>
-</button>
-</h4>
+<div style="text-align:right">
+<p><span class="linkboxfont-sm"> <button class="favorite styled" type="button"> <a href="2_dada2.html">N<sup><u>o</u></sup> 2. DADA2 Workflow -&gt;</a> </button> </span></p>
 </div>
 </div>
 
@@ -653,7 +652,7 @@ invisible(dev.off())</code></pre>
 <hr>
 
 <!-- /.bottom-menu -->
-	<p class="copyright">&#169; 2019 metacrobe & ProjectDIGEST,
+	<p class="copyright">&#169; 2019 <a href="http://www.metacrobe.io">metacrobe</a> & ProjectDIGEST,
 		powered by <a href="http://www.r-project.org">R</a> + <a href="http://rmarkdown.rstudio.com">RMarkdown</a> + <a href="http://github.com">Github</a>.</p>
 </footer>
 

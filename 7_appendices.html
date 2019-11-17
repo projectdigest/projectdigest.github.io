@@ -465,12 +465,12 @@ div.tocify {
 </div>
 
 
-<p><a href="0_pw_intro.html#workflow_overview">Back to Introduction</a></p>
-<hr />
-<div id="appendix-a-other-analyses-visualizations" class="section level2">
-<h2>Appendix A: Other analyses &amp; visualizations</h2>
+<p><br/></p>
+<div id="a-other-analyses-visualizations" class="section level2">
+<h2>A: Other analyses &amp; visualizations</h2>
 <p>Here is code for other representation of taxa abundance. These are raw <code>R</code> images that have not been gussied up.</p>
 <p>We will create two different representations of relative abundance for each sample (arranged by host species) by major Classes—facet grid box-and-whisker plots and bar charts. We will generate each separately (and save) using an earlier relative abundance phyloseq object and then display the combined output.</p>
+<p><br/></p>
 <div id="code-for-box-and-whisker-plot" class="section level4">
 <h4>Code for box-and-whisker plot</h4>
 <pre class="r"><code>library(phyloseq)
@@ -484,54 +484,55 @@ meltd_all$Class &lt;- as.character(meltd_all$Class)
 
 means &lt;- ddply(meltd_all, ~Class, function(x) c(mean = mean(x$Abundance)))
 # decending order
-taxa_means &lt;- means[order(-means$mean), ]  
-# ditch the sci notation 
-taxa_means &lt;- format(taxa_means, scientific = FALSE)  
+taxa_means &lt;- means[order(-means$mean), ]
+# ditch the sci notation
+taxa_means &lt;- format(taxa_means, scientific = FALSE)
 
 # Here we conglomerate at 2%.
-Other &lt;- means[means$mean &lt;= 0.026, ]$Class  
+Other &lt;- means[means$mean &lt;= 0.026, ]$Class
 
 meltd_all[meltd_all$Class %in% Other, ]$Class &lt;- &quot;Other&quot;
-samp_names &lt;- aggregate(meltd_all$Abundance, 
+samp_names &lt;- aggregate(meltd_all$Abundance,
                         by = list(meltd_all$Sample), FUN = sum)[, 1]
 .e &lt;- environment()
-meltd_all[, &quot;Class&quot;] &lt;- factor(meltd_all[, &quot;Class&quot;], 
+meltd_all[, &quot;Class&quot;] &lt;- factor(meltd_all[, &quot;Class&quot;],
                                sort(unique(meltd_all[, &quot;Class&quot;])))
 meltd_all &lt;- meltd_all[order(meltd_all[, &quot;Class&quot;]), ]
 levels(meltd_all$Class)
 
 # Here we order Classes by the Phylum they belong to.
-meltd_all$Class &lt;- factor(meltd_all$Class, 
+meltd_all$Class &lt;- factor(meltd_all$Class,
                           levels = c(
-                            &quot;Bacteroidia&quot;, &quot;Clostridia&quot;, &quot;Erysipelotrichia&quot;, 
-                            &quot;Fusobacteriia&quot;, &quot;Alphaproteobacteria&quot;, 
-                            &quot;Deltaproteobacteria&quot;, &quot;Gammaproteobacteria&quot;, 
-                            &quot;Planctomycetacia&quot;, &quot;Oxyphotobacteria&quot;, &quot;Other&quot;))  
+                            &quot;Bacteroidia&quot;, &quot;Clostridia&quot;, &quot;Erysipelotrichia&quot;,
+                            &quot;Fusobacteriia&quot;, &quot;Alphaproteobacteria&quot;,
+                            &quot;Deltaproteobacteria&quot;, &quot;Gammaproteobacteria&quot;,
+                            &quot;Planctomycetacia&quot;, &quot;Oxyphotobacteria&quot;, &quot;Other&quot;))
 
-sup_fig1 &lt;- qplot(data = meltd_all, x = Sp, y = Abundance, fill = Class, 
+sup_fig1 &lt;- qplot(data = meltd_all, x = Sp, y = Abundance, fill = Class,
                   geom = &quot;boxplot&quot;, ylab = &quot;Relative Abundance&quot;) +
-  theme(legend.position = &quot;bottom&quot;) + 
-  facet_grid(Class ~ ., scales = &quot;free_y&quot;, space = &quot;free_y&quot;) + 
-  geom_jitter(width = 0.05) + 
-  geom_point(colour = &quot;black&quot;, fill = &quot;white&quot;)  
+  theme(legend.position = &quot;bottom&quot;) +
+  facet_grid(Class ~ ., scales = &quot;free_y&quot;, space = &quot;free_y&quot;) +
+  geom_jitter(width = 0.05) +
+  geom_point(colour = &quot;black&quot;, fill = &quot;white&quot;)
 #+ guides(guide_legend(reverse = FALSE) )
 
-sup_fig1 &lt;- sup_fig1 + 
-  scale_fill_manual(values = friend_pal) + 
+sup_fig1 &lt;- sup_fig1 +
+  scale_fill_manual(values = friend_pal) +
   labs(x = &quot;Host species&quot;, y = &quot;Relative abundance (% total reads)&quot;)
 
 pdf(&quot;DATA/PHYLOSEQ/FIGURES/OUTPUT/box_and_whisker.pdf&quot;)
 sup_fig1
 invisible(dev.off())</code></pre>
+<p><br/></p>
 </div>
 <div id="code-for-bar-plot" class="section level4">
 <h4>Code for bar plot</h4>
 <div class="paper">
 Figure S1
 </div>
-<pre class="r"><code>sup_fig2 &lt;- ggplot(meltd_all, aes_string(x = &quot;Sample&quot;, y = &quot;Abundance&quot;, 
+<pre class="r"><code>sup_fig2 &lt;- ggplot(meltd_all, aes_string(x = &quot;Sample&quot;, y = &quot;Abundance&quot;,
     fill = &quot;Class&quot;), environment = .e, Ordered = TRUE)
-sup_fig2 &lt;- sup_fig2 + geom_bar(stat = &quot;identity&quot;, position = &quot;stack&quot;) + 
+sup_fig2 &lt;- sup_fig2 + geom_bar(stat = &quot;identity&quot;, position = &quot;stack&quot;) +
     facet_grid(Class ~ Sp, scales = &quot;free&quot;, space = &quot;free&quot;)
 sup_fig2 &lt;- sup_fig2 + scale_fill_manual(values = friend_pal)
 
@@ -539,11 +540,11 @@ sup_fig2 &lt;- sup_fig2 + scale_fill_manual(values = friend_pal)
 # hjust = 0))
 sup_fig2 &lt;- sup_fig2 + theme(axis.text.x = element_blank())
 
-sup_fig2 &lt;- sup_fig2 + 
-  guides(fill = guide_legend(override.aes = list(colour = NULL), 
-                             reverse = FALSE)) + 
-  theme(legend.key = element_rect(colour = &quot;black&quot;), 
-        legend.position = &quot;bottom&quot;) + 
+sup_fig2 &lt;- sup_fig2 +
+  guides(fill = guide_legend(override.aes = list(colour = NULL),
+                             reverse = FALSE)) +
+  theme(legend.key = element_rect(colour = &quot;black&quot;),
+        legend.position = &quot;bottom&quot;) +
   labs(x = &quot;Individual samples&quot;, y = &quot;Relative abundance (% total reads)&quot;)
 
 pdf(&quot;DATA/PHYLOSEQ/FIGURES/OUTPUT/Figure_S1.pdf&quot;)
@@ -556,33 +557,30 @@ invisible(dev.off())</code></pre>
 Figure S1. Relative abundance of major Classes by sample
 </p>
 </div>
+<p><br/></p>
 </div>
 </div>
-<div id="appendix-b-tools-resources-used-in-this-workflow" class="section level2">
-<h2>Appendix B: Tools &amp; resources used in this workflow</h2>
+<div id="b-tools-resources-used-in-this-workflow" class="section level2">
+<h2>B: Tools &amp; resources used in this workflow</h2>
 <div id="specific-tools" class="section level4">
 <h4>Specific tools</h4>
-<p>– <a href="https://joey711.github.io/phyloseq/" target="_blank">phyloseq</a> as the primary analytical package.<br />
-– <a href="https://dx.doi.org/10.1038%2Fnmeth.2658" target="_blank">LEfSe</a> to identify differentially abundant (DA) amplicon sequence variants (ASV) across host fish species.<br />
-– <a href="http://www.microbiomeanalyst.ca/" target="_blank">MicrobiomeAnalyst</a> to conduct LEfSe analysis.<br />
-– <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank">BLASTn</a> and <a href="https://www.arb-silva.de/aligner/" target="_blank">Silva ACT</a> to identify closest hits to DA ASVs.<br />
-– <a href="https://sco.h-its.org/exelixis/web/software/raxml/" target="_blank">RAxML</a> for phylogenetic inference of DA ASVs and closest hits.<br />
-– <a href="https://itol.embl.de/" target="_blank">iTOL</a> for visualization of tree and associated metadata.</p>
+<p>– <a href="https://joey711.github.io/phyloseq/" target="_blank">phyloseq</a> as the primary analytical package. – <a href="https://dx.doi.org/10.1038%2Fnmeth.2658" target="_blank">LEfSe</a> to identify differentially abundant (DA) amplicon sequence variants (ASV) across host fish species. – <a href="http://www.microbiomeanalyst.ca/" target="_blank">MicrobiomeAnalyst</a> to conduct LEfSe analysis. – <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank">BLASTn</a> and <a href="https://www.arb-silva.de/aligner/" target="_blank">Silva ACT</a> to identify closest hits to DA ASVs. – <a href="https://sco.h-its.org/exelixis/web/software/raxml/" target="_blank">RAxML</a> for phylogenetic inference of DA ASVs and closest hits. – <a href="https://itol.embl.de/" target="_blank">iTOL</a> for visualization of tree and associated metadata.</p>
+<p><br/></p>
 </div>
 <div id="other-valuable-resources" class="section level4">
 <h4>Other valuable resources</h4>
-<p>– <a href="https://bookdown.org/yihui/rmarkdown/" target="_blank">R Markdown: The Definitive Guide</a><br />
-– <a href="http://yihui.name/knitr/" target="_blank">knitr</a> tutorials. Fantastic site!<br />
-– <a href="https://rpubs.com/maddieSC/R_SOP_UCR_Jan_2018" target="_blank">Microbiota analysis in R, UCR Workshop 2018</a> nicely documented workflow with examples.</p>
+<p>– <a href="https://bookdown.org/yihui/rmarkdown/" target="_blank">R Markdown: The Definitive Guide</a> – <a href="http://yihui.name/knitr/" target="_blank">knitr</a> tutorials. Fantastic site! – <a href="https://rpubs.com/maddieSC/R_SOP_UCR_Jan_2018" target="_blank">Microbiota analysis in R, UCR Workshop 2018</a> nicely documented workflow with examples.</p>
+<p><br/></p>
 </div>
 </div>
-<div id="appendix-c-submitting-sequencing-data-to-public-archives" class="section level2">
-<h2>Appendix C: Submitting sequencing data to public archives</h2>
+<div id="c-submitting-sequencing-data-to-public-archives" class="section level2">
+<h2>C: Submitting sequencing data to public archives</h2>
 <p>It is now time to submit the data to your favorite sequence read archive. We submitted out data to the <a href="https://www.ebi.ac.uk/ena" target="blank">European Nucleotide Archive (ENA)</a>. The ENA does not like RAW data and prefers to have primers removed. So we submitted the trimmed Fastq files to the ENA. You can find these data under the study accession number <a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB28397" target="blank"><strong>PRJEB28397</strong></a>. The raw, raw files are available on the project’s <a href="https://doi.org/10.6084/m9.figshare.6875522" target="blank">figshare site</a>.</p>
 <p>To submit to the ENA you need two data tables (plus your sequence data). The first file describes the samples and the second file describes the sequencing data. The original files can be found on the figshare site with the <a href="https://doi.org/10.6084/m9.figshare.6875522" target="_blank">raw data</a>.</p>
+<p><br/></p>
 </div>
-<div id="appendix-d-specific-r-package-versions" class="section level2">
-<h2>Appendix D: Specific R package &amp; versions</h2>
+<div id="d-specific-r-package-versions" class="section level2">
+<h2>D: Specific R package &amp; versions</h2>
 <p>Below are the specific packages and versions used in this workflow using both <code>sessionInfo()</code> and <code>devtools::session_info()</code>.</p>
 <pre class="r"><code>proc.time() - ptm</code></pre>
 <pre><code>##      user    system   elapsed 
@@ -1024,7 +1022,7 @@ end_time - start_time</code></pre>
 <hr>
 
 <!-- /.bottom-menu -->
-	<p class="copyright">&#169; 2019 metacrobe & ProjectDIGEST,
+	<p class="copyright">&#169; 2019 <a href="http://www.metacrobe.io">metacrobe</a> & ProjectDIGEST,
 		powered by <a href="http://www.r-project.org">R</a> + <a href="http://rmarkdown.rstudio.com">RMarkdown</a> + <a href="http://github.com">Github</a>.</p>
 </footer>
 

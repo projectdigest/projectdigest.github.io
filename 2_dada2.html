@@ -12,7 +12,7 @@
 
 
 
-<title>Part 2: DADA2 Workflow for multiple runs</title>
+<title>No 2. DADA2 Workflow</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -466,19 +466,15 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Part 2: DADA2 Workflow for multiple runs</h1>
+<h1 class="title toc-ignore">N<sup><u>o</u></sup> 2. DADA2 Workflow</h1>
 
 </div>
 
 
-<p><a href="0_pw_intro.html#workflow_overview">Back to Introduction</a></p>
-<hr />
-<div class="notice">
-<p>This document is used to process raw pair-end Illumina data from herbivore reef fish with DADA2. The script will process the data from different runs separately and then combine the runs and finish the DADA2 pipeline. Here we report both methods and results in plain text and R code. This document presents a <strong>completely reproducible workflow</strong> of our analysis.</p>
-</div>
-<p>
+<p id="opennote">
+This document is used to <font size="5">process raw pair-end Illumina data</font> from herbivore reef fish with DADA2. The script will process the data from different runs separately and then combine the runs and finish the DADA2 pipeline. We report both methods and results in plain text and R code. This document presents a completely reproducible workflow of our method for sequence processing.
 </p>
-<hr />
+<p><br/></p>
 <div id="data-availability" class="section level2">
 <h2>Data Availability</h2>
 <p>We make several data types available from the DADA2 workflow. For a more complete list of data and data products, please see the <a href="data_availability.html">Data section</a>.</p>
@@ -488,20 +484,22 @@ div.tocify {
 <li><p><a href="https://doi.org/10.6084/m9.figshare.7357178" target="_blank">10.6084/m9.figshare.7357178</a>: Final output file produce in <a href="#Part%20F:%20Merge%20Samples">Part F: Merge Results &amp; Complete Workflow</a> of this workflow as well as files for phyloseq analytical workflow. The DADA2 output file is loaded file directly into the phyloseq workflow.</p></li>
 <li><p><a href="https://doi.org/10.6084/m9.figshare.6997253" target="_blank">10.6084/m9.figshare.6997253</a>: DOI for this workflow.</p></li>
 </ul>
-<hr />
-<div class="notice">
-<p>This pipeline is exactly how we processed our data but this is not meant to be a tutorial and we only provide minimal annotation. There are many great tutorials and explanations out there on <a href="https://benjjneb.github.io/dada2/" target="_blank">DADA2</a> amplicon processing that you can dive into. For example <a href="https://f1000research.com/articles/5-1492/v2" target="_blank">here</a>, <a href="https://benjjneb.github.io/dada2/bigdata.html" target="_blank">here</a>, <a href="https://astrobiomike.github.io/amplicon/dada2_workflow_ex" target="_blank">here</a>, and <a href="https://benjjneb.github.io/dada2/tutorial.html" target="_blank">here</a>.</p>
-<p>Depending on the DADA2 version, you may get <a href="https://github.com/benjjneb/dada2/issues/532" target="_blank">slightly different results</a> due to fundamental changes in the code-base. This is unavoidable at times and the developers do the best they can to maintain fidelity across versions. To replicate our results exactly, please see the <a href="#Appendix:%20R%20packages%20&amp;%20versions">end of this page</a> for the R package and versions used in this workflow. Also, we set random number seeds to ensure full reproducibility (see below).</p>
-<p>In the <strong>upper right hand corner</strong> of this page is a <code>Code</code> button. Use this to show or hide all the code in the document (default is show). Let’s proceed.</p>
-</div>
-<p>
+<p id="opennote">
+This pipeline is <font size ="5">exactly how we processed our data</font>. This however is not meant to be a tutorial and we only provide minimal annotation.
 </p>
+<p>There are many great tutorials and explanations out there on <a href="https://benjjneb.github.io/dada2/" target="_blank">DADA2</a> amplicon processing that you can dive into. For example <a href="https://f1000research.com/articles/5-1492/v2" target="_blank">here</a>, <a href="https://benjjneb.github.io/dada2/bigdata.html" target="_blank">here</a>, <a href="https://astrobiomike.github.io/amplicon/dada2_workflow_ex" target="_blank">here</a>, and <a href="https://benjjneb.github.io/dada2/tutorial.html" target="_blank">here</a>.</p>
+<p>In the upper right hand corner of this page is a <code>Code</code> button. Use this to show or hide all the code in the document (default is show).</p>
+<p id="warning">
+Depending on your DADA2 version, you may get <a href="https://github.com/benjjneb/dada2/issues/532" target="_blank">slightly different results</a> due to fundamental changes in the code-base. This is unavoidable at times (with any software) and developers do their best to maintain fidelity across versions. To replicate our results exactly, please see the <a href="#Appendix:%20R%20packages%20&amp;%20versions">end of this page</a> for the R package and versions used in this workflow. Also, we set random number seeds to ensure full reproducibility (see below).
+</p>
+<p>Let’s proceed.</p>
+<p><br/></p>
 </div>
 <div id="workflow-overview" class="section level2">
 <h2>Workflow Overview</h2>
 <p>This is a workflow for processing the raw 16S rRNA Illumina data for the herbivorous reef fish microbiome study. We sequenced the fore, mid, and hind gut from 53 individual fish. The original dataset contained 7 species from 3 genera. <em>Sparisoma chrysopterum</em> and <em>Scarus vetula</em> were only represented by 1 and 2 individuals, respectively, and were omitted from the final study, however we included those samples in our pipeline and remove them before analysis.</p>
 <p>In addition, many samples were re-sequenced and thus processed separately here before being merged during prior to analysis. There are data for 3 runs–all workflows are identical. We sequenced 144 samples in the first run (Run01) and then the sequencing center re-sequenced those samples because of lower than agreed upon yield (Run02). We then sequenced the remaining 15 samples (5 individuals) on a separate run (Run03).</p>
-<hr />
+<p><br/></p>
 <div id="file-naming" class="section level3">
 <h3>File naming</h3>
 <p>In the original raw data, fastq files are named using the following convention for the root name:</p>
@@ -530,16 +528,15 @@ div.tocify {
 <p>So…</p>
 <p><left><font size="4" color="red">Run1_SpVir08_F_S113_L001_R2_001.fastq</font></left></p>
 <p>…corresponds to the reverse reads (R2) of the foregut from <em>Sparisoma viride</em> individual #8, Run1.</p>
-<hr />
-<p><a id="back to top"></a></p>
+<p><br/></p>
 </div>
 <div id="workflow-sections" class="section level3">
 <h3>Workflow sections</h3>
+<p><br/></p>
 <div id="part-a-preprocessing" class="section level4">
 <h4><a href="#Part%20A:%20Preprocessing">Part A: Preprocessing</a></h4>
 <ul>
-<li>Use <a href="http://cutadapt.readthedocs.io/en/stable/guide.html" target="_blank">cutadapt</a> to trim adapters from raw reads.<br />
-</li>
+<li>Use <a href="http://cutadapt.readthedocs.io/en/stable/guide.html" target="_blank">cutadapt</a> to trim adapters from raw reads.</li>
 <li>Merge gut segments per individual per run using <a href="https://www.mothur.org/" target="_blank">mothur</a>.</li>
 </ul>
 </div>
@@ -566,28 +563,25 @@ div.tocify {
 <li>Construct sequence table</li>
 <li>Export files</li>
 </ul>
-<p>At this point in the workflow we are finished processing the individual runs. To construct our final dataset we will combine the runs, check for chimeras, and assign taxonomy. However, before we do that we are first going to continue processing the individual runs so we can see how each run performed through each step of the workflow, including the removal of chimeras. Run time is displayed after this step.</p>
 </div>
 <div id="part-e-continuation-with-individual-samples" class="section level4">
 <h4><a href="#Part%20E:%20Continuation%20with%20Individual%20Samples">Part E: Continuation with Individual Samples</a></h4>
+<p>At this point in the workflow we are finished processing the individual runs. To construct our final dataset we will combine the runs, check for chimeras, and assign taxonomy. However, before we do that we are first going to continue processing the individual runs so we can see how each run performed through each step of the workflow, including the removal of chimeras. Run time is displayed after this step. Note: Run time is displayed after this step.</p>
 <ul>
 <li>Identify &amp; remove chimeras</li>
 <li>Track changes through each step</li>
 </ul>
-<p>Run time is displayed after this step.</p>
 </div>
 <div id="part-f-merge-results-complete-workflow" class="section level4">
 <h4><a href="#Part%20F:%20Merge%20Results%20&amp;%20Complete%20Workflow">Part F: Merge Results &amp; Complete Workflow</a></h4>
-<p>Here we combine the replicate runs Run01 and Run02, and then add in Run03. We followed <a href="https://benjjneb.github.io/dada2/bigdata_paired.html" target="_blank">this recipe</a> for merging samples.</p>
-<p>Run time is displayed after this step.</p>
-<hr />
+<p>Here we combine the replicate runs Run01 and Run02, and then add in Run03. We followed <a href="https://benjjneb.github.io/dada2/bigdata_paired.html" target="_blank">this recipe</a> for merging samples. Run time is also displayed after this step.</p>
 <p><a id="Part A: Preprocessing"></a></p>
+<p><br/></p>
 </div>
 </div>
 </div>
 <div id="part-a-preprocessing-1" class="section level2">
 <h2>Part A: Preprocessing</h2>
-<p><a href="#back%20to%20top">back to top</a></p>
 <ol style="list-style-type: decimal">
 <li>Run <code>catadapt</code> on all <code>fastq</code> files to trim adapters.</li>
 </ol>
@@ -607,11 +601,12 @@ div.tocify {
 <p>mothur` uses the dash(-) to distinguish between files to be merged so make sure your file names do not have dashes.</p>
 <p>For programmatic reasons we chose to drop the <code>Run</code> prefix from the output merged file and instead delineate run id with <code>_1_</code>. This is probably a little confusing so change as you see fit.</p>
 <p>These file will be the input for the <code>DADA2</code> workflow and are stored in the <code>02_MERGED/</code> directory. To simplify things a little, variables for RUN01 have the suffix <code>X1</code>, RUN02 is <code>Y2</code>, and RUN03 is <code>Z3</code>.</p>
+<p><br/></p>
 </div>
 <div id="part-b-file-prep-1" class="section level2">
 <h2>Part B: File Prep</h2>
 <p><a id="Part B: File Prep"></a></p>
-<p><a href="#back%20to%20top">back to top</a></p>
+<p><br/></p>
 <div id="set-the-working-directory-prep-files" class="section level4">
 <h4>Set the working directory &amp; prep files</h4>
 <pre class="r"><code>path_X1 &lt;- &quot;DATA/02_MERGED/RUN01/INPUT_FILES/&quot;
@@ -649,12 +644,13 @@ fnRs_Y2 &lt;-file.path(path_Y2, fnRs_Y2)
 sample.names_Z3 &lt;- sapply(strsplit(fnFs_Z3, &quot;_&quot;), `[`, 1)
 fnFs_Z3 &lt;-file.path(path_Z3, fnFs_Z3)
 fnRs_Z3 &lt;-file.path(path_Z3, fnRs_Z3)</code></pre>
+<p><br/></p>
 </div>
 </div>
 <div id="part-c-dada2-workflow-1" class="section level2">
 <h2>Part C: DADA2 Workflow</h2>
 <p><a id="Part C: DADA2 Workflow"></a></p>
-<p><a href="#back%20to%20top">back to top</a></p>
+<p><br/></p>
 <div id="quality-assessment" class="section level3">
 <h3>Quality assessment</h3>
 <p><a id="Quality assessment"></a></p>
@@ -686,6 +682,7 @@ fnRs_Z3 &lt;-file.path(path_Z3, fnRs_Z3)</code></pre>
 ## will replace the existing scale.</code></pre>
 <p><img src="2_dada2_files/figure-html/plot_quality_scores_reverse-3.png" width="672" /></p>
 <p>The reverse reads are so so but the forward reads look pretty good. We will deal with the low quality of reverse reads in subsequent steps.</p>
+<p><br/></p>
 </div>
 <div id="filtering" class="section level3">
 <h3>Filtering</h3>
@@ -702,9 +699,9 @@ filtRs_Y2 &lt;- file.path(filt_path_Y2, paste0(sample.names_Y2, &quot;_R_filt.fa
 filt_path_Z3 &lt;- file.path(path_Z3, &quot;filtered&quot;)
 filtFs_Z3 &lt;- file.path(filt_path_Z3, paste0(sample.names_Z3, &quot;_F_filt.fastq.gz&quot;))
 filtRs_Z3 &lt;- file.path(filt_path_Z3, paste0(sample.names_Z3, &quot;_R_filt.fastq.gz&quot;))</code></pre>
-<pre class="r"><code>out_X1 &lt;- filterAndTrim(fnFs_X1, filtFs_X1, fnRs_X1, filtRs_X1, 
-                        truncLen=c(260,160), maxN=0, maxEE=c(2,5), 
-                        truncQ=2, rm.phix=TRUE, compress=TRUE, 
+<pre class="r"><code>out_X1 &lt;- filterAndTrim(fnFs_X1, filtFs_X1, fnRs_X1, filtRs_X1,
+                        truncLen=c(260,160), maxN=0, maxEE=c(2,5),
+                        truncQ=2, rm.phix=TRUE, compress=TRUE,
                         multithread=TRUE)
 head(out_X1)</code></pre>
 <pre><code>##                           reads.in reads.out
@@ -714,9 +711,9 @@ head(out_X1)</code></pre>
 ## AcCoe04_1_R1.merged.fastq   134208    107426
 ## AcCoe05_1_R1.merged.fastq    68449     54839
 ## AcCoe06_1_R1.merged.fastq   114701     93969</code></pre>
-<pre class="r"><code>out_Y2 &lt;- filterAndTrim(fnFs_Y2, filtFs_Y2, fnRs_Y2, filtRs_Y2, 
-                        truncLen=c(260,160), maxN=0, maxEE=c(2,5), 
-                        truncQ=2, rm.phix=TRUE, compress=TRUE, 
+<pre class="r"><code>out_Y2 &lt;- filterAndTrim(fnFs_Y2, filtFs_Y2, fnRs_Y2, filtRs_Y2,
+                        truncLen=c(260,160), maxN=0, maxEE=c(2,5),
+                        truncQ=2, rm.phix=TRUE, compress=TRUE,
                         multithread=TRUE)
 head(out_Y2)</code></pre>
 <pre><code>##                           reads.in reads.out
@@ -726,9 +723,9 @@ head(out_Y2)</code></pre>
 ## AcCoe04_2_R1.merged.fastq   128924    120267
 ## AcCoe05_2_R1.merged.fastq    57834     53797
 ## AcCoe06_2_R1.merged.fastq    98618     92446</code></pre>
-<pre class="r"><code>out_Z3 &lt;- filterAndTrim(fnFs_Z3, filtFs_Z3, fnRs_Z3, filtRs_Z3, 
-                        truncLen=c(260,140), maxN=0, maxEE=c(2,5), 
-                        truncQ=2, rm.phix=TRUE, compress=TRUE, 
+<pre class="r"><code>out_Z3 &lt;- filterAndTrim(fnFs_Z3, filtFs_Z3, fnRs_Z3, filtRs_Z3,
+                        truncLen=c(260,140), maxN=0, maxEE=c(2,5),
+                        truncQ=2, rm.phix=TRUE, compress=TRUE,
                         multithread=TRUE)
 head(out_Z3)</code></pre>
 <pre><code>##                           reads.in reads.out
@@ -737,11 +734,11 @@ head(out_Z3)</code></pre>
 ## SpAur07_3_R1.merged.fastq    87363     67714
 ## SpAur08_3_R1.merged.fastq    41583     31592
 ## SpAur09_3_R1.merged.fastq    64421     51507</code></pre>
+<p><br/></p>
 </div>
 <div id="learn-error-rates" class="section level3">
 <h3>Learn error rates</h3>
 <p><a id="Learn error rate"></a></p>
-<p><a href="#back%20to%20top">back to top</a></p>
 <p><strong>Forward</strong></p>
 <pre class="r"><code>errF_X1 &lt;- learnErrors(filtFs_X1, multithread = TRUE)</code></pre>
 <pre><code>## 109457140 total bases in 420989 reads from 4 samples will be used for learning the error rates.</code></pre>
@@ -756,6 +753,7 @@ head(out_Z3)</code></pre>
 <pre><code>## 104038400 total bases in 650240 reads from 7 samples will be used for learning the error rates.</code></pre>
 <pre class="r"><code>errR_Z3 &lt;- learnErrors(filtRs_Z3, multithread = TRUE)</code></pre>
 <pre><code>## 39938080 total bases in 285272 reads from 5 samples will be used for learning the error rates.</code></pre>
+<p><br/></p>
 </div>
 <div id="plot-error" class="section level3">
 <h3>Plot error</h3>
@@ -765,11 +763,11 @@ head(out_Z3)</code></pre>
 <p><img src="2_dada2_files/figure-html/plot_error-2.png" width="672" /></p>
 <pre class="r"><code>plotErrors(errR_Z3, nominalQ=TRUE)</code></pre>
 <p><img src="2_dada2_files/figure-html/plot_error-3.png" width="672" /></p>
+<p><br/></p>
 </div>
 <div id="dereplicate-reads" class="section level3">
 <h3>Dereplicate reads</h3>
 <p><a id="Dereplicate reads"></a></p>
-<p><a href="#back%20to%20top">back to top</a></p>
 <p>To see the results of the <code>derepFastq</code> command for forward and reverse reads, add the flag <code>verbose = TRUE</code>. We have omitted it here because it takes up a lot of space and the data is summarized at the end anyway.</p>
 <p><strong>Forward</strong></p>
 <pre class="r"><code>derepFs_X1 &lt;- derepFastq(filtFs_X1)
@@ -789,11 +787,11 @@ names(derepRs_Y2) &lt;- sample.names_Y2
 
 derepRs_Z3 &lt;- derepFastq(filtRs_Z3)
 names(derepRs_Z3) &lt;- sample.names_Z3</code></pre>
+<p><br/></p>
 </div>
 <div id="infer-sequence-variants" class="section level3">
 <h3>Infer sequence variants</h3>
 <p><a id="Run DADA2 & Infer Sequence Variants"></a></p>
-<p><a href="#back%20to%20top">back to top</a></p>
 <pre class="r"><code>#Run01
 dadaFs_X1 &lt;- dada(derepFs_X1, err = errF_X1, multithread = TRUE)</code></pre>
 <pre><code>## Sample 1 - 79323 reads in 27509 unique sequences.
@@ -1032,16 +1030,17 @@ dadaRs_Z3 &lt;- dada(derepRs_Z3, err = errR_Z3, multithread = TRUE)</code></pre>
 <pre><code>## dada-class: object describing DADA2 denoising results
 ## 169 sequence variants were inferred from 14127 input unique sequences.
 ## Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16</code></pre>
+<p><br/></p>
 </div>
 </div>
 <div id="part-d-merge-paired-reads-1" class="section level2">
 <h2>Part D: Merge Paired Reads</h2>
 <p><a id="Part D: Merge Paired Reads"></a></p>
-<p><a href="#back%20to%20top">back to top</a></p>
 <p>To see the results of the <code>mergePairs</code> command for each run, add the flag <code>verbose = TRUE</code>. We have omitted it here because it takes up a lot of space and the data is summarized at the end anyway.</p>
 <pre class="r"><code>mergers_X1 &lt;- mergePairs(dadaFs_X1, derepFs_X1, dadaRs_X1, derepRs_X1)
 mergers_Y2 &lt;- mergePairs(dadaFs_Y2, derepFs_Y2, dadaRs_Y2, derepRs_Y2)
 mergers_Z3 &lt;- mergePairs(dadaFs_Z3, derepFs_Z3, dadaRs_Z3, derepRs_Z3)</code></pre>
+<p><br/></p>
 <div id="sequence-table" class="section level3">
 <h3>Sequence table</h3>
 <p><a id="Construct sequence table"></a></p>
@@ -1119,6 +1118,7 @@ dim(seqtab_Z3.2)</code></pre>
 <pre><code>## 
 ##  368  369  370  371  372  373  374  375  376  377  378  379  380 
 ##   20   24    7   15   89  151   46  546 1016  869   33    6    7</code></pre>
+<p><br/></p>
 </div>
 <div id="export-files" class="section level3">
 <h3>Export files</h3>
@@ -1129,72 +1129,74 @@ saveRDS(seqtab_Y2.2, &quot;DATA/02_MERGED/RUN02/seqtab_Y2.2.rds&quot;)
 saveRDS(seqtab_Z3.2, &quot;DATA/02_MERGED/RUN03/seqtab_Z3.2.rds&quot;)</code></pre>
 <p>Processing time…</p>
 <pre class="r"><code>proc.time() - ptm</code></pre>
-<pre><code>##     user   system  elapsed 
-##  248.534 -151.174 4022.902</code></pre>
+<pre><code>##      user    system   elapsed 
+##  1900.792  -306.433 -1865.251</code></pre>
 <blockquote>
 <p>This part of the workflow is finished</p>
 </blockquote>
+<p><br/></p>
 </div>
 </div>
 <div id="part-e-individual-samples" class="section level2">
 <h2>Part E: Individual Samples</h2>
 <p><a id="Part E: Continuation with Individual Samples"></a></p>
-<p><a href="#back%20to%20top">back to top</a></p>
 <blockquote>
 <p>Optional steps to process individual runs</p>
 </blockquote>
 <p>We were interested in the overall performance of each run and wanted to gauge how read totals changed through the pipeline. So we continued with chimera removal and generated a summary table tracking reads by sample. These step could also be useful to compare data across runs, but we will not do that here.</p>
 <p>To see the results of the <code>removeBimeraDenovo</code> command in the console output, add the flag <code>verbose = TRUE</code> to the code chunk. We have omitted it here because it takes up a lot of space. This data is summarized at the end anyway so you’re not missing out.</p>
+<p><br/></p>
 <div id="remove-chimeras" class="section level3">
 <h3>Remove chimeras</h3>
 <p><a id="Identify & remove chimeras"></a></p>
 <pre class="r"><code>#Run01
-seqtab_X1.2.nochim &lt;- removeBimeraDenovo(seqtab_X1.2, 
+seqtab_X1.2.nochim &lt;- removeBimeraDenovo(seqtab_X1.2,
                                          method=&quot;consensus&quot;, multithread=TRUE)
 dim(seqtab_X1.2.nochim)</code></pre>
 <pre><code>## [1]   48 8412</code></pre>
 <pre class="r"><code>sum(seqtab_X1.2.nochim)/sum(seqtab_X1.2)</code></pre>
 <pre><code>## [1] 0.933459</code></pre>
 <pre class="r"><code>#Run02
-seqtab_Y2.2.nochim &lt;- removeBimeraDenovo(seqtab_Y2.2, 
+seqtab_Y2.2.nochim &lt;- removeBimeraDenovo(seqtab_Y2.2,
                                          method=&quot;consensus&quot;, multithread=TRUE)
 dim(seqtab_Y2.2.nochim)</code></pre>
 <pre><code>## [1]   48 9551</code></pre>
 <pre class="r"><code>sum(seqtab_Y2.2.nochim)/sum(seqtab_Y2.2)</code></pre>
 <pre><code>## [1] 0.932805</code></pre>
 <pre class="r"><code>#Run03
-seqtab_Z3.2.nochim &lt;- removeBimeraDenovo(seqtab_Z3.2, 
+seqtab_Z3.2.nochim &lt;- removeBimeraDenovo(seqtab_Z3.2,
                                          method=&quot;consensus&quot;, multithread=TRUE)
 dim(seqtab_Z3.2.nochim)</code></pre>
 <pre><code>## [1]    5 1135</code></pre>
 <pre class="r"><code>sum(seqtab_Z3.2.nochim)/sum(seqtab_Z3.2)</code></pre>
 <pre><code>## [1] 0.8678646</code></pre>
+<p><br/></p>
 </div>
 <div id="track-read-changes" class="section level3">
 <h3>Track read changes</h3>
 <p><a id="Track changes through each step"></a></p>
 <pre class="r"><code>#Run01
 getN_X1 &lt;- function(x) sum(getUniques(x))
-track_X1 &lt;- cbind(out_X1, sapply(dadaFs_X1, getN_X1), 
-                  sapply(dadaRs_X1, getN_X1), sapply(mergers_X1, getN_X1), 
+track_X1 &lt;- cbind(out_X1, sapply(dadaFs_X1, getN_X1),
+                  sapply(dadaRs_X1, getN_X1), sapply(mergers_X1, getN_X1),
                   rowSums(seqtab_X1.2.nochim))
-colnames(track_X1) &lt;- c(&quot;input&quot;, &quot;filtered&quot;, &quot;denoisedF&quot;, 
+colnames(track_X1) &lt;- c(&quot;input&quot;, &quot;filtered&quot;, &quot;denoisedF&quot;,
                         &quot;denoisedR&quot;, &quot;merged&quot;, &quot;nonchim&quot;)
 rownames(track_X1) &lt;- sample.names_X1
 #Run02
 getN_Y2 &lt;- function(x) sum(getUniques(x))
-track_Y2 &lt;- cbind(out_Y2, sapply(dadaFs_Y2, getN_Y2), 
-                  sapply(dadaRs_Y2, getN_Y2), sapply(mergers_Y2, getN_Y2), 
+track_Y2 &lt;- cbind(out_Y2, sapply(dadaFs_Y2, getN_Y2),
+                  sapply(dadaRs_Y2, getN_Y2), sapply(mergers_Y2, getN_Y2),
                   rowSums(seqtab_Y2.2.nochim))
-colnames(track_Y2) &lt;- c(&quot;input&quot;, &quot;filtered&quot;, &quot;denoisedF&quot;, 
+colnames(track_Y2) &lt;- c(&quot;input&quot;, &quot;filtered&quot;, &quot;denoisedF&quot;,
                         &quot;denoisedR&quot;, &quot;merged&quot;, &quot;nonchim&quot;)
 rownames(track_Y2) &lt;- sample.names_Y2
 #Run03
 getN_Z3 &lt;- function(x) sum(getUniques(x))
-track_Z3 &lt;- cbind(out_Z3, sapply(dadaFs_Z3, getN_Z3), 
-                  sapply(dadaRs_Z3, getN_Z3), sapply(mergers_Z3, getN_Z3), 
+track_Z3 &lt;- cbind(out_Z3, sapply(dadaFs_Z3, getN_Z3),
+                  sapply(dadaRs_Z3, getN_Z3), sapply(mergers_Z3, getN_Z3),
                   rowSums(seqtab_Z3.2.nochim))
-colnames(track_Z3) &lt;- c(&quot;input&quot;, &quot;filtered&quot;, &quot;denoisedF&quot;, 
+colnames(track_Z3) &lt;- c(&quot;input&quot;, &quot;filtered&quot;, &quot;denoisedF&quot;,
                         &quot;denoisedR&quot;, &quot;merged&quot;, &quot;nonchim&quot;)
 rownames(track_Z3) &lt;- sample.names_Z3</code></pre>
 <pre class="r"><code>#Run01
@@ -1248,7 +1250,7 @@ track_X1</code></pre>
 ## SpVir09 103645    70643     69645     70048  21987   21253
 ## SpVir10 131451    91633     90980     91224  39948   39096
 ## SpVir11  80780    54959     54767     54866  16861   13864</code></pre>
-<pre class="r"><code>write.table(track_X1, &quot;RUN01_read_changes.txt&quot;, 
+<pre class="r"><code>write.table(track_X1, &quot;RUN01_read_changes.txt&quot;,
             sep = &quot;\t&quot;, quote = FALSE, col.names=NA)
 #Run02
 track_Y2</code></pre>
@@ -1301,7 +1303,7 @@ track_Y2</code></pre>
 ## SpVir09  93549    84593     83744     83984  21126   20385
 ## SpVir10 116443   105756    105194    105329  36480   35750
 ## SpVir11  75728    68265     68111     68110  16326   13452</code></pre>
-<pre class="r"><code>write.table(track_Y2, &quot;RUN02_read_changes.txt&quot;, 
+<pre class="r"><code>write.table(track_Y2, &quot;RUN02_read_changes.txt&quot;,
             sep = &quot;\t&quot;, quote = FALSE, col.names=NA)
 #Run03
 track_Z3</code></pre>
@@ -1311,7 +1313,7 @@ track_Z3</code></pre>
 ## SpAur07 87363    67714     66417     67121  43592   34855
 ## SpAur08 41583    31592     31350     31450  14900   12774
 ## SpAur09 64421    51507     50111     50940  31886   27938</code></pre>
-<pre class="r"><code>write.table(track_Z3, &quot;RUN03_read_changes.txt&quot;, 
+<pre class="r"><code>write.table(track_Z3, &quot;RUN03_read_changes.txt&quot;,
             sep = &quot;\t&quot;, quote = FALSE, col.names=NA)</code></pre>
 <p>Next we save the output of for each run. This is optional but nice if you want to analyze each run separately in phyloseq. You would need to add a taxonomy classification step first before exporting.</p>
 <pre class="r"><code>saveRDS(seqtab_X1.2.nochim, &quot;DATA/02_MERGED/RUN01/seqtab_X1.2.nochim.rds&quot;)
@@ -1324,17 +1326,18 @@ saveRDS(seqtab_Z3.2.nochim, &quot;DATA/02_MERGED/RUN03/seqtab_Z3.2.nochim.rds&qu
 <pre><code>##     user   system  elapsed 
 ## 9609.068 -195.673  643.369</code></pre>
 <p><a id="Part F: Merge Results & Complete Workflow"></a></p>
+<p><br/></p>
 </div>
 </div>
 <div id="part-f-merge-samples" class="section level2">
 <h2>Part F: Merge Samples</h2>
-<p><a href="#back%20to%20top">back to top</a></p>
 <p>First we need to clear everything up to this point…</p>
 <pre class="r"><code>remove(list = ls())</code></pre>
 <p>…and then read in the sequence tables from each run before the chimera checking was performed above. This is because we want to call chimeras on the merged data.</p>
 <pre class="r"><code>seqtab.1 &lt;- readRDS(&quot;DATA/02_MERGED/RUN01/seqtab_X1.2.rds&quot;)
 seqtab.2 &lt;- readRDS(&quot;DATA/02_MERGED/RUN02/seqtab_Y2.2.rds&quot;)
 seqtab.3 &lt;- readRDS(&quot;DATA/02_MERGED/RUN03/seqtab_Z3.2.rds&quot;)</code></pre>
+<p><br/></p>
 <div id="combine-run01-run02-the-duplicates" class="section level4">
 <h4>Combine Run01 &amp; Run02 (the duplicates)</h4>
 <p>Put samples in the 2 sequence tables in the same order</p>
@@ -1343,6 +1346,7 @@ rownames(seqtab.2) &lt;- sapply(strsplit(rownames(seqtab.2), &quot;_&quot;), `[`
 identical(sort(rownames(seqtab.1)), sort(rownames(seqtab.2))) # Should be TRUE</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>seqtab.2 &lt;- seqtab.2[rownames(seqtab.1),]</code></pre>
+<p><br/></p>
 </div>
 <div id="make-matrix-summing-the-sequence-tables" class="section level4">
 <h4>Make matrix summing the sequence tables</h4>
@@ -1354,6 +1358,7 @@ colnames(st.sum) &lt;- seqs
 st.sum[,colnames(seqtab.1)] &lt;- st.sum[,colnames(seqtab.1)] + seqtab.1
 st.sum[,colnames(seqtab.2)] &lt;- st.sum[,colnames(seqtab.2)] + seqtab.2</code></pre>
 <pre class="r"><code>saveRDS(st.sum, &quot;DATA/02_MERGED/combo_run1_run2.rds&quot;)</code></pre>
+<p><br/></p>
 </div>
 <div id="merge-sequence-tables-from-combo_run1_run2-seqtab.3" class="section level4">
 <h4>Merge sequence tables from combo_run1_run2 &amp; seqtab.3</h4>
@@ -1361,6 +1366,7 @@ st.sum[,colnames(seqtab.2)] &lt;- st.sum[,colnames(seqtab.2)] + seqtab.2</code><
 seqtab.3 &lt;- readRDS(&quot;DATA/02_MERGED/RUN03/seqtab_Z3.2.rds&quot;)
 
 st.all &lt;- mergeSequenceTables(combo, seqtab.3)</code></pre>
+<p><br/></p>
 </div>
 <div id="run-chimera-removal-assign-taxonomy" class="section level4">
 <h4>Run chimera removal &amp; assign taxonomy</h4>
@@ -1368,38 +1374,32 @@ st.all &lt;- mergeSequenceTables(combo, seqtab.3)</code></pre>
 <pre class="r"><code>seqtab &lt;- removeBimeraDenovo(st.all, method=&quot;consensus&quot;, multithread=TRUE)</code></pre>
 <p><code>assignTaxonomy</code> implements the naive Bayesian classifier, so for reproducible results you need to set a random number seed (see issue <a href="https://github.com/benjjneb/dada2/issues/538" target="_blank">#538</a>).</p>
 <pre class="r"><code>set.seed(119)#for reproducability
-tax_gg &lt;- assignTaxonomy(seqtab, &quot;gg_13_8_train_set_97.fa.gz&quot;, 
+tax_gg &lt;- assignTaxonomy(seqtab, &quot;gg_13_8_train_set_97.fa.gz&quot;,
                          multithread=TRUE)
 set.seed(911)#for reproducability
-tax_silva &lt;- assignTaxonomy(seqtab, &quot;silva_nr_v132_train_set.fa.gz&quot;, 
+tax_silva &lt;- assignTaxonomy(seqtab, &quot;silva_nr_v132_train_set.fa.gz&quot;,
                             multithread = TRUE)</code></pre>
 <pre class="r"><code>save.image(&quot;DATA/02_MERGED/combo_pipeline.rdata&quot;)</code></pre>
 <p>The DADA2 analysis is now complete. Next we used <a href="https://joey711.github.io/phyloseq/">phyloseq</a> and the <code>combo_pipeline.rdata</code> output file for the subsequent community analysis.</p>
 <p>Processing time…</p>
 <pre class="r"><code>proc.time() - ptm</code></pre>
-<pre><code>##     user   system  elapsed 
-## 1943.987    4.452  639.569</code></pre>
-<p></br></p>
-<div style="text-align:center">
-<h4>
-<button class="favorite styled" type="button">
-<a href="3_data_prep.html">Go to Part 3, Data Preparation</a>
-</button>
-</h4>
+<pre><code>##      user    system   elapsed 
+## -5841.205  -106.629 -2021.346</code></pre>
+<p><br/></p>
+<div style="text-align:right">
+<p><span class="linkboxfont-sm"> <button class="favorite styled" type="button"> <a href="3_data_prep.html">N<sup><u>o</u></sup> 3. Data Preparation -&gt;</a> </button> </span></p>
 </div>
-<p><br></p>
-<hr />
+<p><br/></p>
 </div>
 </div>
 <div id="r-packages-systems-information" class="section level2">
 <h2>R packages &amp; Systems Information</h2>
 <p><a id="Appendix: R packages & versions"></a></p>
-<p><a href="#back%20to%20top">back to top</a></p>
 <p>This pipeline was run on a 2018 MacBook Pro, OSX 10.13.6 with a 3.5 GHz Intel Core i7 processor and 16 GB of memory. Below are the specific packages and versions used in this workflow using both <code>sessionInfo()</code> and <code>devtools::session_info()</code>.</p>
 <pre class="r"><code>sessionInfo()</code></pre>
 <pre><code>## R version 3.6.0 (2019-04-26)
 ## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS Mojave 10.14.6
+## Running under: macOS  10.15.1
 ## 
 ## Matrix products: default
 ## BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
@@ -1413,86 +1413,88 @@ tax_silva &lt;- assignTaxonomy(seqtab, &quot;silva_nr_v132_train_set.fa.gz&quot;
 ##  [8] datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] gapminder_0.3.0             treeio_1.8.2               
-##  [3] tidytree_0.2.7              ggtree_1.16.6              
-##  [5] picante_1.8                 nlme_3.1-141               
-##  [7] gdata_2.18.0                heatmap3_1.1.6             
-##  [9] circlize_0.4.8              ComplexHeatmap_2.1.0       
-## [11] ggpubr_0.2.3                magrittr_1.5               
-## [13] ggthemes_4.2.0              seqinr_3.6-1               
-## [15] ips_0.0.11                  ape_5.3                    
-## [17] TeachingDemos_2.10          leaflet_2.0.2              
-## [19] pairwiseAdonis_0.0.1        cluster_2.1.0              
-## [21] plotly_4.9.0                RCurl_1.95-4.12            
-## [23] bitops_1.0-6                svgPanZoom_0.3.3           
-## [25] gridExtra_2.3               forcats_0.4.0              
-## [27] stringr_1.4.0               dplyr_0.8.3                
-## [29] purrr_0.3.2                 readr_1.3.1                
-## [31] tidyr_0.8.3                 tibble_2.1.3               
-## [33] tidyverse_1.2.1             formatR_1.7                
-## [35] pander_0.6.3                rmarkdown_1.16             
-## [37] DT_0.8                      data.table_1.12.2          
-## [39] kableExtra_1.1.0            knitr_1.25                 
-## [41] rstudioapi_0.10             reshape2_1.4.3             
-## [43] scales_1.0.0                vegan_2.5-6                
-## [45] lattice_0.20-38             permute_0.9-5              
-## [47] plyr_1.8.4                  ggplot2_3.2.1              
-## [49] phyloseq_1.28.0             ShortRead_1.42.0           
-## [51] GenomicAlignments_1.20.1    SummarizedExperiment_1.14.1
-## [53] DelayedArray_0.10.0         matrixStats_0.55.0         
-## [55] Biobase_2.44.0              Rsamtools_2.0.0            
-## [57] GenomicRanges_1.36.1        GenomeInfoDb_1.20.0        
-## [59] Biostrings_2.52.0           XVector_0.24.0             
-## [61] IRanges_2.18.2              S4Vectors_0.22.1           
-## [63] BiocParallel_1.18.1         BiocGenerics_0.30.0        
-## [65] dada2_1.12.1                Rcpp_1.0.2                 
+##  [1] rsvg_1.3                    gdtools_0.2.1              
+##  [3] svglite_1.2.2               leaflet_2.0.2              
+##  [5] treeio_1.8.2                tidytree_0.2.7             
+##  [7] ggtree_1.16.6               picante_1.8                
+##  [9] nlme_3.1-141                gdata_2.18.0               
+## [11] heatmap3_1.1.6              circlize_0.4.8             
+## [13] ComplexHeatmap_2.1.0        ggpubr_0.2.3               
+## [15] magrittr_1.5                ggthemes_4.2.0             
+## [17] pairwiseAdonis_0.0.1        cluster_2.1.0              
+## [19] plotly_4.9.0                svgPanZoom_0.3.3           
+## [21] gridExtra_2.3               pander_0.6.3               
+## [23] reshape2_1.4.3              vegan_2.5-6                
+## [25] lattice_0.20-38             permute_0.9-5              
+## [27] gapminder_0.3.0             RCurl_1.95-4.12            
+## [29] bitops_1.0-6                forcats_0.4.0              
+## [31] stringr_1.4.0               dplyr_0.8.3                
+## [33] purrr_0.3.2                 readr_1.3.1                
+## [35] tidyr_0.8.3                 tibble_2.1.3               
+## [37] tidyverse_1.2.1             formatR_1.7                
+## [39] DT_0.8                      data.table_1.12.2          
+## [41] kableExtra_1.1.0            scales_1.0.0               
+## [43] plyr_1.8.4                  phyloseq_1.28.0            
+## [45] rmarkdown_1.16              knitr_1.25                 
+## [47] rstudioapi_0.10             seqinr_3.6-1               
+## [49] ips_0.0.11                  ape_5.3                    
+## [51] TeachingDemos_2.10          ggplot2_3.2.1              
+## [53] ShortRead_1.42.0            GenomicAlignments_1.20.1   
+## [55] SummarizedExperiment_1.14.1 DelayedArray_0.10.0        
+## [57] matrixStats_0.55.0          Biobase_2.44.0             
+## [59] Rsamtools_2.0.0             GenomicRanges_1.36.1       
+## [61] GenomeInfoDb_1.20.0         Biostrings_2.52.0          
+## [63] XVector_0.24.0              IRanges_2.18.2             
+## [65] S4Vectors_0.22.1            BiocParallel_1.18.1        
+## [67] BiocGenerics_0.30.0         dada2_1.12.1               
+## [69] Rcpp_1.0.2                 
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] readxl_1.3.1           backports_1.1.5        fastmatch_1.1-0       
-##  [4] igraph_1.2.4.1         lazyeval_0.2.2         splines_3.6.0         
-##  [7] crosstalk_1.0.0        usethis_1.5.1          digest_0.6.21         
-## [10] foreach_1.4.7          htmltools_0.4.0        memoise_1.1.0         
-## [13] remotes_2.1.0          fastcluster_1.1.25     modelr_0.1.5          
-## [16] RcppParallel_4.4.3     prettyunits_1.0.2      colorspace_1.4-1      
-## [19] rvest_0.3.4            haven_2.1.1            xfun_0.10             
-## [22] callr_3.3.1            crayon_1.3.4           jsonlite_1.6          
-## [25] zeallot_0.1.0          survival_2.44-1.1      phangorn_2.5.5        
-## [28] iterators_1.0.12       glue_1.3.1             gtable_0.3.0          
-## [31] zlibbioc_1.30.0        webshot_0.5.1          GetoptLong_0.1.7      
-## [34] pkgbuild_1.0.5         Rhdf5lib_1.6.1         shape_1.4.4           
-## [37] viridisLite_0.3.0      xtable_1.8-4           clue_0.3-57           
-## [40] htmlwidgets_1.3        httr_1.4.1             RColorBrewer_1.1-2    
-## [43] ellipsis_0.3.0         pkgconfig_2.0.3        XML_3.98-1.20         
-## [46] labeling_0.3           tidyselect_0.2.5       rlang_0.4.0           
-## [49] later_1.0.0            munsell_0.5.0          cellranger_1.1.0      
-## [52] tools_3.6.0            cli_1.1.0              generics_0.0.2        
-## [55] ade4_1.7-13            devtools_2.2.0         broom_0.5.2           
-## [58] evaluate_0.14          biomformat_1.12.0      yaml_2.2.0            
-## [61] fs_1.3.1               processx_3.4.1         mime_0.7              
-## [64] xml2_1.2.2             compiler_3.6.0         png_0.1-7             
-## [67] testthat_2.2.1         ggsignif_0.6.0         stringi_1.4.3         
-## [70] ps_1.3.0               desc_1.2.0             Matrix_1.2-17         
-## [73] multtest_2.40.0        vctrs_0.2.0            pillar_1.4.2          
-## [76] GlobalOptions_0.1.0    httpuv_1.5.2           R6_2.4.0              
-## [79] latticeExtra_0.6-28    hwriter_1.3.2          promises_1.1.0        
-## [82] sessioninfo_1.1.1      codetools_0.2-16       pkgload_1.0.2         
-## [85] gtools_3.8.1           MASS_7.3-51.4          assertthat_0.2.1      
-## [88] rhdf5_2.28.0           rprojroot_1.3-2        rjson_0.2.20          
-## [91] withr_2.1.2            GenomeInfoDbData_1.2.1 mgcv_1.8-28           
-## [94] hms_0.5.1              quadprog_1.5-7         rvcheck_0.1.3         
-## [97] shiny_1.3.2            lubridate_1.7.4</code></pre>
+##  [1] tidyselect_0.2.5       htmlwidgets_1.3        devtools_2.2.0        
+##  [4] munsell_0.5.0          codetools_0.2-16       withr_2.1.2           
+##  [7] colorspace_1.4-1       ggsignif_0.6.0         GenomeInfoDbData_1.2.1
+## [10] hwriter_1.3.2          rhdf5_2.28.0           rprojroot_1.3-2       
+## [13] vctrs_0.2.0            generics_0.0.2         xfun_0.10             
+## [16] fastcluster_1.1.25     R6_2.4.0               clue_0.3-57           
+## [19] assertthat_0.2.1       promises_1.1.0         gtable_0.3.0          
+## [22] processx_3.4.1         phangorn_2.5.5         rlang_0.4.0           
+## [25] zeallot_0.1.0          systemfonts_0.1.1      GlobalOptions_0.1.0   
+## [28] splines_3.6.0          lazyeval_0.2.2         broom_0.5.2           
+## [31] yaml_2.2.0             modelr_0.1.5           crosstalk_1.0.0       
+## [34] backports_1.1.5        httpuv_1.5.2           tools_3.6.0           
+## [37] usethis_1.5.1          ellipsis_0.3.0         biomformat_1.12.0     
+## [40] RColorBrewer_1.1-2     sessioninfo_1.1.1      zlibbioc_1.30.0       
+## [43] ps_1.3.0               prettyunits_1.0.2      GetoptLong_0.1.7      
+## [46] haven_2.1.1            fs_1.3.1               pkgload_1.0.2         
+## [49] hms_0.5.1              mime_0.7               evaluate_0.14         
+## [52] xtable_1.8-4           XML_3.98-1.20          readxl_1.3.1          
+## [55] shape_1.4.4            testthat_2.2.1         compiler_3.6.0        
+## [58] crayon_1.3.4           htmltools_0.4.0        mgcv_1.8-28           
+## [61] later_1.0.0            RcppParallel_4.4.3     lubridate_1.7.4       
+## [64] MASS_7.3-51.4          Matrix_1.2-17          ade4_1.7-13           
+## [67] cli_1.1.0              quadprog_1.5-7         igraph_1.2.4.1        
+## [70] pkgconfig_2.0.3        rvcheck_0.1.3          xml2_1.2.2            
+## [73] foreach_1.4.7          multtest_2.40.0        webshot_0.5.1         
+## [76] rvest_0.3.4            callr_3.3.1            digest_0.6.21         
+## [79] cellranger_1.1.0       fastmatch_1.1-0        shiny_1.3.2           
+## [82] gtools_3.8.1           rjson_0.2.20           jsonlite_1.6          
+## [85] Rhdf5lib_1.6.1         desc_1.2.0             viridisLite_0.3.0     
+## [88] pillar_1.4.2           httr_1.4.1             pkgbuild_1.0.5        
+## [91] survival_2.44-1.1      glue_1.3.1             remotes_2.1.0         
+## [94] png_0.1-7              iterators_1.0.12       stringi_1.4.3         
+## [97] latticeExtra_0.6-28    memoise_1.1.0</code></pre>
 <pre class="r"><code>devtools::session_info()</code></pre>
 <pre><code>## ─ Session info ──────────────────────────────────────────────────────────
 ##  setting  value                       
 ##  version  R version 3.6.0 (2019-04-26)
-##  os       macOS Mojave 10.14.6        
+##  os       macOS  10.15.1              
 ##  system   x86_64, darwin15.6.0        
 ##  ui       RStudio                     
 ##  language (EN)                        
 ##  collate  en_US.UTF-8                 
 ##  ctype    en_US.UTF-8                 
 ##  tz       America/Panama              
-##  date     2019-10-23                  
+##  date     2019-11-17                  
 ## 
 ## ─ Packages ──────────────────────────────────────────────────────────────
 ##  package              * version   date       lib
@@ -1536,6 +1538,7 @@ tax_silva &lt;- assignTaxonomy(seqtab, &quot;silva_nr_v132_train_set.fa.gz&quot;
 ##  fs                     1.3.1     2019-05-06 [1]
 ##  gapminder            * 0.3.0     2017-10-31 [1]
 ##  gdata                * 2.18.0    2017-06-06 [1]
+##  gdtools              * 0.2.1     2019-10-14 [1]
 ##  generics               0.0.2     2018-11-29 [1]
 ##  GenomeInfoDb         * 1.20.0    2019-05-02 [1]
 ##  GenomeInfoDbData       1.2.1     2019-09-10 [1]
@@ -1567,7 +1570,6 @@ tax_silva &lt;- assignTaxonomy(seqtab, &quot;silva_nr_v132_train_set.fa.gz&quot;
 ##  jsonlite               1.6       2018-12-07 [1]
 ##  kableExtra           * 1.1.0     2019-03-16 [1]
 ##  knitr                * 1.25      2019-09-18 [1]
-##  labeling               0.3       2014-08-23 [1]
 ##  later                  1.0.0     2019-10-04 [1]
 ##  lattice              * 0.20-38   2018-11-04 [1]
 ##  latticeExtra           0.6-28    2016-02-09 [1]
@@ -1621,6 +1623,7 @@ tax_silva &lt;- assignTaxonomy(seqtab, &quot;silva_nr_v132_train_set.fa.gz&quot;
 ##  rprojroot              1.3-2     2018-01-03 [1]
 ##  Rsamtools            * 2.0.0     2019-05-02 [1]
 ##  rstudioapi           * 0.10      2019-03-19 [1]
+##  rsvg                 * 1.3       2018-05-10 [1]
 ##  rvcheck                0.1.3     2018-12-06 [1]
 ##  rvest                  0.3.4     2019-05-15 [1]
 ##  S4Vectors            * 0.22.1    2019-09-09 [1]
@@ -1634,7 +1637,9 @@ tax_silva &lt;- assignTaxonomy(seqtab, &quot;silva_nr_v132_train_set.fa.gz&quot;
 ##  stringr              * 1.4.0     2019-02-10 [1]
 ##  SummarizedExperiment * 1.14.1    2019-07-31 [1]
 ##  survival               2.44-1.1  2019-04-01 [1]
+##  svglite              * 1.2.2     2019-05-17 [1]
 ##  svgPanZoom           * 0.3.3     2016-09-26 [1]
+##  systemfonts            0.1.1     2019-07-01 [1]
 ##  TeachingDemos        * 2.10      2016-02-12 [1]
 ##  testthat               2.2.1     2019-07-25 [1]
 ##  tibble               * 2.1.3     2019-06-06 [1]
@@ -1699,26 +1704,11 @@ tax_silva &lt;- assignTaxonomy(seqtab, &quot;silva_nr_v132_train_set.fa.gz&quot;
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  Bioconductor                                   
 ##  Bioconductor                                   
 ##  Bioconductor                                   
 ##  Bioconductor                                   
-##  Bioconductor                                   
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  Bioconductor                                   
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
@@ -1726,6 +1716,21 @@ tax_silva &lt;- assignTaxonomy(seqtab, &quot;silva_nr_v132_train_set.fa.gz&quot;
 ##  CRAN (R 3.6.0)                                 
 ##  Bioconductor                                   
 ##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  Bioconductor                                   
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
@@ -1785,16 +1790,19 @@ tax_silva &lt;- assignTaxonomy(seqtab, &quot;silva_nr_v132_train_set.fa.gz&quot;
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
-##  Bioconductor                                   
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  Bioconductor                                   
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
 ##  Bioconductor                                   
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  Bioconductor                                   
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
@@ -1821,16 +1829,10 @@ tax_silva &lt;- assignTaxonomy(seqtab, &quot;silva_nr_v132_train_set.fa.gz&quot;
 ##  Bioconductor                                   
 ## 
 ## [1] /Library/Frameworks/R.framework/Versions/3.6/Resources/library</code></pre>
-<hr />
-<p></br></p>
-<div style="text-align:center">
-<h4>
-<button class="favorite styled" type="button">
-<a href="3_data_prep.html">Go to Part 3, Data Preparation</a>
-</button>
-</h4>
+<p><br/></p>
+<div style="text-align:right">
+<p><span class="linkboxfont-sm"> <button class="favorite styled" type="button"> <a href="3_data_prep.html">N<sup><u>o</u></sup> 3. Data Preparation -&gt;</a> </button> </span></p>
 </div>
-<p><br></p>
 </div>
 
 <footer role="contentinfo" id="site-footer">
@@ -1838,7 +1840,7 @@ tax_silva &lt;- assignTaxonomy(seqtab, &quot;silva_nr_v132_train_set.fa.gz&quot;
 <hr>
 
 <!-- /.bottom-menu -->
-	<p class="copyright">&#169; 2019 metacrobe & ProjectDIGEST,
+	<p class="copyright">&#169; 2019 <a href="http://www.metacrobe.io">metacrobe</a> & ProjectDIGEST,
 		powered by <a href="http://www.r-project.org">R</a> + <a href="http://rmarkdown.rstudio.com">RMarkdown</a> + <a href="http://github.com">Github</a>.</p>
 </footer>
 
