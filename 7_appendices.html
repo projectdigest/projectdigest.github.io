@@ -527,9 +527,7 @@ invisible(dev.off())</code></pre>
 </div>
 <div id="code-for-bar-plot" class="section level4">
 <h4>Code for bar plot</h4>
-<div class="paper">
-Figure S1
-</div>
+<p><span class="paper">Figure S1</span></p>
 <pre class="r"><code>sup_fig2 &lt;- ggplot(meltd_all, aes_string(x = &quot;Sample&quot;, y = &quot;Abundance&quot;,
     fill = &quot;Class&quot;), environment = .e, Ordered = TRUE)
 sup_fig2 &lt;- sup_fig2 + geom_bar(stat = &quot;identity&quot;, position = &quot;stack&quot;) +

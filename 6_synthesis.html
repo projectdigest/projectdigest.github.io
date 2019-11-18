@@ -519,9 +519,7 @@ Now it is time to <span class="callout">put the pieces together</span> and see w
 <h3>Putting the pieces together</h3>
 <p>We took all of these data and used <a href="https://itol.embl.de/" target="_blank">iTOL</a> to visualize the tree. For each top hit, we added the isolation source/natural host information, taxonomic affiliation, and Sullam <em>lifestyle category</em>. We also overlaid the number of hits to the IMNGS database for each ASV.</p>
 <p>To view a full, interactive version of the tree go this <a href="https://itol.embl.de/tree/18614898186392201535496541" target="_blank">iTOL page</a>.</p>
-<div class="paper">
-Figure 3
-</div>
+<p><span class="paper">Figure 3</span></p>
 <p class="notice">
 You can pan around and zoom in on this tree. Double-clicking will zoom in on an area.
 </p>
@@ -545,9 +543,7 @@ You can pan around and zoom in on this tree. Double-clicking will zoom in on an 
 <div id="assessing-habitat-specificity." class="section level3">
 <h3>Assessing habitat specificity.</h3>
 <p>We combined these habitat predictions with the results of the BLASTn analysis, scan of the IMNGS database, Sullam lifestyle categories, etc. and put it all in one <strong>editable</strong> table. So if you disagree with a habitat prediction, you can feel free to change it.</p>
-<div class="paper">
-Table S6
-</div>
+<p><span class="paper">Table S6</span></p>
 <pre class="r"><code>habi_tab &lt;- read.table(&quot;DATA/PHYLOSEQ/TABLES/INPUT/habitat_specificity.txt&quot;,
                        header = TRUE, sep = &quot;\t&quot;, check.names = FALSE)
 # order by habitat and host enriched
@@ -626,9 +622,7 @@ This table also scrolls horizontally.
 <div id="summary-of-habitat-preference" class="section level3">
 <h3>Summary of habitat preference</h3>
 <p>Now we can summarize the data for each lifestyle category. This table was constructed in a text file and read into R.</p>
-<div class="paper">
-Table 1
-</div>
+<p><span class="paper">Table 1</span></p>
 <pre class="r"><code>habi_summary &lt;- read.table(&quot;DATA/PHYLOSEQ/TABLES/INPUT/Table_1.txt&quot;,
                            header = TRUE, sep = &quot;\t&quot;, check.names = FALSE)
 
@@ -836,9 +830,7 @@ ASV_bar</code></pre>
 </div>
 <div id="heatmap" class="section level3">
 <h3>Heatmap</h3>
-<div class="paper">
-Figure 4 (mostly)
-</div>
+<p><span class="paper">Figure 4 (mostly)</span></p>
 <pre class="r"><code># Heatmap
 library(ComplexHeatmap)
 library(circlize)
