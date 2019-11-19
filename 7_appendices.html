@@ -465,12 +465,16 @@ div.tocify {
 </div>
 
 
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 <div id="a-other-analyses-visualizations" class="section level2">
 <h2>A: Other analyses &amp; visualizations</h2>
 <p>Here is code for other representation of taxa abundance. These are raw <code>R</code> images that have not been gussied up.</p>
 <p>We will create two different representations of relative abundance for each sample (arranged by host species) by major Classes—facet grid box-and-whisker plots and bar charts. We will generate each separately (and save) using an earlier relative abundance phyloseq object and then display the combined output.</p>
-<p><br/></p>
+<div style="padding-top: 0.5em">
+
+</div>
 <div id="code-for-box-and-whisker-plot" class="section level4">
 <h4>Code for box-and-whisker plot</h4>
 <pre class="r"><code>library(phyloseq)
@@ -523,7 +527,9 @@ sup_fig1 &lt;- sup_fig1 +
 pdf(&quot;DATA/PHYLOSEQ/FIGURES/OUTPUT/box_and_whisker.pdf&quot;)
 sup_fig1
 invisible(dev.off())</code></pre>
-<p><br/></p>
+<div style="padding-top: 0.5em">
+
+</div>
 </div>
 <div id="code-for-bar-plot" class="section level4">
 <h4>Code for bar plot</h4>
@@ -555,27 +561,46 @@ invisible(dev.off())</code></pre>
 Figure S1. Relative abundance of major Classes by sample
 </p>
 </div>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 </div>
 <div id="b-tools-resources-used-in-this-workflow" class="section level2">
 <h2>B: Tools &amp; resources used in this workflow</h2>
 <div id="specific-tools" class="section level4">
 <h4>Specific tools</h4>
-<p>– <a href="https://joey711.github.io/phyloseq/" target="_blank">phyloseq</a> as the primary analytical package. – <a href="https://dx.doi.org/10.1038%2Fnmeth.2658" target="_blank">LEfSe</a> to identify differentially abundant (DA) amplicon sequence variants (ASV) across host fish species. – <a href="http://www.microbiomeanalyst.ca/" target="_blank">MicrobiomeAnalyst</a> to conduct LEfSe analysis. – <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank">BLASTn</a> and <a href="https://www.arb-silva.de/aligner/" target="_blank">Silva ACT</a> to identify closest hits to DA ASVs. – <a href="https://sco.h-its.org/exelixis/web/software/raxml/" target="_blank">RAxML</a> for phylogenetic inference of DA ASVs and closest hits. – <a href="https://itol.embl.de/" target="_blank">iTOL</a> for visualization of tree and associated metadata.</p>
-<p><br/></p>
+<ul>
+<li><a href="https://joey711.github.io/phyloseq/" target="_blank">phyloseq</a> as the primary analytical package.</li>
+<li><a href="https://dx.doi.org/10.1038%2Fnmeth.2658" target="_blank">LEfSe</a> to identify differentially abundant (DA) amplicon sequence variants (ASV) across host fish species.</li>
+<li><a href="http://www.microbiomeanalyst.ca/" target="_blank">MicrobiomeAnalyst</a> to conduct LEfSe analysis.</li>
+<li><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank">BLASTn</a> and <a href="https://www.arb-silva.de/aligner/" target="_blank">Silva ACT</a> to identify closest hits to DA ASVs.</li>
+<li><a href="https://sco.h-its.org/exelixis/web/software/raxml/" target="_blank">RAxML</a> for phylogenetic inference of DA ASVs and closest hits.</li>
+<li><a href="https://itol.embl.de/" target="_blank">iTOL</a> for visualization of tree and associated metadata.</li>
+</ul>
+<div style="padding-top: 0.5em">
+
+</div>
 </div>
 <div id="other-valuable-resources" class="section level4">
 <h4>Other valuable resources</h4>
-<p>– <a href="https://bookdown.org/yihui/rmarkdown/" target="_blank">R Markdown: The Definitive Guide</a> – <a href="http://yihui.name/knitr/" target="_blank">knitr</a> tutorials. Fantastic site! – <a href="https://rpubs.com/maddieSC/R_SOP_UCR_Jan_2018" target="_blank">Microbiota analysis in R, UCR Workshop 2018</a> nicely documented workflow with examples.</p>
-<p><br/></p>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown/" target="_blank">R Markdown: The Definitive Guide</a></li>
+<li><a href="http://yihui.name/knitr/" target="_blank">knitr</a> tutorials. Fantastic site!</li>
+<li><a href="https://rpubs.com/maddieSC/R_SOP_UCR_Jan_2018" target="_blank">Microbiota analysis in R, UCR Workshop 2018</a> nicely documented workflow with examples.</li>
+</ul>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 </div>
 <div id="c-submitting-sequencing-data-to-public-archives" class="section level2">
 <h2>C: Submitting sequencing data to public archives</h2>
 <p>It is now time to submit the data to your favorite sequence read archive. We submitted out data to the <a href="https://www.ebi.ac.uk/ena" target="blank">European Nucleotide Archive (ENA)</a>. The ENA does not like RAW data and prefers to have primers removed. So we submitted the trimmed Fastq files to the ENA. You can find these data under the study accession number <a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB28397" target="blank"><strong>PRJEB28397</strong></a>. The raw, raw files are available on the project’s <a href="https://doi.org/10.6084/m9.figshare.6875522" target="blank">figshare site</a>.</p>
 <p>To submit to the ENA you need two data tables (plus your sequence data). The first file describes the samples and the second file describes the sequencing data. The original files can be found on the figshare site with the <a href="https://doi.org/10.6084/m9.figshare.6875522" target="_blank">raw data</a>.</p>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 <div id="d-specific-r-package-versions" class="section level2">
 <h2>D: Specific R package &amp; versions</h2>

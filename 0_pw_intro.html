@@ -474,7 +474,9 @@ div.tocify {
 <p id="opennote">
 In this study, we looked at <span class="callout">intestinal microbial</span> communities from five <span class="callout">herbivorous fish</span> species across two families—<em>Sparisoma viride</em>, <em>Sparisoma aurofrenatum</em> and <em>Scarus taeniopterus</em> from the Labridae and <em>Acanthurus tractus</em> and <em>Acanthurus coeruleus</em> from the Acanthuridae.
 </p>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 <div id="definitions-abbreviations" class="section level2">
 <h2>Definitions &amp; Abbreviations</h2>
 <ul>
@@ -485,7 +487,9 @@ In this study, we looked at <span class="callout">intestinal microbial</span> co
 Differentially abundant (<strong>DA</strong>) feature: Taxa, ASV, etc. that is disproportionately abundant in a group of samples and statistically different than other groups.
 </li>
 </ul>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 <div id="goals-of-the-study" class="section level2">
 <h2>Goals of the Study</h2>
@@ -503,33 +507,53 @@ Identify differentially abundant ASVs across the host species.
 Predict the specificity of differentially abundant ASVs.
 </li>
 </ol>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 <div id="workflow-overview" class="section level2">
 <h2>Workflow Overview</h2>
 <div id="no-1.-field-observations" class="section level4">
 <h4><a href="1_field_observations.html">N<sup><u>o</u></sup> 1. Field Observations</a></h4>
 <p>In the first section we run some analyses on field-based behavioral assays of the different herbivorous reef fish species.</p>
+<div style="padding-top: 0.5em">
+
+</div>
 </div>
 <div id="no-2.-dada2-workflow" class="section level4">
 <h4><a href="2_dada2.html">N<sup><u>o</u></sup> 2. DADA2 Workflow</a></h4>
 <p>In this part we go through the process of processing raw 16S rRNA read data including assessing read quality, filtering reads, correcting errors, and infersing amplicon sequence variants (ASVs).</p>
+<div style="padding-top: 0.5em">
+
+</div>
 </div>
 <div id="no-3.-data-preparation" class="section level4">
 <h4><a href="3_data_prep.html">N<sup><u>o</u></sup> 3. Data Preparation</a></h4>
 <p>Next we go through the steps of defining sample groups, creating phyloseq objects, removing unwanted samples, and removing contaminant ASVs. Various parts of this section can easily be modified to perform different analyses. For example, if you were only interested in a specific taxa or group of samples, you could change the code here to create new phyloseq objects.</p>
+<div style="padding-top: 0.5em">
+
+</div>
 </div>
 <div id="no-4.-composition-diversity" class="section level4">
 <h4><a href="4_diversity.html">N<sup><u>o</u></sup> 4. Composition &amp; Diversity</a></h4>
 <p>Here we assess taxonomic composition, alpha diversity, and beta diversity. Phyloseq offers many options for assessing diversity, including several alpha diversity metrics, additional ordination and distance methods, and so on. You can play around with these settings to how it affects the results.</p>
+<div style="padding-top: 0.5em">
+
+</div>
 </div>
 <div id="no-5.-differentially-abundant-asvs" class="section level4">
 <h4><a href="5_da_asv.html">N<sup><u>o</u></sup> 5. Differentially Abundant ASVs</a></h4>
 <p>We wanted to understand how ASVs partitioned across host species. We also wanted to assess the specificity of each ASV to determine habitat preference. To our knowledge there is no quantitative way to do this. The only attempt we are aware of was <a href="http://mmdb.aori.u-tokyo.ac.jp/" target="_blank">MetaMetaDB</a> but it is based on a 454 database and no longer seems to be in active development. So we used an approach based on the work of <a href="https://doi.org/10.1111/j.1365-294X.2012.05552.x" target="_blank">Sullam <em>et. al.</em></a>, first identifying differentially abundant ASVs, then searching for closest database hits, and finally using phylogenetic analysis and top hit metadata (isolation source, natural host) to infer habitat preference.</p>
+<div style="padding-top: 0.5em">
+
+</div>
 </div>
 <div id="no-6.-synthesis" class="section level4">
 <h4><a href="6_synthesis.html">N<sup><u>o</u></sup> 6. Synthesis</a></h4>
-<p>In this section we pull together the results and try to make sense of the microbiomes from these herbivorous reef fish. How are ASVs partitioning across host? How similar are these ASVs to sequences from other studies? What can these patterns tell us about host specificity?</p>
+In this section we pull together the results and try to make sense of the microbiomes from these herbivorous reef fish. How are ASVs partitioning across host? How similar are these ASVs to sequences from other studies? What can these patterns tell us about host specificity?
+<div style="padding-top: 0.5em">
+
+</div>
 </div>
 <div id="appendices" class="section level4">
 <h4><a href="7_appendices.html">Appendices</a></h4>
@@ -537,7 +561,9 @@ Predict the specificity of differentially abundant ASVs.
 <blockquote>
 <p>All tables and figures presented herein are named as they appeared in the original publication. We also include many additional data productes that were not part of the original publication.</p>
 </blockquote>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 </div>
 <div id="color-graphics" class="section level2">
@@ -562,11 +588,16 @@ cols &lt;- function(a) image(1:10, 1, as.matrix(1:10),
 cols(friend_pal)</code></pre>
 <p><img src="0_pw_intro_files/figure-html/define_color_blind_scheme-1.png" width="672" /></p>
 <p>There is a great article on <a href="https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7" target="blank">Coloring for Colorblindness</a> by David Nichols that has an interactive color picker and recommendations for accessible palettes. This is also a <a href="https://www.canva.com/colors/color-wheel/" target="blank">really cool site</a> for looking at color combinations. Both resources are highly recommended.</p>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 <div id="figures-tables" class="section level2">
 <h2>Figures &amp; Tables</h2>
 <p>Use the links below if you want to jump directly to the code used to produce the <strong>figures and tables</strong> from the original publication. You can also find the full Supplementary files for the paper <a href="supplemental_material.html" target="blank">here</a> but there is no R code on this page. If you want to see the code that produced the supplemental material, the direct links are also below. There is no code for Tables S2 and S7.</p>
+<div style="padding-top: 1em">
+
+</div>
 <div id="main-paper" class="section level3">
 <h3>Main Paper</h3>
 <ul>
@@ -592,6 +623,9 @@ cols(friend_pal)</code></pre>
 <a href="6_synthesis.html#summary_of_habitat_preference" target="blank">Table 1</a>: Summary of habitat preference.
 </li>
 </ul>
+<div style="padding-top: 1em">
+
+</div>
 </div>
 <div id="supplemental-material" class="section level3">
 <h3><a href="supplemental_material.html" target="blank">Supplemental Material</a></h3>

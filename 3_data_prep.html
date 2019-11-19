@@ -483,7 +483,9 @@ div.tocify {
 <p id="opennote">
 Before we conduct any analyses we need to prepare our datasets and working environment by <span class="callout">curating samples</span>, <span class="callout">removing contaminants</span>, and creating <span class="callout">phyloseq objects</span>.
 </p>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 <div id="defining-groups" class="section level2">
 <h2>Defining Groups</h2>
 <p>First, we need to load the data packet produced (combo_pipeline.rdata) by the final step of the DADA2 workflow, format sample names, and define groupings. We will use the sample names to define the different groups.</p>
@@ -597,7 +599,10 @@ SpVir
 <li>ScVet = <em>Scarus vetula</em></li>
 <li>SpChr = <em>Sparisoma chrysopterum</em></li>
 </ul>
-<p><br/></p>
+<br/>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 <div id="phyloseq-objects" class="section level2">
 <h2>Phyloseq Objects</h2>
@@ -668,7 +673,9 @@ smin_raw &lt;- as.integer(min(sample_sums(ps_slv_work)))
 smean_raw &lt;- as.integer(mean(sample_sums(ps_slv_work)))
 smax_raw &lt;- as.integer(max(sample_sums(ps_slv_work)))</code></pre>
 <p>Looks like the total number of reads in the dataset (after removing unwanted samples) is <strong>3120211</strong>; range of 12178 to 182696 reads per sample and an average of 62404 reads per sample.</p>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 <div id="remove-contaminants" class="section level2">
 <h2>Remove Contaminants</h2>
@@ -743,7 +750,9 @@ smax &lt;- as.integer(max(sample_sums(ps_slv_work_filt)))</code></pre>
 <li>Range of <strong>11686</strong> to <strong>180159</strong> reads per sample.</li>
 <li>Average of <strong>58699</strong> reads per sample.</li>
 </ul>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 <div id="merged-phyloseq-object" class="section level2">
 <h2>Merged Phyloseq Object</h2>
@@ -774,7 +783,9 @@ mergedGP</code></pre>
 <code>mergedGP</code> –&gt; <code>ps_slv_work_filt</code> phyloseq dataset collapsed by host species.
 </li>
 </ul>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 <div id="host-information" class="section level2">
 <h2>Host Information</h2>

@@ -488,11 +488,15 @@ div.tocify {
 <p id="opennote">
 What are the <span class="callout">dominant taxa</span> in this system? How diverse are these communities? How similar are samples to each other? In this sections we explore the <span class="callout">taxonomic</span> diversity, <span class="callout">alpha</span> diversity, and <span class="callout">beta</span> diversity.
 </p>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 <div id="taxonomic-composition" class="section level2">
 <h2>Taxonomic Composition</h2>
 <p>Before we can start to understand a system, we need to know something about its parts. So lets start by looking at taxonomic diversity.</p>
-<p><br/></p>
+<div style="padding-top: 1em">
+
+</div>
 <div id="total-reads-asvs" class="section level3">
 <h3>Total reads &amp; ASVs</h3>
 <p>We will look at Class level diversity but you can of course change this to any taxonomic rank you wish. Here we created a <strong>sortable</strong> table that has the total number of reads and ASVs for each class</p>
@@ -595,7 +599,9 @@ taxa_means &lt;- format(taxa_means, scientific = FALSE)
 #RENAME NA to UNCLASSIFIED
 taxa_means$Class &lt;- gsub(&quot;NA&quot;, &quot;Unclassified&quot;, taxa_means$Class)</code></pre>
 <p>Since our goal is to generate a figure and we only have 9 colors, some taxa will need to be put into an <strong>Other</strong> category. We can define ‘Other’ however we like so lets take a look at the overall relative abundance of each Class.</p>
-<p><br/></p>
+<div style="padding-top: 1em">
+
+</div>
 </div>
 <div id="relative-abundance" class="section level3">
 <h3>Relative abundance</h3>
@@ -633,7 +639,9 @@ meltd$Class &lt;- factor(meltd$Class,
                                  &quot;Alphaproteobacteria&quot;, &quot;Deltaproteobacteria&quot;,
                                  &quot;Gammaproteobacteria&quot;, &quot;Planctomycetacia&quot;,
                                  &quot;Oxyphotobacteria&quot;, &quot;Other&quot;))</code></pre>
-<p><br/></p>
+<div style="padding-top: 1em">
+
+</div>
 </div>
 <div id="abundance-by-host-species" class="section level3">
 <h3>Abundance by host species</h3>
@@ -685,12 +693,16 @@ Figure 2A
 fig2A
 invisible(dev.off())</code></pre>
 <p>Armed with a picture of taxonomic composition we can move on to diversity estimates.</p>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 </div>
 <div id="alpha-diversity" class="section level2">
 <h2>Alpha-Diversity</h2>
-<p><br/></p>
+<div style="padding-top: 1em">
+
+</div>
 <div id="statistical-tests" class="section level3">
 <h3>Statistical tests</h3>
 <p>Alpha diversity describes the diversity in a sample or site. There are several alpha diversity metrics available in phyloseq: <code>Observed</code>, <code>Chao1</code>, <code>ACE</code>, <code>Shannon</code>, <code>Simpson</code>, <code>InvSimpson</code>, <code>Fisher</code>. Play around to see how different metrics change or confirm these results.</p>
@@ -786,7 +798,9 @@ shapiro_test_Observed &lt;- shapiro.test(sample_data(ps_slv_work_filt_div)$Obser
 ## data:  sample_data(ps_slv_work_filt_div)$Observed
 ## W = 0.89591, p-value = 0.0003531</code></pre>
 <p>Ok, since the p-values are significant for the inverse Simpson, Chao richness, and Observed ASV richness we reject the null hypothesis that these data are normally distributed. However, the Shannon estimates appear normally distributed. So lets see if diversity is significantly different between host species based on the Shannon index.</p>
-<p><br/></p>
+<div style="padding-top: 0.5em">
+
+</div>
 <div id="normally-distributed" class="section level4">
 <h4>Normally distributed</h4>
 <p>Since the Shannon data is normally distributed we can test for significance using ANOVA (a parametric test).</p>
@@ -819,7 +833,9 @@ summary(aov.shannon)</code></pre>
 ## SpVir-ScTae -0.1403392 -1.55349237  1.27281396 0.9985589
 ## SpVir-SpAur  1.2554901 -0.03255018  2.54353034 0.0593081</code></pre>
 <p>Looks like <em>Sparisoma aurofrenatum</em> is significantly different from <em>Scarus taeniopterus</em> and <em>Acanthurus tractus</em>.</p>
-<p><br/></p>
+<div style="padding-top: 0.5em">
+
+</div>
 </div>
 <div id="non-normally-distributed" class="section level4">
 <h4>Non-normally distributed</h4>
@@ -897,7 +913,9 @@ kruskal.test(Observed ~ Sp, data = sampledataDF)</code></pre>
 ## 
 ## P value adjustment method: fdr</code></pre>
 <p>Again we see that only <em>Sp. aurofrenatum</em> is significantly different from the other hosts. For the inverse Simpson index, <em>Sp. aurofrenatum</em> is significantly different from three of the four host species and Chao1 richness estimator, <em>Sp. aurofrenatum</em> is significantly different from all other host species. Now we can plot the results.</p>
-<p><br/></p>
+<div style="padding-top: 1em">
+
+</div>
 </div>
 </div>
 <div id="diversity-plots" class="section level3">
@@ -930,7 +948,9 @@ Figure 2B
 <pre class="r"><code>pdf(&quot;DATA/PHYLOSEQ/FIGURES/OUTPUT/Figure_2B.pdf&quot;)
 fig2B
 invisible(invisible(dev.off()))</code></pre>
-<p><br/></p>
+<div style="padding-top: 1em">
+
+</div>
 </div>
 <div id="correlations-with-diversity" class="section level3">
 <h3>Correlations with diversity</h3>
@@ -1001,7 +1021,9 @@ grid.arrange(shan_by_length, shan_by_weight, ncol = 2)</code></pre>
 #ggqqplot(host_summary$midgut_length) # =&gt; p = 0.09
 ######################################################</code></pre>
 <p>TODO: How to present two plots side by side with a common legend?</p>
-<p><br/></p>
+<div style="padding-top: 2em">
+
+</div>
 </div>
 </div>
 <div id="beta-diversity" class="section level2">
@@ -1031,7 +1053,9 @@ stressplot(ord.nmds.jsd_slv)</code></pre>
 ## Scaling: centring, PC rotation 
 ## Species: scores missing</code></pre>
 <p>We see that a convergent solution was reached around 20 iterations and our stress is below 0.20, meaning that 2-axes are sufficient to view the data. Generally, we are looking for stress values below 0.2. If the stress values are high, you may need to add more axes to the ordination. Lets visualize the plot.</p>
-<p><br/></p>
+<div style="padding-top: 1em">
+
+</div>
 <div id="diversity-plots-1" class="section level3">
 <h3>Diversity plots</h3>
 <p>Here we plot results from the Jensen-Shannon divergence. We will save a copy of the figure for later tweaking. We use the color palette described above to delineate host species.</p>
@@ -1069,7 +1093,9 @@ Figure 2C
 fig2C
 invisible(dev.off())</code></pre>
 <p>So we can see some clustering within groups and spread between groups, but this is not a test for statistical differences. Do microbial communities differ significantly by host taxa?</p>
-<p><br/></p>
+<div style="padding-top: 1em">
+
+</div>
 </div>
 <div id="permanova" class="section level3">
 <h3>PERMANOVA</h3>
@@ -1158,7 +1184,9 @@ beta_adonis</code></pre>
 <li>ScTae &amp; AcCoe, AcTra, SpVir</li>
 </ul>
 <p>This means we are less confident that the PERMANOVA result is a real result, and that the result is possibly due to differences in group dispersions.</p>
-<p><br/></p>
+<div style="padding-top: 1em">
+
+</div>
 </div>
 <div id="anosim" class="section level3">
 <h3>ANOSIM</h3>
