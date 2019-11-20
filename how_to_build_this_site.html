@@ -266,6 +266,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -515,11 +521,11 @@ There are drawbacks to using the Simple R Markdown Website approach. The main on
 <p>The first thing you want to do is fire up RStudio and go to <code>File &gt; New Project</code>. A popup window appears and gives you three options (at least on my setup) for <span class="callout">Creating a New Project; New Directory, Existing Directory, or Version Control</span>. The New and Existing Directory choices are pretty much the same—use the later if you already have some <code>.Rmd</code> files. The Version Control choice is recommended by a lot of tutorials because it facilitates Git integration. But since I am a beginner I thought it would be nice to learn Git through the command line interface (CLI.) So all version control here is done through the CLI rather than RStudio. Version control is discussed below.</p>
 <p>Anyway, chose <code>New Directory &gt; Simple R Markdown Website</code>, give it a name and figure out where you want it to live. Let’s call it <code>mock_site</code>. Then hit <code>Create Project</code>.</p>
 <p>Now you have a new directory called <code>mock_site/</code> with the following files:</p>
-<pre><code>## [1] &quot;_site.yml&quot;       &quot;about.Rmd&quot;       &quot;index.Rmd&quot;       &quot;mock_site.Rproj&quot;</code></pre>
+<pre><code>## character(0)</code></pre>
 <p>And that’s it. At this point you can render the site by running:</p>
 <pre><code>rmarkdown::render_site()</code></pre>
 <p>The site generator makes a new directory called <code>_site/</code>, which contains all the info needed for the actual website.</p>
-<pre><code>## [1] &quot;about.html&quot; &quot;index.html&quot; &quot;site_libs&quot;</code></pre>
+<pre><code>## character(0)</code></pre>
 <p>As you can see the directory has <code>.html</code> versions of the <code>.Rmd</code> files (in this case just two), a <code>_site.yml</code> file (discussed below), and a directory called <code>site_libs/</code>—a directory that has a bunch of <code>.js</code> and <code>.css</code> files. These files dictate the look and action of the site. Every time you render the site, the entire <code>_site/</code> directory and its contents are rebuilt. As far as I know there is no reason you should ever need to mess with this directory or its contents. If you go into the <code>_site/</code> and open <code>index.html</code> you can see the site in a browser. Super simple—a couple of tabs, a header, a few links, nada mas. But a website nonetheless (albeit a bit boring).</p>
 <p><br/></p>
 <p><a href="#minimal"> <img src="images/simple_site.png" class="thumbnail"> </a></p>
@@ -546,7 +552,21 @@ Content: Lots of beautiful code, creative analyses, poetic prose...
 written in R, R Markdown, html, etc.</code></pre>
 <p>While this file is open feel free to add some content, change the title, whatever. Then save the file, rerun <code>rmarkdown::render_site()</code>, and open the <code>_site/index.html</code> file. Boom. Updated website. Pretty slick. If fact every time you add or change something, save the file and run the render command again. You can even just render a single page if the rest are done, so you don’t have to re-render the whole dang thing. Like so…<code>rmarkdown::render_site(&quot;about.Rmd&quot;)</code>. The only time you need to re-render the whole site is if you change something that will affect the whole site.</p>
 <p>So the base of your website will be different pages written in like this and saved as <code>.Rmd</code> files. The Rmd files will likely be a mix of text and R code but you can also make a site without any R code at all. Anyway, I will leave the rest of this part up to you…</p>
-<p>For now, lets say you want a website with four pages. * <code>index.Rmd</code> This will always be the landing or home page of the site. * <code>about.Rmd</code> A page about you or the project. * <code>processing.Rmd</code> A page that has the processing workflow (e.g., <a href="https://benjjneb.github.io/dada2/index.html">DADA2</a>). * <code>analytical.Rmd</code> A page that has the analytical workflow (e.g., <a href="https://joey711.github.io/phyloseq/">phyloseq</a>).</p>
+<p>For now, lets say you want a website with four pages.</p>
+<ul>
+<li>
+<code>index.Rmd</code> This will always be the landing or home page of the site.
+</li>
+<li>
+<code>about.Rmd</code> A page about you or the project.
+</li>
+<li>
+<code>processing.Rmd</code> A page that has the processing workflow (e.g., <a href="https://benjjneb.github.io/dada2/index.html">DADA2</a>).
+</li>
+<li>
+<code>analytical.Rmd</code> A page that has the analytical workflow (e.g., <a href="https://joey711.github.io/phyloseq/">phyloseq</a>).
+</li>
+</ul>
 <p>OK, you have all your content and are ready to build the website. But before you do that you need to tell knitr about the new pages. The engine will automatically render all <code>.Rmd</code> files to <code>.html</code> but unless you instruct knitr what to do with the additional files, you will not have any links on the site. Lets open up the <code>_site.yml</code> file (located in the main directory) and have a look.</p>
 <pre><code>name: &quot;my-website&quot;
 navbar:
@@ -610,20 +630,20 @@ output:
 <pre><code>?rmarkdown::html_document</code></pre>
 <p>Or see this <a href="https://cran.r-project.org/web/packages/ymlthis/vignettes/yaml-fieldguide.html" target="_blank">site</a> for YAML options.</p>
 <p>For an intro to the topic of modifying the YAML file, see the awesome book <a href="https://bookdown.org/yihui/rmarkdown/html-document.html#appearance_and_style">R Markdown: The Definitive Guide</a> by <em>Yihui Xie, J. J. Allaire, Garrett Grolemund</em>. If you dig deep enough however, you may soon reach the limits of using the YAML file to modify your site.</p>
-<p id="warning">
+<div class="notice-list">
 YAML file notes:
 <ul>
 <li>
-Use <code>include: [file_name]</code> or <code>exclude: [file_name]</code> to include or exclude files in the render directory. If specifying an entire directory DO NOT use a backslash. Quotes seem options.
+Use <code>include: [file_name]</code> or <code>exclude: [file_name]</code> to include or exclude files in the render directory. If specifying an entire directory DO NOT use a backslash. Quotes optional.
 </li>
 <li>
 Not sure but I think the <code>_site.yml</code> file needs to be specifically included (<code>include: [_site.yml]</code>).
 </li>
 <li>
-I have no idea what <code>type: inverse</code> means under the navbar. UPDATE: it lets you swap the color of the navbar and the navbar text.
+The <code>type: inverse</code> option lets you swap the color of the navbar and the navbar text.
 </li>
 </ul>
-</p>
+</div>
 <div style="padding-top: 1em">
 
 </div>

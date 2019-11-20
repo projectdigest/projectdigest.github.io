@@ -763,16 +763,17 @@ Short read sequences are not ideal for phylogenetic analysis, but given the data
 <li>
 We used <a href="https://www.mothur.org/wiki/" target="_blank">mothur</a> (v.1.42.1, Last updated: 5/13/19) and the <a href="https://www.mothur.org/wiki/Silva_reference_files" target="_blank">Silva full length sequences and taxonomy references (release 132)</a> to align the DA ASVs and our new reference db, and also classify the sequences. We used a <a href="https://www.mothur.org/wiki/Filter.seqs#hard" target="_blank">hard mask</a> to trim all long reads to the same length (~373bp) and 16S region as the ASVs.
 </li>
-<pre><code>mothur &quot;#align.seqs(candidate=sequence_tree.fasta, \
-  template=silva.nr_v132.align, processors=20, flip=t)&quot;
-mothur &quot;#filter.seqs(fasta=sequence_tree.fasta, \
-  vertical = =F, hard=mask.txt)&quot;
-mothur &quot;#classify.seqs(fasta=sequence_tree.filter.fasta, \
-  template=silva.nr_v132.align, taxonomy=silva.nr_v132.tax, processors=10)&quot;</code></pre>
+<pre>
+mothur "#align.seqs(candidate=sequence_tree.fasta, template=silva.nr_v132.align, processors=20, flip=t)"
+mothur "#filter.seqs(fasta=sequence_tree.fasta, vertical = =F, hard=mask.txt)"
+mothur "#classify.seqs(fasta=sequence_tree.filter.fasta, template=silva.nr_v132.align, taxonomy=silva.nr_v132.tax, processors=10)"
+</pre>
 <li>
 Now that we had our 59 DA ASVs and the top database hits, its was time for phylogenetic inference. We used <a href="https://sco.h-its.org/exelixis/web/software/raxml/index.html" target="_blank">RAxML-HPC</a> to generate a phylogenetic tree (with <em>Aquifex</em> as the outgroup)
 </li>
-<pre><code>raxmlHPC-PTHREADS-SSE3 -T 24 -f a -p 2345 -x 3456 -m GTRGAMMA  -N 1000 -s sequence_tree.filter.fasta -n fish_arb_align_1000BS_B.tre</code></pre>
+<pre>
+raxmlHPC-PTHREADS-SSE3 -T 24 -f a -p 2345 -x 3456 -m GTRGAMMA  -N 1000 -s sequence_tree.filter.fasta -n fish_arb_align_1000BS_B.tre
+</pre>
 </ol>
 <p></br></p>
 <div style="text-align:right">
