@@ -465,6 +465,9 @@ div.tocify {
 </div>
 
 
+<p id="warning">
+Please note this page is a work in progress. I will be adding more details on site construction, site hosting/deployment, and valuable resources.
+</p>
 <div style="padding-top: 2em">
 
 </div>
@@ -533,7 +536,7 @@ There are drawbacks to using the Simple R Markdown Website approach. The main on
 <p><br/></p>
 <p>FYI, this image is expandable. Click the image to expand to the full screen and click again to return to the main page. Below I discuss how I made this feature.</p>
 <p id="notice">
-So are you happy with the super default settings? If so, you can add content and then publish your site. If not, I recommend skipping the content at first and instead focusing on Adding Style &amp; Structure to your site. I say this because tweaking a site with minimal content is easier than messing with a full blown workflow (speaking from experience). This is primarily because render times of minimal sites are quicker and it will be simpler to identify the effects of modifications. This is especially true if you have embedded R code. You can cache the code in the codechunks but it will still take a bit to render.
+So are you happy with the default settings and the default theme? If so, you can add content and then publish your site. If not, I recommend skipping the content at first and instead focusing on Adding Style &amp; Structure to your site. I say this because tweaking a site with minimal content is easier than messing with a full blown workflow (speaking from experience). This is primarily because render times of minimal sites are quicker and it will be simpler to identify the effects of modifications. This is especially true if you have embedded R code. You can cache the code in the codechunks but it will still take a bit to render.
 </p>
 <div style="padding-top: 2em">
 
@@ -541,7 +544,7 @@ So are you happy with the super default settings? If so, you can add content and
 </div>
 <div id="content" class="section level2">
 <h2>Content</h2>
-<p>The minimum you need for an R Markdown website are the <code>_site.yml</code> and the <code>index.Rmd</code> files. The index file and any other R Markdown files contain the content and the YAML file contains the general site parameters. The engine uses these files in conjunction with the libraries to build the site.</p>
+<p>The minimum you need for an R Markdown website are the <code>_site.yml</code> and the <code>index.Rmd</code> files. The index file and any other R Markdown files contain the content and the YAML file contains the global site settings. The engine uses these files in conjunction with the libraries to build the site.</p>
 <p>So the first thing you do is write all the code and text in R Markdown files (<code>.Rmd</code>)—basically <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a> (an easy-to-write plain text format) with R code functionality added in. When you render the site, RStudio and an a program call <a href="https://yihui.org/knitr/" target="_blank">knitr</a> will run all the code and R Markdown text and spit out an html file with tables, graphs, code, whatever you put in the Rmd file. Later you can cache the code chunks so you don’t need to run all the code every time the site is rendered. A tutorial on R and R Markdown is beyond the scope of this humble page but there are a lot of resources to help you on your way.</p>
 <p>The basic structure of the Rmd file is super simple. The title of the page sits between two rows of three consecutive dashes followed by your content. Lets open the <code>about.Rmd</code> file and have look.</p>
 <pre><code>---
@@ -550,7 +553,7 @@ title: &quot;About This Website&quot;
 
 Content: Lots of beautiful code, creative analyses, poetic prose...
 written in R, R Markdown, html, etc.</code></pre>
-<p>While this file is open feel free to add some content, change the title, whatever. Then save the file, rerun <code>rmarkdown::render_site()</code>, and open the <code>_site/index.html</code> file. Boom. Updated website. Pretty slick. If fact every time you add or change something, save the file and run the render command again. You can even just render a single page if the rest are done, so you don’t have to re-render the whole dang thing. Like so…<code>rmarkdown::render_site(&quot;about.Rmd&quot;)</code>. The only time you need to re-render the whole site is if you change something that will affect the whole site.</p>
+<p>While this file is open feel free to add some content, change the title, whatever. Then save the file, rerun <code>rmarkdown::render_site()</code>, and open the <code>_site/index.html</code> file. Boom. Updated website. Pretty slick. If fact every time you add or change something, save the file and run the render command again. You can even just render a single page if the rest are done, so you don’t have to re-render the whole dang thing. Like so…<code>rmarkdown::render_site(&quot;about.Rmd&quot;)</code>. The only time you need to re-render the whole site is if you change something that will affect the whole site. Continually rendering the site is a drawback of this approach. For example, the <a href="https://bookdown.org/yihui/blogdown/">blogdown package</a> has live reload meaning everytime you make a change and save it, the engine renders the site again. Cool.</p>
 <p>So the base of your website will be different pages written in like this and saved as <code>.Rmd</code> files. The Rmd files will likely be a mix of text and R code but you can also make a site without any R code at all. Anyway, I will leave the rest of this part up to you…</p>
 <p>For now, lets say you want a website with four pages.</p>
 <ul>
@@ -590,7 +593,7 @@ navbar:
       href: processing.html
     - text: &quot;Cool Analytics&quot;
       href: analytical.html</code></pre>
-<p>Whatever. That’s it. Assuming your code ran successfully and you got a message after rendering like this… <code>Output created: _site/index.html</code> …your website done. Now you can publish it, tweet about it, and tell your sweet Grandpa to check it out. Below I discuss how I published this site using GitHub Pages. I will leave the tweeting and telling Grandpa up to you.</p>
+<p>Whatever. That’s it. Run <code>rmarkdown::render_site()</code> again. Assuming your code ran successfully and you got a message after rendering like this… <code>Output created: _site/index.html</code> …your website done. Now you can publish it, tweet about it, and tell your sweet Grandpa to check it out. Below I discuss how I published this site using GitHub Pages. I will leave the tweeting and telling Grandpa up to you.</p>
 <div style="padding-top: 2em">
 
 </div>
