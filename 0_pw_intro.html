@@ -487,7 +487,7 @@ In this study, we looked at <span class="callout">intestinal microbial</span> co
 <h2>Definitions &amp; Abbreviations</h2>
 <ul>
 <li>
-<a href="https://www.nature.com/articles/ismej2017119" target="_blank">Amplicon Sequence Variant</a> (<strong>ASV</strong>): Exact sequence variant—analogous to an OTU—but with single nucleotide resolution.
+<a href="https://www.nature.com/articles/ismej2017119" target="_new">Amplicon Sequence Variant</a> (<strong>ASV</strong>): Exact sequence variant—analogous to an OTU—but with single nucleotide resolution.
 </li>
 <li>
 Differentially abundant (<strong>DA</strong>) feature: Taxa, ASV, etc. that is disproportionately abundant in a group of samples and statistically different than other groups.
@@ -549,7 +549,7 @@ Predict the specificity of differentially abundant ASVs.
 </div>
 <div id="no-5.-differentially-abundant-asvs" class="section level4">
 <h4><a href="5_da_asv.html">N<sup><u>o</u></sup> 5. Differentially Abundant ASVs</a></h4>
-<p>We wanted to understand how ASVs partitioned across host species. We also wanted to assess the specificity of each ASV to determine habitat preference. To our knowledge there is no quantitative way to do this. The only attempt we are aware of was <a href="http://mmdb.aori.u-tokyo.ac.jp/" target="_blank">MetaMetaDB</a> but it is based on a 454 database and no longer seems to be in active development. So we used an approach based on the work of <a href="https://doi.org/10.1111/j.1365-294X.2012.05552.x" target="_blank">Sullam <em>et. al.</em></a>, first identifying differentially abundant ASVs, then searching for closest database hits, and finally using phylogenetic analysis and top hit metadata (isolation source, natural host) to infer habitat preference.</p>
+<p>We wanted to understand how ASVs partitioned across host species. We also wanted to assess the specificity of each ASV to determine habitat preference. To our knowledge there is no quantitative way to do this. The only attempt we are aware of was <a href="http://mmdb.aori.u-tokyo.ac.jp/" target="_new">MetaMetaDB</a> but it is based on a 454 database and no longer seems to be in active development. So we used an approach based on the work of <a href="https://doi.org/10.1111/j.1365-294X.2012.05552.x" target="_new">Sullam <em>et. al.</em></a>, first identifying differentially abundant ASVs, then searching for closest database hits, and finally using phylogenetic analysis and top hit metadata (isolation source, natural host) to infer habitat preference.</p>
 <div style="padding-top: 0.5em">
 
 </div>
@@ -576,9 +576,9 @@ In this section we pull together the results and try to make sense of the microb
 <h2>Color &amp; Graphics</h2>
 <p>Throughout this workflow we are going to rely on color to help us tell a story. We will use color to delineate host fish species and to delineate microbial taxa. Microbial diversity is pretty vast and it can be difficult to display all of this diversity in a single, static figure.</p>
 <div class="warning">
-<p>Many of us perceive color and/or differences in color, well, differently. So when designing figures it is important to use <b>a</b>) a relatively few colors and <b>b</b>) a palette that is friendly to a variety of people. For our figures, we generated a palette based on Bang Wong’s scheme described in this <a href="http://dx.doi.org/10.1038/nmeth.1618" target="_blank">paper</a>. Wong’s scheme uses contrasting colors that can be distinguished by a range of people. Consider that roughly 8% of people (mostly males) are color blind. So what do you think? Do you want Keanu Reeves to understand your figures or not?</p>
+<p>Many of us perceive color and/or differences in color, well, differently. So when designing figures it is important to use <b>a</b>) a relatively few colors and <b>b</b>) a palette that is friendly to a variety of people. For our figures, we generated a palette based on Bang Wong’s scheme described in this <a href="http://dx.doi.org/10.1038/nmeth.1618" target="_new">paper</a>. Wong’s scheme uses contrasting colors that can be distinguished by a range of people. Consider that roughly 8% of people (mostly males) are color blind. So what do you think? Do you want Keanu Reeves to understand your figures or not?</p>
 </div>
-<p>Wong’s scheme is conservative—there are only 7 colors. We added black grey, and a blueish white to give us some wiggle room (we cheated a little). Others have developed <a href="http://mkweb.bcgsc.ca/colorblind/" target="_blank">12 and 15 color palette schemes</a> and these are worth looking into, but be careful—figures with too many colors can inhibit our ability to discern patterns. This conservative palette forced us to choose carefully when deciding which taxa to target or how many groups to display. To keep things simple, we created two palettes—one for microbial taxa (<code>friend_pal</code>) with all the colors and another for the five host fish species (<code>samp_pal</code>). The fish palette is just a subset of the full palette. Here is the code:</p>
+<p>Wong’s scheme is conservative—there are only 7 colors. We added black grey, and a blueish white to give us some wiggle room (we cheated a little). Others have developed <a href="http://mkweb.bcgsc.ca/colorblind/" target="_new">12 and 15 color palette schemes</a> and these are worth looking into, but be careful—figures with too many colors can inhibit our ability to discern patterns. This conservative palette forced us to choose carefully when deciding which taxa to target or how many groups to display. To keep things simple, we created two palettes—one for microbial taxa (<code>friend_pal</code>) with all the colors and another for the five host fish species (<code>samp_pal</code>). The fish palette is just a subset of the full palette. Here is the code:</p>
 <pre class="r"><code>#Full palette
 friend_pal &lt;- c(&quot;#009E73&quot;, &quot;#D55E00&quot;, &quot;#F0E442&quot;,
                 &quot;#CC79A7&quot;, &quot;#56B4E9&quot;, &quot;#E69F00&quot;,
@@ -593,14 +593,14 @@ cols &lt;- function(a) image(1:10, 1, as.matrix(1:10),
                           col=a, axes=FALSE , xlab=&quot;&quot;, ylab=&quot;&quot;)
 cols(friend_pal)</code></pre>
 <p><img src="0_pw_intro_files/figure-html/define_color_blind_scheme-1.png" width="672" /></p>
-<p>There is a great article on <a href="https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7" target="blank">Coloring for Colorblindness</a> by David Nichols that has an interactive color picker and recommendations for accessible palettes. This is also a <a href="https://www.canva.com/colors/color-wheel/" target="blank">really cool site</a> for looking at color combinations. Both resources are highly recommended.</p>
+<p>There is a great article on <a href="https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7" target="_new">Coloring for Colorblindness</a> by David Nichols that has an interactive color picker and recommendations for accessible palettes. This is also a <a href="https://www.canva.com/colors/color-wheel/" target="_new">really cool site</a> for looking at color combinations. Both resources are highly recommended.</p>
 <div style="padding-top: 2em">
 
 </div>
 </div>
-<div id="figures-tables" class="section level2">
-<h2>Figures &amp; Tables</h2>
-<p>Use the links below if you want to jump directly to the code used to produce the <strong>figures and tables</strong> from the original publication. You can also find the full Supplementary files for the paper <a href="supplemental_material.html" target="blank">here</a> but there is no R code on this page. If you want to see the code that produced the supplemental material, the direct links are also below. There is no code for Tables S2 and S7.</p>
+<div id="links-to-figures-tables" class="section level2">
+<h2>Links to Figures &amp; Tables</h2>
+<p>Use the links below if you want to jump directly to the code used to produce the <strong>figures and tables</strong> from the original publication. You can also find the full Supplementary files for the paper <a href="supplemental_material.html" target="_blank">here</a> but there is no R code on this page. If you want to see the code that produced the supplemental material, the direct links are also below. There is no code for Tables S2 and S7.</p>
 <div style="padding-top: 1em">
 
 </div>
@@ -608,25 +608,25 @@ cols(friend_pal)</code></pre>
 <h3>Main Paper</h3>
 <ul>
 <li>
-<a href="1_field_observations.html#nmds_analysis" target="blank">Figure 1</a>: NMDS analysis of host feeding behavior.
+<a href="1_field_observations.html#nmds_analysis" target="_blank">Figure 1</a>: NMDS analysis of host feeding behavior.
 </li>
 <li>
-<a href="4_diversity.html#abundance_by_host_species" target="blank">Figure 2A</a>: Taxa abundance by host species.
+<a href="4_diversity.html#abundance_by_host_species" target="_blank">Figure 2A</a>: Taxa abundance by host species.
 </li>
 <li>
-<a href="4_diversity.html#diversity_plots" target="blank">Figure 2B</a>: Alpha diversity.
+<a href="4_diversity.html#diversity_plots" target="_blank">Figure 2B</a>: Alpha diversity.
 </li>
 <li>
-<a href="4_diversity.html#diversity_plots10" target="blank">Figure 2C</a>: Beta diversity.
+<a href="4_diversity.html#diversity_plots10" target="_blank">Figure 2C</a>: Beta diversity.
 </li>
 <li>
-<a href="6_synthesis.html#putting_the_pieces_together" target="blank">Figure 3</a>: DA ASV tree.
+<a href="6_synthesis.html#putting_the_pieces_together" target="_blank">Figure 3</a>: DA ASV tree.
 </li>
 <li>
-<a href="6_synthesis.html#heatmap" target="blank">Figure 4</a>: DA ASV heatmap.
+<a href="6_synthesis.html#heatmap" target="_blank">Figure 4</a>: DA ASV heatmap.
 </li>
 <li>
-<a href="6_synthesis.html#summary_of_habitat_preference" target="blank">Table 1</a>: Summary of habitat preference.
+<a href="6_synthesis.html#summary_of_habitat_preference" target="_blank">Table 1</a>: Summary of habitat preference.
 </li>
 </ul>
 <div style="padding-top: 1em">
@@ -634,31 +634,31 @@ cols(friend_pal)</code></pre>
 </div>
 </div>
 <div id="supplemental-material" class="section level3">
-<h3><a href="supplemental_material.html" target="blank">Supplemental Material</a></h3>
+<h3><a href="supplemental_material.html" target="_blank">Supplemental Material</a></h3>
 <ul>
 <li>
-<a href="1_field_observations.html#observational_data" target="blank">Table S1</a>: Summary of field-based feeding observations.
+<a href="1_field_observations.html#observational_data" target="_blank">Table S1</a>: Summary of field-based feeding observations.
 </li>
 <li>
-<a href="supplemental_material.html#table_s2" target="blank">Table S2</a>: Number of bites observed for each herbivore species at each site.
+<a href="supplemental_material.html#table_s2" target="_blank">Table S2</a>: Number of bites observed for each herbivore species at each site.
 </li>
 <li>
-<a href="4_diversity.html#statistical_tests" target="blank">Table S3</a>: Metadata and microbiome diversity estimates for each sample.
+<a href="4_diversity.html#statistical_tests" target="_blank">Table S3</a>: Metadata and microbiome diversity estimates for each sample.
 </li>
 <li>
-<a href="4_diversity.html#taxonomic_composition" target="blank">Table S4</a>: Total taxonomic diversity (by Class) of herbivore microbiomes.
+<a href="4_diversity.html#taxonomic_composition" target="_blank">Table S4</a>: Total taxonomic diversity (by Class) of herbivore microbiomes.
 </li>
 <li>
-<a href="5_da_asv.html#results_of_lefse_analysis" target="blank">Table S5</a>: Results of LEfSe analysis.
+<a href="5_da_asv.html#results_of_lefse_analysis" target="_blank">Table S5</a>: Results of LEfSe analysis.
 </li>
 <li>
-<a href="6_synthesis.html#assessing_habitat_specificity" target="blank">Table S6</a>: Results of BLAST analysis for DA ASVs.
+<a href="6_synthesis.html#assessing_habitat_specificity" target="_blank">Table S6</a>: Results of BLAST analysis for DA ASVs.
 </li>
 <li>
-<a href="supplemental_material.html#table_s7" target="blank">Table S7</a>: Accession numbers and unique codes for sequence data in Figure 3.
+<a href="supplemental_material.html#table_s7" target="_blank">Table S7</a>: Accession numbers and unique codes for sequence data in Figure 3.
 </li>
 <li>
-<a href="7_appendices.html#appendix_a:_other_analyses__visualizations" target="blank">Figure S1</a>: Class-level relative abundance of microbial communities from each sample.
+<a href="7_appendices.html#appendix_a:_other_analyses__visualizations" target="_blank">Figure S1</a>: Class-level relative abundance of microbial communities from each sample.
 </li>
 </ul>
 <p></br></p>
