@@ -613,11 +613,11 @@ Figure S1. Relative abundance of major Classes by sample
 <p>Below are the specific packages and versions used in this workflow using both <code>sessionInfo()</code> and <code>devtools::session_info()</code>.</p>
 <pre class="r"><code>proc.time() - ptm</code></pre>
 <pre><code>##      user    system   elapsed 
-## 11216.860   188.438  4027.967</code></pre>
+##  9745.265   375.067 10898.498</code></pre>
 <pre class="r"><code>sessionInfo()</code></pre>
 <pre><code>## R version 3.6.1 (2019-07-05)
 ## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS Catalina 10.15.1
+## Running under: macOS Catalina 10.15.2
 ## 
 ## Matrix products: default
 ## BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
@@ -632,13 +632,13 @@ Figure S1. Relative abundance of major Classes by sample
 ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 ## 
 ## attached base packages:
-##  [1] grid      stats4    parallel  stats     graphics  grDevices utils    
-##  [8] datasets  methods   base     
+##  [1] grid      stats4    parallel  stats     graphics  grDevices
+##  [7] utils     datasets  methods   base     
 ## 
 ## other attached packages:
 ##  [1] phyloseq_1.28.0             whoppeR_0.0.0.9022         
 ##  [3] rsvg_1.3                    gdtools_0.2.1              
-##  [5] svglite_1.2.2               leaflet_2.0.2              
+##  [5] svglite_1.2.2               leaflet_2.0.3.9000         
 ##  [7] gapminder_0.3.0             treeio_1.8.2               
 ##  [9] tidytree_0.2.7              ggtree_1.16.6              
 ## [11] picante_1.8                 nlme_3.1-140               
@@ -673,54 +673,73 @@ Figure S1. Relative abundance of major Classes by sample
 ## [69] dada2_1.12.1                Rcpp_1.0.3                 
 ## 
 ## loaded via a namespace (and not attached):
-##   [1] tidyselect_0.2.5       htmlwidgets_1.3        devtools_2.2.0        
-##   [4] munsell_0.5.0          codetools_0.2-16       withr_2.1.2           
-##   [7] colorspace_1.4-1       highr_0.8              ggsignif_0.6.0        
-##  [10] labeling_0.3           GenomeInfoDbData_1.2.1 hwriter_1.3.2         
-##  [13] farver_2.0.1           rhdf5_2.28.0           rprojroot_1.3-2       
-##  [16] vctrs_0.2.0            generics_0.0.2         xfun_0.11             
-##  [19] fastcluster_1.1.25     R6_2.4.1               clue_0.3-57           
-##  [22] assertthat_0.2.1       promises_1.1.0         gtable_0.3.0          
-##  [25] processx_3.4.1         phangorn_2.5.5         rlang_0.4.2           
-##  [28] zeallot_0.1.0          systemfonts_0.1.1      GlobalOptions_0.1.0   
-##  [31] splines_3.6.1          lazyeval_0.2.2         broom_0.5.2           
-##  [34] yaml_2.2.0             modelr_0.1.5           crosstalk_1.0.0       
-##  [37] backports_1.1.5        httpuv_1.5.2           usethis_1.5.1         
-##  [40] tools_3.6.1            ellipsis_0.3.0         biomformat_1.12.0     
-##  [43] RColorBrewer_1.1-2     sessioninfo_1.1.1      zlibbioc_1.30.0       
-##  [46] ps_1.3.0               prettyunits_1.0.2      GetoptLong_0.1.7      
-##  [49] haven_2.1.1            fs_1.3.1               pkgload_1.0.2         
-##  [52] hms_0.5.1              mime_0.7               evaluate_0.14         
-##  [55] xtable_1.8-4           XML_3.98-1.20          readxl_1.3.1          
-##  [58] shape_1.4.4            testthat_2.2.1         compiler_3.6.1        
-##  [61] crayon_1.3.4           htmltools_0.4.0        mgcv_1.8-28           
-##  [64] later_1.0.0            RcppParallel_4.4.3     lubridate_1.7.4       
-##  [67] MASS_7.3-51.4          Matrix_1.2-17          ade4_1.7-13           
-##  [70] cli_1.1.0              quadprog_1.5-7         igraph_1.2.4.1        
-##  [73] pkgconfig_2.0.3        rvcheck_0.1.3          xml2_1.2.2            
-##  [76] foreach_1.4.7          multtest_2.40.0        webshot_0.5.1         
-##  [79] rvest_0.3.4            callr_3.3.1            digest_0.6.23         
-##  [82] cellranger_1.1.0       fastmatch_1.1-0        shiny_1.3.2           
-##  [85] gtools_3.8.1           rjson_0.2.20           lifecycle_0.1.0       
-##  [88] jsonlite_1.6           Rhdf5lib_1.6.1         desc_1.2.0            
-##  [91] viridisLite_0.3.0      pillar_1.4.2           httr_1.4.1            
-##  [94] pkgbuild_1.0.5         survival_2.44-1.1      glue_1.3.1            
-##  [97] remotes_2.1.0          png_0.1-7              iterators_1.0.12      
-## [100] stringi_1.4.3          latticeExtra_0.6-28    memoise_1.1.0</code></pre>
+##   [1] tidyselect_0.2.5        htmlwidgets_1.5.1      
+##   [3] devtools_2.2.0          munsell_0.5.0          
+##   [5] codetools_0.2-16        withr_2.1.2            
+##   [7] colorspace_1.4-1        highr_0.8              
+##   [9] ggsignif_0.6.0          labeling_0.3           
+##  [11] GenomeInfoDbData_1.2.1  hwriter_1.3.2          
+##  [13] farver_2.0.1            rhdf5_2.28.0           
+##  [15] rprojroot_1.3-2         vctrs_0.2.0            
+##  [17] generics_0.0.2          xfun_0.11              
+##  [19] fastcluster_1.1.25      R6_2.4.1               
+##  [21] clue_0.3-57             assertthat_0.2.1       
+##  [23] promises_1.1.0          gtable_0.3.0           
+##  [25] processx_3.4.1          phangorn_2.5.5         
+##  [27] rlang_0.4.2             zeallot_0.1.0          
+##  [29] systemfonts_0.1.1       GlobalOptions_0.1.0    
+##  [31] splines_3.6.1           lazyeval_0.2.2         
+##  [33] broom_0.5.2             yaml_2.2.0             
+##  [35] modelr_0.1.5            crosstalk_1.0.0        
+##  [37] backports_1.1.5         httpuv_1.5.2           
+##  [39] tools_3.6.1             usethis_1.5.1          
+##  [41] ellipsis_0.3.0          biomformat_1.12.0      
+##  [43] RColorBrewer_1.1-2      sessioninfo_1.1.1      
+##  [45] zlibbioc_1.30.0         ps_1.3.0               
+##  [47] prettyunits_1.0.2       GetoptLong_0.1.7       
+##  [49] haven_2.1.1             fs_1.3.1               
+##  [51] pkgload_1.0.2           xtable_1.8-4           
+##  [53] mime_0.7                hms_0.5.1              
+##  [55] evaluate_0.14           XML_3.98-1.20          
+##  [57] readxl_1.3.1            shape_1.4.4            
+##  [59] testthat_2.2.1          compiler_3.6.1         
+##  [61] crayon_1.3.4            htmltools_0.4.0        
+##  [63] mgcv_1.8-28             later_1.0.0            
+##  [65] RcppParallel_4.4.3      lubridate_1.7.4        
+##  [67] MASS_7.3-51.4           Matrix_1.2-17          
+##  [69] ade4_1.7-13             cli_2.0.0              
+##  [71] quadprog_1.5-7          igraph_1.2.4.1         
+##  [73] pkgconfig_2.0.3         rvcheck_0.1.3          
+##  [75] xml2_1.2.2              foreach_1.4.7          
+##  [77] multtest_2.40.0         webshot_0.5.1          
+##  [79] rvest_0.3.4             callr_3.3.1            
+##  [81] digest_0.6.23           cellranger_1.1.0       
+##  [83] fastmatch_1.1-0         shiny_1.4.0            
+##  [85] gtools_3.8.1            rjson_0.2.20           
+##  [87] lifecycle_0.1.0         jsonlite_1.6           
+##  [89] Rhdf5lib_1.6.1          desc_1.2.0             
+##  [91] viridisLite_0.3.0       fansi_0.4.0            
+##  [93] pillar_1.4.2            fastmap_1.0.1          
+##  [95] httr_1.4.1              pkgbuild_1.0.5         
+##  [97] survival_2.44-1.1       glue_1.3.1             
+##  [99] remotes_2.1.0           leaflet.providers_1.9.0
+## [101] png_0.1-7               iterators_1.0.12       
+## [103] stringi_1.4.3           latticeExtra_0.6-28    
+## [105] memoise_1.1.0</code></pre>
 <pre class="r"><code>devtools::session_info()</code></pre>
-<pre><code>## ─ Session info ─────────────────────────────────────────────────────────────────
+<pre><code>## ─ Session info ────────────────────────────────────────────────────────
 ##  setting  value                       
 ##  version  R version 3.6.1 (2019-07-05)
-##  os       macOS Catalina 10.15.1      
+##  os       macOS Catalina 10.15.2      
 ##  system   x86_64, darwin15.6.0        
 ##  ui       RStudio                     
 ##  language (EN)                        
 ##  collate  en_US.UTF-8                 
 ##  ctype    en_US.UTF-8                 
 ##  tz       America/Panama              
-##  date     2019-11-26                  
+##  date     2019-12-12                  
 ## 
-## ─ Packages ─────────────────────────────────────────────────────────────────────
+## ─ Packages ────────────────────────────────────────────────────────────
 ##  package              * version    date       lib
 ##  ade4                   1.7-13     2018-08-31 [1]
 ##  ape                  * 5.3        2019-03-17 [1]
@@ -736,7 +755,7 @@ Figure S1. Relative abundance of major Classes by sample
 ##  callr                  3.3.1      2019-07-18 [1]
 ##  cellranger             1.1.0      2016-07-27 [1]
 ##  circlize             * 0.4.8      2019-09-08 [1]
-##  cli                    1.1.0      2019-03-19 [1]
+##  cli                    2.0.0      2019-12-09 [1]
 ##  clue                   0.3-57     2019-02-25 [1]
 ##  cluster              * 2.1.0      2019-06-19 [1]
 ##  codetools              0.2-16     2018-12-24 [1]
@@ -754,8 +773,10 @@ Figure S1. Relative abundance of major Classes by sample
 ##  DT                   * 0.8        2019-08-07 [1]
 ##  ellipsis               0.3.0      2019-09-20 [1]
 ##  evaluate               0.14       2019-05-28 [1]
+##  fansi                  0.4.0      2018-10-05 [1]
 ##  farver                 2.0.1      2019-11-13 [1]
 ##  fastcluster            1.1.25     2018-06-07 [1]
+##  fastmap                1.0.1      2019-10-08 [1]
 ##  fastmatch              1.1-0      2017-01-28 [1]
 ##  forcats              * 0.4.0      2019-02-17 [1]
 ##  foreach                1.4.7      2019-07-27 [1]
@@ -785,7 +806,7 @@ Figure S1. Relative abundance of major Classes by sample
 ##  highr                  0.8        2019-03-20 [1]
 ##  hms                    0.5.1      2019-08-23 [1]
 ##  htmltools              0.4.0      2019-10-04 [1]
-##  htmlwidgets            1.3        2018-09-30 [1]
+##  htmlwidgets            1.5.1      2019-10-08 [1]
 ##  httpuv                 1.5.2      2019-09-11 [1]
 ##  httr                   1.4.1      2019-08-05 [1]
 ##  hwriter                1.3.2      2014-09-10 [1]
@@ -801,7 +822,8 @@ Figure S1. Relative abundance of major Classes by sample
 ##  lattice              * 0.20-38    2018-11-04 [1]
 ##  latticeExtra           0.6-28     2016-02-09 [1]
 ##  lazyeval               0.2.2      2019-03-15 [1]
-##  leaflet              * 2.0.2      2018-08-27 [1]
+##  leaflet              * 2.0.3.9000 2019-12-11 [1]
+##  leaflet.providers      1.9.0      2019-11-09 [1]
 ##  lifecycle              0.1.0      2019-08-01 [1]
 ##  lubridate              1.7.4      2018-04-11 [1]
 ##  magrittr             * 1.5        2014-11-22 [1]
@@ -859,7 +881,7 @@ Figure S1. Relative abundance of major Classes by sample
 ##  seqinr               * 3.6-1      2019-09-07 [1]
 ##  sessioninfo            1.1.1      2018-11-05 [1]
 ##  shape                  1.4.4      2018-02-07 [1]
-##  shiny                  1.3.2      2019-04-22 [1]
+##  shiny                  1.4.0      2019-10-10 [1]
 ##  ShortRead            * 1.42.0     2019-05-02 [1]
 ##  stringi                1.4.3      2019-03-12 [1]
 ##  stringr              * 1.4.0      2019-02-10 [1]
@@ -906,7 +928,7 @@ Figure S1. Relative abundance of major Classes by sample
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
-##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.1)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.1)                                 
 ##  CRAN (R 3.6.1)                                 
@@ -935,6 +957,8 @@ Figure S1. Relative abundance of major Classes by sample
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
+##  CRAN (R 3.6.0)                                 
 ##  Bioconductor                                   
 ##  Bioconductor                                   
 ##  Bioconductor                                   
@@ -971,6 +995,7 @@ Figure S1. Relative abundance of major Classes by sample
 ##  CRAN (R 3.6.1)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
+##  Github (rstudio/leaflet@c19b0fb)               
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
 ##  CRAN (R 3.6.0)                                 
@@ -1065,7 +1090,7 @@ Figure S1. Relative abundance of major Classes by sample
 ## [1] /Library/Frameworks/R.framework/Versions/3.6/Resources/library</code></pre>
 <pre class="r"><code>end_time &lt;- Sys.time()
 end_time - start_time</code></pre>
-<pre><code>## Time difference of 34.92775 days</code></pre>
+<pre><code>## Time difference of 2.561346 mins</code></pre>
 </div>
 
 <footer role="contentinfo" id="site-footer">
@@ -1155,15 +1180,6 @@ $(document).ready(function ()  {
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 
 </body>
 </html>
