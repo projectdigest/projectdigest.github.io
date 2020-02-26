@@ -27,16 +27,16 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="site_libs/datatables-binding-0.8/datatables.js"></script>
-<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="site_libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
-<link href="site_libs/dt-ext-buttons-1.10.16/css/buttons.dataTables.min.css" rel="stylesheet" />
-<script src="site_libs/dt-ext-buttons-1.10.16/js/dataTables.buttons.min.js"></script>
-<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.flash.min.js"></script>
-<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.html5.min.js"></script>
-<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.colVis.min.js"></script>
-<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.print.min.js"></script>
+<script src="site_libs/datatables-binding-0.12/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.20/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.20/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.print.min.js"></script>
 <link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -481,7 +481,15 @@ This document contains all seven supplementary <span class="callout">tables</spa
 </div>
 <div id="contents" class="section level2">
 <h2>Contents</h2>
-<p><a href="#Data%20Availability">Data Availability</a>: DOI and accession numbers for study related data.<br/> <a href="#Sample%20Naming">Sample Naming</a>: Naming scheme for samples.<br/> <a href="#Supplementary%20Methods">Supplementary Methods</a>: Details on DNA extraction, sequencing, and read processing.<br/> <a href="#Table%20S1">Table S1</a>: Summary of field-based feeding observations.<br/> <a href="#Table%20S2">Table S2</a>: Number of bites observed for each herbivore species at each site.<br/> <a href="#Table%20S3">Table S3</a>: Metadata and microbiome diversity estimates for each sample.<br/> <a href="#Table%20S4">Table S4</a>: Total taxonomic diversity (by Class) of herbivore microbiomes.<br/> <a href="#Figure%20S1">Figure S1</a>: Class-level relative abundance of microbial communities from each sample.<br/> <a href="#Table%20S5">Table S5</a>: Results of LEfSe analysis.<br/> <a href="#Table%20S6">Table S6</a>: Results of BLAST analysis for DA ASVs.<br/> <a href="#Table%20S7">Table S7</a>: Accession numbers and unique codes for sequence data in Figure 3. <br/></p>
+<p><a href="#Data%20Availability">Data Availability</a>: DOI and accession numbers for study related data. <br> <a href="#Sample%20Naming">Sample Naming</a>: Naming scheme for samples.<br />
+<a href="#Supplementary%20Methods">Supplementary Methods</a>: Details on DNA extraction, sequencing, and read processing, and functional analysis. <a href="#Table%20S1">Table S1</a>: Summary of field-based feeding observations.<br />
+<a href="#Table%20S2">Table S2</a>: Number of bites observed for each herbivore species at each site.<br />
+<a href="#Table%20S3">Table S3</a>: Metadata and microbiome diversity estimates for each sample.<br />
+<a href="#Table%20S4">Table S4</a>: Total taxonomic diversity (by Class) of herbivore microbiomes.<br />
+<a href="#Figure%20S1">Figure S1</a>: Class-level relative abundance of microbial communities from each sample.<br />
+<a href="#Table%20S5">Table S5</a>: Results of LEfSe analysis.<br />
+<a href="#Table%20S6">Table S6</a>: Results of BLAST analysis for DA ASVs.<br />
+<a href="#Table%20S7">Table S7</a>: Accession numbers and unique codes for sequence data in Figure 3.</p>
 <hr/>
 <hr/>
 <p><a id="Data Availability"></a></p>
@@ -533,18 +541,25 @@ G was the gut segment (F = foregut; M = midgut; H = hind).
 </div>
 <div id="supplementary-methods" class="section level2">
 <h2>Supplementary Methods</h2>
+<div style="padding-top: 2em">
+
+</div>
+<div id="study-organisms" class="section level4">
+<h4>Study organisms</h4>
+<p>The five species of herbivorous fishes in this study—Acanthurus coeruleus, Acanthurus tractus, Scarus taeniopterus, Sparisoma aurofrenatum, and Sparisoma viride—all feed on benthic algae, but each species feeds in a different way and targets different components of the algal assemblage. Sp. viride is an excavating bioeroder that uses its strong, beak-like jaws to remove reef carbonates while feeding on endolithic algae [1]. The grazer Sc. taeniopterus primarily scrapes epilithic algal turfs from reef surfaces, while Sp. aurofrenatum tends to browse on erect macroalgae and longer turf algae that it tears from the reef [2,3]. Both A. coeruleus and A. tractus crop algal filaments and browse on macroalgae, but the two species feed at different rates, digest food via different mechanisms [4], and display species-specific feeding preferences [5].</p>
 <div style="padding-top: 0.5em">
 
 </div>
+</div>
 <div id="dna-extraction-sequencing-read-processing" class="section level4">
 <h4>DNA extraction, sequencing, &amp; read processing</h4>
-<p id="warning">
-Reference numbers in brackets refer to the bibliography in the main paper.
-</p>
-<p>For all samples, we homogenized material from each gut segment (fore, mid, hind) in separate 50 mL conical tubes for 10 minutes on a Vortex Genie 2. We collected 200 mg (wet weight) of homogenate for DNA extraction following the Human Microbiome Project Core Microbiome Sampling Protocol A (v12.0, HMP Protocol # 07-001) for stool samples. We heat treated each sample, first at 65°C for 10 minutes, followed by 95°C for 10 minutes. We then used the PowerSoil® DNA Isolation Kit (formerly MoBio, Carlsbad CA, USA) following the manufacturer’s protocol to extract community DNA from each sample. Extracted DNA was sequenced on an Illumina MiSeq by Integrated Microbiome Resource (Dalhousie University). We targeted the V4–V5 hypervariable region using 515F and 926R primers [49]. We generated sequence data for 159 samples—three gut segments (fore, mid, and hind) from 53 individuals. Sequencing was conducted across three runs. In Run01, 144 samples were sequenced and, due to lower than average yield, were re-sequenced (Run02). The remaining 15 samples were sequenced on a separate run (Run03).</p>
-<p>Cutadapt [50] was used to remove adapter sequences (max error rate = 0.12) and then mothur [51] was used to merge fastq files for each gut segment by individual and run (i.e., to pool the sequencing data produced among the three gut segments within an individual). We used DADA2 [52] following the Bioconductor workflow (v2) proposed by Callahan and colleagues [53] to filter and trim based on the quality profiles (maxN = 0; maxEE = 2, 5; truncQ = 2; and truncLen = 270, 200), error correct, dereplicate, and infer amplicon sequence variants (ASVs). ASVs are analogous to OTUs, but have higher (single nucleotide) resolution [54]. We merged pair-end reads, constructed sequence tables for each run, and removed amplicons &gt; 380 or &lt; 368 base pairs. We combined sequence tables from replicate runs (Run01 &amp; Run02) and merged this table with the sequence table from Run03. Finally, we removed chimeras (method = “consensus”) and assigned taxonomy against the Silva_nr_v132_train_set. See the electronic supplementary materials for details about obtaining the DADA2 workflow and associated data products.</p>
+</div>
+<div id="dna-extraction-sequencing-read-processing-1" class="section level4">
+<h4>DNA extraction, sequencing, &amp; read processing</h4>
+<p>For all samples, we homogenized material from each gut segment (fore, mid, hind) in separate 50 mL conical tubes for 10 minutes on a Vortex Genie 2. We collected 200 mg (wet weight) of homogenate for DNA extraction following the Human Microbiome Project Core Microbiome Sampling Protocol A (v12.0, HMP Protocol # 07-001) for stool samples. We heat treated each sample, first at 65°C for 10 minutes, followed by 95°C for 10 minutes. We then used the PowerSoil® DNA Isolation Kit (formerly MoBio, Carlsbad CA, USA) following the manufacturer’s protocol to extract community DNA from each sample. Extracted DNA was sequenced on an Illumina MiSeq by Integrated Microbiome Resource (Dalhousie University). We targeted the V4–V5 hypervariable region using 515F and 926R primers [6]. We generated sequence data for 159 samples—three gut segments (fore, mid, and hind) from 53 individuals. Sequencing was conducted across three runs. In Run01, 144 samples were sequenced and, due to lower than average yield, were re-sequenced (Run02). The remaining 15 samples were sequenced on a separate run (Run03).</p>
+<p>Cutadapt [7] was used to remove adapter sequences (max error rate = 0.12) and then mothur [8] was used to merge fastq files for each gut segment by individual and run (i.e., to pool the sequencing data produced among the three gut segments within an individual). We used DADA2 [9] following the Bioconductor workflow (v2) proposed by Callahan and colleagues [10] to filter and trim based on the quality profiles (maxN = 0; maxEE = 2, 5; truncQ = 2; and truncLen = 270, 200), error correct, dereplicate, and infer amplicon sequence variants (ASVs). ASVs are analogous to OTUs, but have higher (single nucleotide) resolution [11]. We merged pair-end reads, constructed sequence tables for each run, and removed amplicons &gt; 380 or &lt; 368 base pairs. We combined sequence tables from replicate runs (Run01 &amp; Run02) and merged this table with the sequence table from Run03. Finally, we removed chimeras (method = “consensus”) and assigned taxonomy against the Silva_nr_v132_train_set. See the electronic supplementary materials for details about obtaining the DADA2 workflow and associated data products.</p>
 <p>In addition to the host species listed in the main text, we also collected two individuals from <em>Scarus vetula</em>, and one individual from <em>Sparisoma chrysopterum</em> in July 2016 at Pickles Reef, Upper Florida Keys, USA. Though these samples were sequenced and the data is publically available, the samples were removed from the study due to a low sample size of collected fish.</p>
-<p>See the <a href="#data-availability">Data Availability</a> section above for accession numbers and more details on obtaining raw sequencing data, workflows, data products, etc.</p>
+<p>See the Data Availability section above for accession numbers and more details on obtaining raw sequencing data, workflows, data products, etc.</p>
 </div>
 <div id="inferring-metagenomic-function" class="section level4">
 <h4>Inferring metagenomic function</h4>
@@ -555,6 +570,11 @@ Reference numbers in brackets refer to the bibliography in the main paper.
 <h4>Additional alpha diversity tests</h4>
 <p>We also conducted Shapiro-Wilk Normality Tests on of the following alpha diversity metrics: Observed AVS, Chao1, and Inverse Simpson. Though only the Shannon index was normally distributed, we conducted additional tests of the non-normally distributed indices. Since host species is categorical, we used Kruskal-Wallis (non-parametric equivalent of ANOVA) to test for significance. For the inverse Simpson, Chao1, and Observed richness the results of the Kruskal-Wallis rank sum test were all significant. We then used Wilcoxon rank sum test for post-hoc analysis of each pairwise comparisons for each index.</p>
 <p>Again we saw that only <em>Sp. aurofrenatum</em> was significantly different from the other hosts. For the inverse Simpson index, <em>Sp. aurofrenatum</em> was significantly different from three of the four host species. For both Chao1 richness estimator and Observed ASV richness, <em>Sp. aurofrenatum</em> was significantly different from all other host species. Complete code and results can be found on the <a href="https://projectdigest.github.io/4_diversity.html#statistical_tests">project website</a>.</p>
+</div>
+<div id="associations-between-intestinal-microbes-host-phylogeny-herbivore-foraging-behaviour" class="section level4">
+<h4>Associations between intestinal microbes, host phylogeny, &amp; herbivore foraging behaviour</h4>
+<p>We used a series of simple and partial Mantel tests to assess whether DA ASVs were associated with a fish species’ foraging ecology and/or phylogenetic history. The dissimilarity matrix for foraging ecology was based on the behavioural foraging data collected on the reef (see above). The phylogenetic dissimilarity matrix was based on a phylogenetic tree we constructed using cytochrome oxidase subunit 1 (COI) genes retrieved from NCBI’s Nucleotide Database for the five fish species used in this study.</p>
+<p>We used Clustal Omega [12] to align sequences (default settings for DNA) and Jalview [13] to manually curate and trim the final alignment to 593 bp. The alignment contained COI genes from <em>Sc. taeniopterus</em> (n = 5), <em>Sp. aurofrenatum</em> (n = 22), <em>Sp. viride</em> (n = 21), <em>A. coeruleus</em> (n = 28), and <em>A. tractus</em> (<em>bahianus</em>; n = 23), with members of the Gerridae (2 <em>Eucinostomus</em> and 4 <em>Gerres</em>) used as the outgroup. We used RAxML [14] and the GTR model for tree computation and the GAMMA rate model for likelihoods. The tree was then transformed into a distance matrix using the cophenetic function in R [15]. Finally, we constructed separate dissimilarity matrices to focus on putative resident ASVs and putative environmental ASVs, respectively. All matrices were constructed based on Bray-Curtis dissimilarity of Hellinger transformed data using the vegan package [16] in R [15].</p>
 <p><a id="Table S1"></a></p>
 <div style="padding-top: 2em">
 
@@ -824,6 +844,29 @@ Table scrolls horizontally.
 </li>
 </ul>
 </ul>
+<p>
+</p>
+<div id="references" class="section level3">
+<h3>References</h3>
+<ol style="list-style-type: decimal">
+<li><p>Bruggemann JH, Kuyper MWM, Breeman AM. 1994 Comparative analysis of foraging and habitat use by the sympatric Caribbean parrotfish Scarus vetula and Sparisoma viride (Scaridae). Mar. Ecol. Prog. Ser. 112, 51–66.</p></li>
+<li><p>Burkepile DE, Hay ME. 2008 Herbivore species richness and feeding complementarity affect community structure and function on a coral reef. Proc. Natl. Acad. Sci. U. S. A. 105, 16201–16206.</p></li>
+<li><p>Adam T, Duran A, Fuchs C, Roycroft M, Rojas M, Ruttenberg B, Burkepile D. 2018 Comparative analysis of foraging behavior and bite mechanics reveals complex functional diversity among Caribbean parrotfishes. Mar. Ecol. Prog. Ser. 597, 207–220.</p></li>
+<li><p>Randall J. 1967 Food Habits of Reef Fishes of the West Indies. NOAA Rep.</p></li>
+<li><p>Duran A, Adam TC, Palma L, Moreno S, Collado-Vides L, Burkepile DE. 2019. Feeding behavior in Caribbean surgeonfishes varies across fish size, algal abundance, and habitat characteristics. Mar. Ecol. 40 e12561.</p></li>
+<li><p>Parada AE, Needham DM, Fuhrman JA. 2016 Every base matters: assessing small subunit rRNA primers for marine microbiomes with mock communities, time series and global field samples. Environ. Microbiol. 18, 1403–1414.</p></li>
+<li><p>Martin M. 2011 Cutadapt removes adapter sequences from high-throughput sequencing reads. EMBnet.journal 17, 10.</p></li>
+<li><p>Schloss PD et al. 2009 Introducing mothur: open-source, platform-independent, community-supported software for describing and comparing microbial communities. Appl. Environ. Microbiol. 75, 7537–7541.</p></li>
+<li><p>Callahan BJ, McMurdie PJ, Rosen MJ, Han AW, Johnson AJA, Holmes SP. 2016 DADA2: high-resolution sample inference from Illumina amplicon data. Nat. Methods 13, 581–583.</p></li>
+<li><p>Callahan BJ, Sankaran K, Fukuyama JA, McMurdie PJ, Holmes SP. 2016 Bioconductor workflow for microbiome data analysis: from raw reads to community analyses. F1000Research 5, 1492.</p></li>
+<li><p>Eren AM, Zozaya M, Taylor CM, Dowd SE, Martin DH, Ferris MJ, 2011. Exploring the diversity of Gardnerella vaginalis in the genitourinary tract microbiota of monogamous couples through subtle nucleotide variation. PLoS One, 6 e26732.</p></li>
+<li><p>Sievers F et al. 2011 Fast, scalable generation of high‐quality protein multiple sequence alignments using Clustal Omega. Mol. Syst. Biol. 7, 539.</p></li>
+<li><p>Waterhouse AM, Procter JB, Martin DMA, Clamp M, Barton GJ. 2009 Jalview Version 2–a multiple sequence alignment editor and analysis workbench. Bioinformatics 25, 1189–1191.</p></li>
+<li><p>Stamatakis A. 2006 RAxML-VI-HPC: maximum likelihood-based phylogenetic analyses with thousands of taxa and mixed models. Bioinformatics 22, 2688–2690.</p></li>
+<li><p>R Core Team. 2018 R: A Language and Environment for Statistical Computing.</p></li>
+<li><p>Oksanen J et al. 2013 Package ‘vegan’. Community Ecol. Packag. version 2.</p></li>
+</ol>
+</div>
 </div>
 
 <footer role="contentinfo" id="site-footer">
