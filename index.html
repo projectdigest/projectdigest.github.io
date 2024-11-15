@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title>ProjectDIGEST</title>
+<title>ProjectDIGEST  DNA Investigation of Grazer Ecology with Sequencing Technology</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -32,8 +31,10 @@
     <title></title>
   </head>
   <body>
-    <a href="images/fish_tree.svg" target="_blank">
-      <img src="images/fish_tree_clip_title.png" alt="">
+    <div class="article-header">
+      <a href="images/fish_tree.svg" target="_blank">
+      <img src="images/collage.png" class="article-banner" alt="">
+    </div>
     </a>
   </body>
 </html>
@@ -247,6 +248,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -378,7 +380,7 @@ $(document).ready(function () {
   <a href="people.html">
     <span class="fa fa-user-friends"></span>
      
-    People
+    Authors
   </a>
 </li>
       </ul>
@@ -390,38 +392,61 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">ProjectDIGEST</h1>
+<h1 class="title toc-ignore">ProjectDIGEST <br/><small><font color = #000000; size=6.5em;>D</font>NA <font color = #000000; size=6.5em;>I</font>nvestigation of <font color = #000000; size=6.5em;>G</font>razer <font color = #000000; size=6.5em;>E</font>cology with <font color = #000000; size=6.5em;>S</font>equencing <font color = #000000; size=6.5em;>T</font>echnology</small></h1>
 
 </div>
 
 
-<div style="padding-top: 2em">
+<div style="padding-top: 0.1em">
 
 </div>
-<p id="notice">
-This website provides a <span class="callout">completely reproducible workflow</span> of our <a href="publication.html" target="_new">study</a> on the intestinal microbial communities from five species of herbivorous coral reef fishes. The workflow goes through the steps we used to process the raw 16S rRNA marker data and the various tools we used to analyze and interpret the data. With this workflow you can generate the figures and tables from the paper as well as many additional data products. The workflow is written in R Markdown and contains a mixture plain text and R code. Anyone should be able to reproduce our results with just this workflow and the raw data.
+<div class="alert-synopsis">
+<p style="text-align:center;">
+This website provides a reproducible workflow for our study entitled
 </p>
-<div style="padding-top: 2em">
+<p style="text-align:center;font-size:1.3em;">
+<a href="https://doi.org/10.1098/rspb.2019.2367" target="_new">Intestinal microbes as an axis of functional diversity among large marine consumers</a>.
+</p>
+<p>The workflow goes through the steps we used to process the raw 16S rRNA gene data and the tools we used to analyze and interpret the data. With this workflow you can generate the figures and tables from the paper as well as many other data products. The workflow is written in R Markdown and contains a mixture plain text and R code. Anyone should be able to reproduce our results with just this workflow and the raw data. A BibTex version of the paper references is available <a href="cite.bib">here</a> and you can learn more about the authors <a href="authors.html/">here</a>.</p>
+</div>
+<div style="padding-top: 0.5em">
 
 </div>
 <div id="about-this-site" class="section level2">
 <h2>About this Site</h2>
 <p>The <span class="callout">navigation bar</span> at the top contains links to workflows, data/data products, supplementary material from the paper (see SOM), and a variety of other useful information. The site itself has many <span class="callout">dynamic</span> components. For example, you can <span class="callout">sort</span> and <span class="callout">scroll</span> through most of the tables, several figures expand when clicked, and one figure is <span class="callout">zoomable</span>. All figures and tables from the final publication are highlighted in <span class="paper">red font</span> to make them easy to identify. You can choose to <span class="callout">show</span> or <span class="callout">hide</span> the R code using the <code>Code</code> button in the upper right hand corner of each page (default is mostly hide). An unannotated version of the R code is available for download using the navbar link.</p>
 <p><br/></p>
-<div style="text-align:center">
-<p><span class="linkboxfont-sm"> <button class="favorite styled" type="button"> <a href="0_pw_intro.html">Proceed to Workflow</a> </button> </span></p>
-</div>
 <div style="padding-top: 2em">
 
 </div>
 </div>
-<div id="about-this-tree" class="section level2">
-<h2>About this Tree</h2>
+<div id="about-the-banner" class="section level2">
+<h2>About the Banner</h2>
+<blockquote>
+<p>The banner contains images of the 5 species examined in this study. From left to right these are: <em>Acanthurus bahianus/Acanthurus tractus</em>, <em>Acanthurus coeruleus</em>, <em>Scarus taeniopterus</em>, <em>Sparisoma aurofrenatum</em>, and <em>Sparisoma viride</em> (see below for image credits). It also contains some images of figures from the paper and in the middle, part of a huge bony fish phylogeny. If you click on the banner you can see the full tree.</p>
+</blockquote>
 <p>One of our <a href="6_synthesis.html#asvs__host_trait_correlation" target="_new">analyses</a> required us to create a phylogenetic tree of the five host species. To construct the tree we first needed an appropriate out group. Our search for an out group lead to <a href="https://sites.google.com/site/guilleorti/" target="_new">DeepFin</a> and the amazing paper by <a href="https://link.springer.com/article/10.1186/s12862-017-0958-3" target="_new">Betancur-R et. al., (2017)</a> on the phylogenetic classification of bony fishes. The tree in this paper is the 4th version (the original dates back to 2013) and is based on the phylogeny of a whopping <span class="callout">1990 species</span> encompassing <span class="callout">72 orders</span> and <span class="callout">410 families</span>. Wow. In our study, we looked at intestinal microbes from five fish species across two families.</p>
 <p>Anyway, we used the original tree from the paper to choose an out group for our analysis (Gerreidae) and for the fun of it decided to make our own representation of the Betancur-R et. al., tree. To construct the tree above we first downloaded the newick file from the paper’s supplementary material (<a href="https://static-content.springer.com/esm/art%3A10.1186%2Fs12862-017-0958-3/MediaObjects/12862_2017_958_MOESM2_ESM.tre" target="_new">download link</a>), parsed out the Family data from the tree file (included in the name of each leaf), and finally visualized the tree in <a href="http://merenlab.org/software/anvio/" target="_new">anvi’o</a>. Within the anvi’o interface we visualized the tree as a circular phylogram and collapsed any Family represented by two or more species. The size of each triangle is proportional to the number of species in that family while the colors are somewhat arbitrary. Originally we thought it would be cool to color leaves by the taxa but that was too complicated. So the colors are really just for looks. The families we studied in this project are in the lower left, marked by asterisks. In the future we would like to identify which fish families have been the subject of microbial investigations and use the phylogenetic framework to identify gaps in knowledge and patterns of associations.</p>
 <blockquote>
-<p>The image above is actually just half the Betancur-R tree. You can download a full SVG version by clicking on the tree. Or you can download the files we used to make the tree from this <a href="https://github.com/projectdigest/betancur_r-fish-tree" target="_new">GitHub repo</a> and then use anvi’o to make an better tree.</p>
+<p>You can download a full SVG version by clicking on the banner. Or you can download the files we used to make the tree from this <a href="https://github.com/projectdigest/betancur_r-fish-tree" target="_new">GitHub repo</a> and then use anvi’o to make an even better tree.</p>
 </blockquote>
+<p><br/></p>
+<div class="post-nav">
+<div class="post-nav-item">
+<div class="meta-nav">
+Next
+</div>
+<p><a href="0_pw_intro.html" rel="next">Begin Workflow</a></p>
+</div>
+</div>
+<p class="edit-page">
+<a href="https://github.com/projectdigest/web/blob/master/build/index.Rmd"> <i class="fas fa-pen pr-2"></i> Edit this page </a>
+</p>
+<hr/>
+<p>
+<p><small> <em>All banner photos on this page were retreived from Wikimedia Commons and Licensed under Creative Commons Attributions. Each photo was modified from the originals by removing the background</em>.</p>
+<strong>Banner photos from left to right</strong>: <em>Acanthurus bahianus/Acanthurus tractus </em><a href="https://commons.wikimedia.org/wiki/Category:Acanthurus_bahianus#/media/File:Acanthurus_bahianus_SI2.jpg">(original)</a> licenced under <a href="https://creativecommons.org/share-your-work/public-domain/cc0">CC-0</a>; <em>Acanthurus coeruleus </em><a href="https://commons.wikimedia.org/wiki/File:Fish13092009a.jpg">(original)</a> by Sylfred1977 licenced under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA-3.0</a>; <em>Scarus taeniopterus</em> (Desmarest 1831) <a href="https://commons.wikimedia.org/wiki/File:Scarus_taeniopterus_-_pone.0010676.g130.png">(original)</a>, <em>Sparisoma aurofrenatum</em> (Valenciennes, 1840) <a href="https://commons.wikimedia.org/wiki/File:Sparisoma_aurofrenatum_-_pone.0010676.g133.png">(original)</a>, and <em>Sparisoma viride</em> (Bonnaterre, 1788) <a href="https://commons.wikimedia.org/wiki/File:Stoplight-parrotfish.jpg">(original)</a> all licenced under <a href="https://creativecommons.org/licenses/by/2.5/">CC-BY-2.5</a> by <a href="https://doi.org/10.1371/journal.pone.0010676">Williams et. al., 2010</a>. </small>
+</p>
 <!--
 
 <pre>
@@ -442,7 +467,7 @@ done
 
 
 <!-- /.bottom-menu -->
-	<p class="copyright">&#169; 2019
+	<p class="copyright">&#169; 2020
 		<a href="http://www.metacrobe.io">metacrobe</a>
 		& ProjectDIGEST | powered by
 		<a href="http://www.r-project.org">R</a> +
@@ -492,15 +517,6 @@ $(document).ready(function () {
 <!-- code folding -->
 
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

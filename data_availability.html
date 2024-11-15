@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -235,6 +234,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -366,7 +366,7 @@ $(document).ready(function () {
   <a href="people.html">
     <span class="fa fa-user-friends"></span>
      
-    People
+    Authors
   </a>
 </li>
       </ul>
@@ -383,20 +383,31 @@ $(document).ready(function () {
 </div>
 
 
+<p>On this page you will find information on obtaining various data, data products, and processing scripts. Of course, all the R code is embeded in the workflows on the website as well.</p>
 <p id="steel">
-To run the workflow, install the appropriate R packages and download this file:
-</p>
-<p><a href="https://doi.org/10.6084/m9.figshare.7357178" target="_new">10.6084/m9.figshare.7357178</a>: DOI for this workflow. Includes output from the DADA2 workflow, the phyloseq script, and other necessary input files.</p>
-<div style="padding-top: 1em">
-
-</div>
-<p id="steel">
-We also offer several additional data products and processing scripts.
+To start from the beginning you will need the DADA2 workflow and the raw data.
 </p>
 <ul>
 <li><a href="https://doi.org/10.6084/m9.figshare.6875522" target="_new">10.6084/m9.figshare.6875522</a>: Raw data for each sample (before removing primers) plus two tables for ENA submission.</li>
 <li><a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB28397" target="_new">PRJEB28397</a>: Study accession number for trimmed data (primers removed) deposited at the European Nucleotide Archive.</li>
 <li><a href="https://doi.org/10.6084/m9.figshare.6997253" target="_new">10.6084/m9.figshare.6997253</a>: DADA2 workflow for processing 16S rRNA reads.</li>
+</ul>
+<p><em>The data in the ENA (primers removed) is the input for the DADA2 workflow but if you prefer to remove primers yourself, then please download the raw data instead.</em></p>
+<div style="padding-top: 1em">
+
+</div>
+<p id="steel">
+To run the phyloseq workflow only, download this file:
+</p>
+<p><a href="https://doi.org/10.6084/m9.figshare.7357178" target="_new">10.6084/m9.figshare.7357178</a>: DOI for the phyloseq workflow. Includes output from the DADA2 workflow, the phyloseq script, and other necessary input files.</p>
+<p><em>The input file for this workflow is the output from the DADA2 workflow (<code>combo_pipeline.rdata</code>). There are also some additional files included that are needed for some of the analyses.</em></p>
+<div style="padding-top: 1em">
+
+</div>
+<p id="steel">
+Additional data products.
+</p>
+<ul>
 <li><a href="https://doi.org/10.6084/m9.figshare.7379930" target="_new">10.6084/m9.figshare.7379930</a>: Data products from the workflows including sequence tables, taxonomy tables, and ASV fasta files.</li>
 <li><a href="https://doi.org/10.6084/m9.figshare.7379936" target="_new">10.6084/m9.figshare.7379936</a>: Fasta files for the 59 DA ASVs and top BLAST results, plus the alignment file (including top BLAST hits).</li>
 <li><a href="https://doi.org/10.6084/m9.figshare.7379597" target="_new">10.6084/m9.figshare.7379597</a>: Supplementary file from the paper.</li>
@@ -408,6 +419,40 @@ We also offer several additional data products and processing scripts.
 Accessing the R Code only.
 </p>
 <p>The R code is available by clicking on the code button in the menu bar or <a href="raw_code.txt">here</a>. Please note that this R code is pulled from all the <code>.Rmd</code> files. This has not been tested independent of the R Markdown workflows so <span class="paper">Use at Your Own Risk</span>. In other words, the code works in the Rmarkdown format but the complete pipeline has not been tested using just this code. I used <code>knitr::purl()</code> to pull the code from the Rmarkdown file. I did this for you just in case you wanted the code and not hear me drone on about colors, zoomable figures, or Keanu Reeves. The first part is the DADA2 workflow and the second part is the phyloseq workflow. Commands that are commented out are things I tried that I could never get to work. Any line that starts like this: <code>## ----</code> is the code chuck name and details.</p>
+<p id="steel">
+Submitting sequence data to nucleotide archives
+</p>
+<p>We submitted out data to the <a href="https://www.ebi.ac.uk/ena">European Nucleotide Archive (ENA)</a>. The ENA does not like RAW data and prefers to have primers removed. So we submitted the trimmed Fastq files to the ENA. You can find these data under the study accession number <strong>PRJEB28397</strong>. The RAW files on our figshare site (see above).</p>
+<p>To submit to the ENA you need two data tables (plus your sequence data). One file describes the samples and the other file describes the sequencing data.</p>
+<p>You can download these data tables here:</p>
+<p><a href="ena_submit/ENA_Sample_SUBMISSION_DIGEST.txt">Description of sample data</a></p>
+<p><a href="ena_submit/ENA_PAIRED_FASTQ_SUBMISSION_DIGEST.txt">Description of sequence data</a></p>
+<p>Step by step instructions for submitting to the ENA</p>
+<ol style="list-style-type: decimal">
+<li>go to <a href="https://www.ebi.ac.uk/ena/submit" class="uri">https://www.ebi.ac.uk/ena/submit</a> and select <strong>Submit to ENA</strong>.<br />
+</li>
+<li>Login or Register.<br />
+</li>
+<li>Go to <strong>New Submission</strong> tab and select <strong>Register study (project)</strong>.</li>
+<li>Hit Next</li>
+<li>Enter details and hit Submit.</li>
+<li>Next, Select Checklist. This will be specific to the type of samples you have and basically will create a template so you can add your sample metadata. For this study I chose <strong>GSC MIxS host associated</strong></li>
+<li>Next</li>
+<li>Now go through and select/deselect fields as needed. Note, some fields are mandatory.</li>
+<li>Once finished, hit <strong>Next</strong> to fill in any details that applay to <em>All</em> samples.</li>
+<li>Fill in the sheet</li>
+<li>Hit the <strong>Next</strong> button, change the number of samples, and download the sheet. (<em>This is a little messy and you just need to wade through it</em>)</li>
+<li>Once everything looks good and uploaded, click Next to get to the <strong>Run</strong> page.</li>
+<li>Select <strong>Two Fastq files (Paired)</strong> and Download the template.</li>
+<li>Before filling out the form, gzip <strong>.gz</strong> all the trimmed fastq files (these are what you submit)</li>
+<li>Then run <code>md5</code> on all the <code>tar.gz</code> files.</li>
+<li>Upload all the fastq files. There are different options for this step.</li>
+<li>Fill in the sheet including md5 checksum values.</li>
+<li>Upload and submit the sheet.</li>
+</ol>
+<p class="edit-page">
+<a href="https://github.com/projectdigest/web/blob/master/build//data_availability.Rmd"> <i class="fas fa-pen pr-2"></i> Edit this page </a>
+</p>
 
 <footer role="contentinfo" id="site-footer">
 
@@ -463,15 +508,6 @@ $(document).ready(function () {
 <!-- code folding -->
 
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

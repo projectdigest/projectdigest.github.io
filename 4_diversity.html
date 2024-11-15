@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -27,18 +26,18 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="site_libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="site_libs/datatables-binding-0.8/datatables.js"></script>
-<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="site_libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
-<link href="site_libs/dt-ext-buttons-1.10.16/css/buttons.dataTables.min.css" rel="stylesheet" />
-<script src="site_libs/dt-ext-buttons-1.10.16/js/dataTables.buttons.min.js"></script>
-<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.flash.min.js"></script>
-<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.html5.min.js"></script>
-<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.colVis.min.js"></script>
-<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.print.min.js"></script>
+<script src="site_libs/datatables-binding-0.12/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.20/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.20/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.print.min.js"></script>
 <link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -253,6 +252,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -466,7 +466,7 @@ div.tocify {
   <a href="people.html">
     <span class="fa fa-user-friends"></span>
      
-    People
+    Authors
   </a>
 </li>
       </ul>
@@ -576,8 +576,8 @@ datatable(taxa_read_asv_tab2, rownames = FALSE, width = &quot;100%&quot;,
                          dom = &quot;Blfrtip&quot;, pageLength = 5,
                          lengthMenu = c(5, 10, 35, 70),
                          buttons = c(&quot;csv&quot;, &quot;copy&quot;)))</code></pre>
-<div id="htmlwidget-c862fc109d4a4d313929" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c862fc109d4a4d313929">{"x":{"filter":"none","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align: left;\">\n  Table: \n  <em>Total reads &amp; ASVs by Class<\/em>\n<\/caption>","data":[["028H05-P-BN-P5","Acidimicrobiia","Acidobacteriia","Actinobacteria","Alphaproteobacteria","Anaerolineae","Babeliae","Bacilli","Bacteroidia","BD2-11_terrestrial_group","BD7-11","Blastocatellia_(Subgroup_4)","Calditrichia","Campylobacteria","Chlamydiae","Chlorobia","Clostridia","Coriobacteriia","Dadabacteriia","Deferribacteres","Dehalococcoidia","Deinococci","Deltaproteobacteria","Entotheonellia","Erysipelotrichia","Fibrobacteria","Fusobacteriia","Gammaproteobacteria","Gracilibacteria","Halanaerobiia","Holophagae","Hydrogenedentia","Ignavibacteria","KD4-96","Kiritimatiellae","KIST-JJY010","Ktedonobacteria","Lentisphaeria","Lineage_IIb","Melainabacteria","Microgenomatia","Moduliflexia","Mollicutes","NC10","Negativicutes","Nitrososphaeria","Nitrospira","Oligosphaeria","OM190","Oxyphotobacteria","Parcubacteria","PAUC43f_marine_benthic_group","Phycisphaerae","Pla3_lineage","Pla4_lineage","Planctomycetacia","Rhodothermia","Saccharimonadia","Spirochaetia","Subgroup_17","Subgroup_22","Subgroup_26","Subgroup_6","Subgroup_9","Synergistia","Thermoanaerobaculia","Thermoleophilia","Unclassified","vadinHA49","Verrucomicrobiae","WWE3","Zetaproteobacteria"],[25,3261,30,4726,315809,787,579,3331,217335,13,40,29,2,9451,85,236,302028,8114,3459,708,29,249,219331,3,83548,8,260519,1040757,30,42,45,2,6,158,668,11,5,2416,4,775,11,6,33447,3,97,364,35,697,2839,71304,2,8,3223,93,12,262356,160,705,28375,150,441,274,29,571,7,1084,147,7027,662,42087,3,123],[9e-06,0.001111,1e-05,0.00161,0.107601,0.000268,0.000197,0.001135,0.07405,4e-06,1.4e-05,1e-05,1e-06,0.00322,2.9e-05,8e-05,0.102906,0.002765,0.001179,0.000241,1e-05,8.5e-05,0.07473,1e-06,0.028466,3e-06,0.088763,0.354603,1e-05,1.4e-05,1.5e-05,1e-06,2e-06,5.4e-05,0.000228,4e-06,2e-06,0.000823,1e-06,0.000264,4e-06,2e-06,0.011396,1e-06,3.3e-05,0.000124,1.2e-05,0.000237,0.000967,0.024294,1e-06,3e-06,0.001098,3.2e-05,4e-06,0.089389,5.5e-05,0.00024,0.009668,5.1e-05,0.00015,9.3e-05,1e-05,0.000195,2e-06,0.000369,5e-05,0.002394,0.000226,0.01434,1e-06,4.2e-05],[3,81,5,51,1978,52,88,77,1349,3,8,3,1,4,16,1,597,3,29,3,2,6,570,1,54,1,44,1664,11,5,3,1,3,8,24,1,2,13,1,35,2,2,110,1,6,23,5,4,191,449,1,2,245,16,3,2512,13,53,16,15,42,10,2,26,1,64,7,198,24,295,1,4],[0.000269,0.007268,0.000449,0.004576,0.177495,0.004666,0.007897,0.00691,0.121052,0.000269,0.000718,0.000269,9e-05,0.000359,0.001436,9e-05,0.053571,0.000269,0.002602,0.000269,0.000179,0.000538,0.051149,9e-05,0.004846,9e-05,0.003948,0.149318,0.000987,0.000449,0.000269,9e-05,0.000269,0.000718,0.002154,9e-05,0.000179,0.001167,9e-05,0.003141,0.000179,0.000179,0.009871,9e-05,0.000538,0.002064,0.000449,0.000359,0.017139,0.040291,9e-05,0.000179,0.021985,0.001436,0.000269,0.225413,0.001167,0.004756,0.001436,0.001346,0.003769,0.000897,0.000179,0.002333,9e-05,0.005743,0.000628,0.017767,0.002154,0.026472,9e-05,0.000359]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Class<\/th>\n      <th>total_reads<\/th>\n      <th>prop_of_reads<\/th>\n      <th>total_ASVs<\/th>\n      <th>prop_of_ASVs<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3,4]}],"dom":"Blfrtip","pageLength":5,"lengthMenu":[5,10,35,70],"buttons":["csv","copy"],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2eabf7756a5ec60c53cf" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2eabf7756a5ec60c53cf">{"x":{"filter":"none","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align: left;\">\n  Table: \n  <em>Total reads &amp; ASVs by Class<\/em>\n<\/caption>","data":[["028H05-P-BN-P5","Acidimicrobiia","Acidobacteriia","Actinobacteria","Alphaproteobacteria","Anaerolineae","BD2-11_terrestrial_group","BD7-11","Babeliae","Bacilli","Bacteroidia","Blastocatellia_(Subgroup_4)","Calditrichia","Campylobacteria","Chlamydiae","Chlorobia","Clostridia","Coriobacteriia","Dadabacteriia","Deferribacteres","Dehalococcoidia","Deinococci","Deltaproteobacteria","Entotheonellia","Erysipelotrichia","Fibrobacteria","Fusobacteriia","Gammaproteobacteria","Gracilibacteria","Halanaerobiia","Holophagae","Hydrogenedentia","Ignavibacteria","KD4-96","KIST-JJY010","Kiritimatiellae","Ktedonobacteria","Lentisphaeria","Lineage_IIb","Melainabacteria","Microgenomatia","Moduliflexia","Mollicutes","NC10","Negativicutes","Nitrososphaeria","Nitrospira","OM190","Oligosphaeria","Oxyphotobacteria","PAUC43f_marine_benthic_group","Parcubacteria","Phycisphaerae","Pla3_lineage","Pla4_lineage","Planctomycetacia","Rhodothermia","Saccharimonadia","Spirochaetia","Subgroup_17","Subgroup_22","Subgroup_26","Subgroup_6","Subgroup_9","Synergistia","Thermoanaerobaculia","Thermoleophilia","Unclassified","Verrucomicrobiae","WWE3","Zetaproteobacteria","vadinHA49"],[25,3261,30,4726,315809,787,13,40,579,3331,217335,29,2,9451,85,236,302028,8114,3459,708,29,249,219331,3,83548,8,260519,1040757,30,42,45,2,6,158,11,668,5,2416,4,775,11,6,33447,3,97,364,35,2839,697,71304,8,2,3223,93,12,262356,160,705,28375,150,441,274,29,571,7,1084,147,7027,42087,3,123,662],[9e-06,0.001111,1e-05,0.00161,0.107601,0.000268,4e-06,1.4e-05,0.000197,0.001135,0.07405,1e-05,1e-06,0.00322,2.9e-05,8e-05,0.102906,0.002765,0.001179,0.000241,1e-05,8.5e-05,0.07473,1e-06,0.028466,3e-06,0.088763,0.354603,1e-05,1.4e-05,1.5e-05,1e-06,2e-06,5.4e-05,4e-06,0.000228,2e-06,0.000823,1e-06,0.000264,4e-06,2e-06,0.011396,1e-06,3.3e-05,0.000124,1.2e-05,0.000967,0.000237,0.024294,3e-06,1e-06,0.001098,3.2e-05,4e-06,0.089389,5.5e-05,0.00024,0.009668,5.1e-05,0.00015,9.3e-05,1e-05,0.000195,2e-06,0.000369,5e-05,0.002394,0.01434,1e-06,4.2e-05,0.000226],[3,81,5,51,1978,52,3,8,88,77,1349,3,1,4,16,1,597,3,29,3,2,6,570,1,54,1,44,1664,11,5,3,1,3,8,1,24,2,13,1,35,2,2,110,1,6,23,5,191,4,449,2,1,245,16,3,2512,13,53,16,15,42,10,2,26,1,64,7,198,295,1,4,24],[0.000269,0.007268,0.000449,0.004576,0.177495,0.004666,0.000269,0.000718,0.007897,0.00691,0.121052,0.000269,9e-05,0.000359,0.001436,9e-05,0.053571,0.000269,0.002602,0.000269,0.000179,0.000538,0.051149,9e-05,0.004846,9e-05,0.003948,0.149318,0.000987,0.000449,0.000269,9e-05,0.000269,0.000718,9e-05,0.002154,0.000179,0.001167,9e-05,0.003141,0.000179,0.000179,0.009871,9e-05,0.000538,0.002064,0.000449,0.017139,0.000359,0.040291,0.000179,9e-05,0.021985,0.001436,0.000269,0.225413,0.001167,0.004756,0.001436,0.001346,0.003769,0.000897,0.000179,0.002333,9e-05,0.005743,0.000628,0.017767,0.026472,9e-05,0.000359,0.002154]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Class<\/th>\n      <th>total_reads<\/th>\n      <th>prop_of_reads<\/th>\n      <th>total_ASVs<\/th>\n      <th>prop_of_ASVs<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3,4]}],"dom":"Blfrtip","pageLength":5,"lengthMenu":[5,10,35,70],"buttons":["csv","copy"],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>Looks like Proteobacteria, Firmicutes, Fusobacteria, Planctomycetes, and Bacteroidetes dominate in the read department. Curiously, Fusobacteria has comparatively low ASV richness.</p>
 <p>Much of the analyses we do from here on out will be at the <strong>Class</strong> &amp; <strong>Family</strong> levels. We chose not to focus on the Genus level because there simply is not enough resolution in our dataset to build a cohesive story. This is because these fish are (microbially) understudied <em>and</em> we are dealing with short read data. On the other hand, Phylum level is too coarse for groups like Proteobacteria and Firmicutes. Order did not provide any additional information and can be cumbersome for taxa with poorly resolved lineages. Depending on the dataset, you may want to change your strategy.</p>
 <p>Lets take a closer look Class-level taxonomic content of these communities. There are numerous ways to do this but here we chose to collapse samples by host species and display the relative abundance of the most dominant taxa. We also generated alternative views of taxonomic composition for individual samples—a box-and-whisker plot as well as bar plots separated by host and taxa. The figures and code are available in <a href="1_field_observations.html">Appendix A</a>.</p>
@@ -624,8 +624,8 @@ taxa_means$Class &lt;- gsub(&quot;NA&quot;, &quot;Unclassified&quot;, taxa_means
                          dom = &quot;Blfrtip&quot;, pageLength = 10,
                          lengthMenu = c(5, 10, 50, 70),
                          buttons = c(&quot;csv&quot;, &quot;copy&quot;)))</code></pre>
-<div id="htmlwidget-681a6addeee675513901" style="width:65%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-681a6addeee675513901">{"x":{"filter":"none","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom;&#10;                                    text-align: left;\">\n  Table: \n  <em>Class-level\n                                                  relative abundance.<\/em>\n<\/caption>","data":[["Gammaproteobacteria","Alphaproteobacteria","Planctomycetacia","Clostridia","Fusobacteriia","Deltaproteobacteria","Bacteroidia","Oxyphotobacteria","Erysipelotrichia","Verrucomicrobiae","Spirochaetia","Mollicutes","Campylobacteria","Actinobacteria","Bacilli","Coriobacteriia","Acidimicrobiia","Dadabacteriia","Phycisphaerae","OM190","Lentisphaeria","Thermoanaerobaculia","Melainabacteria","vadinHA49","Anaerolineae","Saccharimonadia","Kiritimatiellae","Subgroup_9","Babeliae","Nitrososphaeria","Subgroup_22","Unclassified","Deferribacteres","Oligosphaeria","Subgroup_26","Deinococci","Chlorobia","KD4-96","Subgroup_17","Negativicutes","Zetaproteobacteria","Thermoleophilia","Rhodothermia","Pla3_lineage","Chlamydiae","BD7-11","Nitrospira","Holophagae","Halanaerobiia","Dehalococcoidia","Subgroup_6","Gracilibacteria","Acidobacteriia","Blastocatellia_(Subgroup_4)","KIST-JJY010","028H05-P-BN-P5","BD2-11_terrestrial_group","Fibrobacteria","Synergistia","Microgenomatia","Moduliflexia","PAUC43f_marine_benthic_group","Pla4_lineage","Entotheonellia","Hydrogenedentia","Ignavibacteria","Ktedonobacteria","Lineage_IIb","NC10","Calditrichia","WWE3","Parcubacteria"],["0.38183442","0.11797067","0.10258117","0.09487547","0.07117657","0.06379053","0.05990859","0.02762129","0.02703927","0.01374814","0.01136774","0.00913849","0.00235727","0.00217362","0.00154911","0.00140717","0.00120728","0.00118767","0.00117836","0.00109177","0.00077884","0.00040244","0.00028658","0.00027786","0.00025759","0.00023699","0.00022715","0.00022565","0.00021430","0.00018363","0.00016425","0.00014576","0.00013792","0.00012882","0.00010781","0.00007844","0.00006010","0.00005783","0.00005532","0.00005242","0.00005210","0.00005201","0.00005144","0.00003821","0.00002599","0.00002150","0.00001754","0.00001614","0.00001389","0.00001276","0.00001062","0.00000958","0.00000956","0.00000812","0.00000606","0.00000561","0.00000359","0.00000335","0.00000325","0.00000306","0.00000274","0.00000266","0.00000253","0.00000238","0.00000200","0.00000185","0.00000129","0.00000096","0.00000076","0.00000073","0.00000072","0.00000050"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Class<\/th>\n      <th>mean<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":"_all"}],"dom":"Blfrtip","pageLength":10,"lengthMenu":[5,10,50,70],"buttons":["csv","copy"],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9b04290e1fe7830d94f0" style="width:65%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9b04290e1fe7830d94f0">{"x":{"filter":"none","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom;&#10;                                    text-align: left;\">\n  Table: \n  <em>Class-level\n                                                  relative abundance.<\/em>\n<\/caption>","data":[["Gammaproteobacteria","Alphaproteobacteria","Planctomycetacia","Clostridia","Fusobacteriia","Deltaproteobacteria","Bacteroidia","Oxyphotobacteria","Erysipelotrichia","Verrucomicrobiae","Spirochaetia","Mollicutes","Campylobacteria","Actinobacteria","Bacilli","Coriobacteriia","Acidimicrobiia","Dadabacteriia","Phycisphaerae","OM190","Lentisphaeria","Thermoanaerobaculia","Melainabacteria","vadinHA49","Anaerolineae","Saccharimonadia","Kiritimatiellae","Subgroup_9","Babeliae","Nitrososphaeria","Subgroup_22","Unclassified","Deferribacteres","Oligosphaeria","Subgroup_26","Deinococci","Chlorobia","KD4-96","Subgroup_17","Negativicutes","Zetaproteobacteria","Thermoleophilia","Rhodothermia","Pla3_lineage","Chlamydiae","BD7-11","Nitrospira","Holophagae","Halanaerobiia","Dehalococcoidia","Subgroup_6","Gracilibacteria","Acidobacteriia","Blastocatellia_(Subgroup_4)","KIST-JJY010","028H05-P-BN-P5","BD2-11_terrestrial_group","Fibrobacteria","Synergistia","Microgenomatia","Moduliflexia","PAUC43f_marine_benthic_group","Pla4_lineage","Entotheonellia","Hydrogenedentia","Ignavibacteria","Ktedonobacteria","Lineage_IIb","NC10","Calditrichia","WWE3","Parcubacteria"],["0.38183442","0.11797067","0.10258117","0.09487547","0.07117657","0.06379053","0.05990859","0.02762129","0.02703927","0.01374814","0.01136774","0.00913849","0.00235727","0.00217362","0.00154911","0.00140717","0.00120728","0.00118767","0.00117836","0.00109177","0.00077884","0.00040244","0.00028658","0.00027786","0.00025759","0.00023699","0.00022715","0.00022565","0.00021430","0.00018363","0.00016425","0.00014576","0.00013792","0.00012882","0.00010781","0.00007844","0.00006010","0.00005783","0.00005532","0.00005242","0.00005210","0.00005201","0.00005144","0.00003821","0.00002599","0.00002150","0.00001754","0.00001614","0.00001389","0.00001276","0.00001062","0.00000958","0.00000956","0.00000812","0.00000606","0.00000561","0.00000359","0.00000335","0.00000325","0.00000306","0.00000274","0.00000266","0.00000253","0.00000238","0.00000200","0.00000185","0.00000129","0.00000096","0.00000076","0.00000073","0.00000072","0.00000050"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Class<\/th>\n      <th>mean<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":"_all"}],"dom":"Blfrtip","pageLength":10,"lengthMenu":[5,10,50,70],"buttons":["csv","copy"],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>Inspecting the table it looks like if we choose a cutoff of 2% (0.02) we get 9 taxa—sounds pretty good. The rest go into the ‘Other’ category. No matter what, we will always gloss over some groups using such a coarse approach. But as we will see later, some of these low abundance groups will reappear when we look at the level of individual ASVs.</p>
 <p>Here we define the <strong>Other</strong> category by combining all taxa with less than 2% of total reads.</p>
 <pre class="r"><code>Other &lt;- means[means$mean &lt;= 0.02, ]$Class
@@ -764,8 +764,8 @@ datatable(host_summary, rownames = FALSE, width = &quot;100%&quot;,
                  dom = &quot;Blfrtip&quot;, pageLength = 5, lengthMenu = c(5, 10, 50),
                  buttons = c(&quot;csv&quot;, &quot;copy&quot;), scrollX = TRUE,
                  scrollCollapse = TRUE))</code></pre>
-<div id="htmlwidget-745e363e2cfa33de974f" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-745e363e2cfa33de974f">{"x":{"filter":"none","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align:&#10;                                    left;\">\n  Table: \n  <em>Host-associated metadata &amp;\n                                                  microbial diversity<\/em>\n<\/caption>","data":[["AcCoe01","AcCoe02","AcCoe03","AcCoe04","AcCoe05","AcCoe06","AcCoe07","AcCoe08","AcTra01","AcTra02","AcTra03","AcTra04","AcTra05","AcTra06","AcTra07","AcTra08","AcTra09","ScTae01","ScTae02","ScTae03","ScTae04","ScTae05","ScTae06","ScTae07","ScTae08","ScTae09","SpAur01","SpAur02","SpAur03","SpAur04","SpAur05","SpAur06","SpAur07","SpAur08","SpAur09","SpAur10","SpAur11","SpAur12","SpAur13","SpVir01","SpVir02","SpVir03","SpVir04","SpVir05","SpVir06","SpVir07","SpVir08","SpVir09","SpVir10","SpVir11"],["Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Scarus","Scarus","Scarus","Scarus","Scarus","Scarus","Scarus","Scarus","Scarus","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma"],["coeruleus","coeruleus","coeruleus","coeruleus","coeruleus","coeruleus","coeruleus","coeruleus","tractus","tractus","tractus","tractus","tractus","tractus","tractus","tractus","tractus","taeniopterus","taeniopterus","taeniopterus","taeniopterus","taeniopterus","taeniopterus","taeniopterus","taeniopterus","taeniopterus","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","viride","viride","viride","viride","viride","viride","viride","viride","viride","viride","viride"],["blue tang surgeonfish","blue tang surgeonfish","blue tang surgeonfish","blue tang surgeonfish","blue tang surgeonfish","blue tang surgeonfish","blue tang surgeonfish","blue tang surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","princess parrotfish","princess parrotfish","princess parrotfish","princess parrotfish","princess parrotfish","princess parrotfish","princess parrotfish","princess parrotfish","princess parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish"],["157585","157585","157585","157585","157585","157585","157585","157585","1316013","1316013","1316013","1316013","1316013","1316013","1316013","1316013","1316013","544418","544418","544418","544418","544418","544418","544418","544418","544418","59663","59663","59663","59663","59663","59663","59663","59663","59663","59663","59663","59663","59663","59666","59666","59666","59666","59666","59666","59666","59666","59666","59666","59666"],["2016-7-15","2016-7-15","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-20","2016-7-20","2016-7-15","2016-7-19","2016-7-19","2016-7-19","2016-7-20","2016-7-20","2016-7-20","2016-7-20","2016-7-20","2016-7-15","2016-7-15","2016-7-15","2016-7-15","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-15","2016-7-15","2016-7-15","2016-7-15","2016-4-24","2016-4-24","2016-4-24","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-15","2016-7-15","2016-7-15","2016-7-15","2016-7-15","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-19"],["large","large","large","large","large","large","large","juvenile","large","small","large","large","large","large","small","small","large","terminal","initial","terminal","terminal","terminal","terminal","initial","initial","initial","terminal","initial","terminal","initial","initial","initial","initial","terminal","initial","initial","juvenile","terminal","initial","initial","terminal","terminal","initial","initial","initial","initial","initial","initial","initial","initial"],[266,187.8,129.9,188.1,277.5,235.8,226,8,89.8,69,101.5,88.5,98,84,13,23,96,526,115,331,574,394.6,445.8,220.9,142.04,195.2,236,112,212,114,null,null,null,185.1,152.6,175.05,29.4,173.09,142.5,358,null,1124,408.41,564,552.8,310.1,300.45,645,243.5,150.5],[23.5,20,17.5,20.5,23,22.5,22,7,17.2,15,17,16.5,18.4,16,8.3,9.8,17.5,30.5,19,25.4,30.3,27.9,28.7,22,19.6,21.5,24.5,18,23.1,18.5,null,null,null,21.6,19.5,21.8,11.5,21,20,27,40,43,28.5,34,33.8,25.5,26,38,24.2,19.5],[17,9,7,9,15,10,14,4,7,10,10,null,4,null,3.5,5,5,11.5,7,8,19,10.5,10,9,4,8.5,11,9,7,5,null,null,null,8.8,9,10.5,3.1,7.2,6,10,16,null,11,null,12.5,12.8,10.7,13,6,null],[64,74,71,76,97,83,71,22,53,43,32,null,49,null,24,29,53,31.5,20,25,39,31.5,34.1,29,22,27,18,17,26,17,null,null,null,25.8,26.1,28.2,8.7,27.8,20.5,39,78,null,39,null,53,46,42.4,65.5,34,null],[9,12,4,7,7,5,7,4.5,6,3,4,null,3,null,3,4,4,5,1.5,3,4,5,3.5,2.6,3,4,4,2,3.5,5,null,null,null,3,3,3,0.7,2.6,3,3.5,10,null,5,null,4.8,2.5,4.3,4.7,3,null],[90,95,82,92,119,98,92,30.5,66,56,46,null,56,null,30.5,38,62,48,28.5,36,62,47,47.6,40.6,29,39.5,33,28,36.5,27,null,null,null,37.6,38.1,41.7,12.5,37.6,29.5,52.5,104,null,55,null,70.3,61.3,57.4,83.2,43,null],[64360,137180,105966,180159,58982,105859,78401,117863,31483,53448,47620,65285,88469,60784,48607,131146,57571,52898,36997,28642,80074,58809,53118,82019,42598,27312,42513,11686,43164,15359,45483,19398,37006,13220,28047,71679,26893,62031,87183,39112,71391,75561,19366,73304,20724,49961,44363,41082,74298,26522],[1148,630,702,461,827,789,475,402,534,194,793,1503,2031,1768,488,391,1516,795,771,676,1308,723,576,1022,297,786,175,154,153,332,187,612,257,96,486,592,198,915,350,470,1037,1548,418,598,666,594,665,634,572,108],[1175,642.5,704,469.2,841,795.8,476.3,405.9,552.2,197.5,815.2,1543.4,2090.7,1821.7,493,402,1544.6,813.3,801,704.6,1345.3,733,588.8,1036.5,297.9,809.3,175,154.2,153,334.4,188.2,628,264.6,101,500.6,601.1,198.7,929.6,357.3,472.3,1050.9,1604.4,422.8,604.4,672.2,600.5,684.8,639.4,575,109.5],[10.74,6.58,1.96,6.36,7.07,4.11,1.56,3.19,8.41,3.44,9.64,12.82,15.47,14.72,3.51,8.88,10.32,7.62,11.76,12.57,12.29,5.32,7.27,6.39,1.3,10.25,0.03,0.62,0.06,2.27,1.52,7.45,5.45,6.04,7.49,5.03,1.15,6.94,4.53,2.42,6.56,18.28,3.61,4.19,3.74,4.34,9.52,3.74,2.52,2.59],[1159.5,637.2,704.4,463.6,833.6,794.7,477.3,405.2,545.2,196.1,802.8,1523.5,2067.1,1799,492.8,393.1,1530.2,811.9,786.9,687.5,1332.3,731.2,581.4,1033.8,298.4,796.2,175.2,154.8,153.2,334.8,189.1,623.2,262.1,97.5,495.8,599.4,198.8,922.7,357,471.6,1046,1567.2,422,602.8,672.5,598.3,673.2,638.2,574.9,108.7],[16.74,12.43,12.84,10.36,14.26,13.89,9.96,9.9,11.49,6.88,13.97,18.86,21.73,20.66,11.01,9.8,19.02,13.65,13.55,12.76,17.15,13.14,11.94,15.67,8.59,13.79,6.57,6.11,6.13,9.01,6.43,12.19,7.85,4.55,10.81,12.09,6.96,15.03,9.33,10.59,15.91,18.94,10.18,12.09,12.79,12.05,12.79,12.38,11.92,4.63],[5.1,3.51,4.39,2.94,4,4,4.56,3.04,3.95,2.92,4.52,6.09,6.49,6.45,3.52,1.95,6.27,4.98,4.98,4.67,5.81,4.1,3.23,3.98,2.51,5.48,2.4,2.2,2.7,3.44,3.51,4.89,2.8,2.81,4.21,2.73,1.31,3.94,2.32,3.76,4.78,6.04,4.33,3.77,5.3,3.95,4.49,4.29,3.47,2.85],[0.968,0.927,0.973,0.821,0.866,0.947,0.971,0.882,0.912,0.882,0.955,0.993,0.995,0.995,0.898,0.577,0.993,0.962,0.963,0.937,0.987,0.924,0.838,0.845,0.776,0.983,0.792,0.625,0.854,0.849,0.929,0.942,0.805,0.878,0.952,0.725,0.354,0.852,0.714,0.887,0.972,0.987,0.964,0.942,0.979,0.929,0.97,0.943,0.932,0.877],[31.07,13.76,36.89,5.57,7.44,19.03,34.32,8.48,11.4,8.5,22.11,143.66,187.66,184.41,9.76,2.36,147.97,26.23,26.7,15.98,74.68,13.11,6.18,6.47,4.46,58.04,4.8,2.67,6.87,6.64,14.01,17.37,5.14,8.19,20.78,3.64,1.55,6.74,3.49,8.85,35.25,76.44,27.68,17.34,48.42,14.04,33.78,17.66,14.78,8.15],[198.5,85.3,100.9,57.2,136.2,115.7,67.3,52,91.4,25.3,135.2,274.5,370.7,340.7,75.4,49.6,285.4,132.7,137.8,124.1,222,116.1,90.3,164.5,43.1,151.1,23.3,25.1,19.9,59.8,24.9,120.2,37.2,14,83.5,88.4,29,152.2,46.4,75.1,171.9,275.6,75.3,89.1,131.4,94.7,111,106.4,84.3,14.4]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Sample ID<\/th>\n      <th>Host genus<\/th>\n      <th>Host species<\/th>\n      <th>Common name<\/th>\n      <th>NCBI tAxID<\/th>\n      <th>Collection date<\/th>\n      <th>Life phase<\/th>\n      <th>Weight (g)<\/th>\n      <th>Total length (cm)<\/th>\n      <th>Foregut length (cm)<\/th>\n      <th>Midgut length (cm)<\/th>\n      <th>Hindgut length (cm)<\/th>\n      <th>Total gut length (cm)<\/th>\n      <th>Total reads<\/th>\n      <th>Total ASVs<\/th>\n      <th>Chao1<\/th>\n      <th>Chao1 (se)<\/th>\n      <th>ACE<\/th>\n      <th>ACE (se)<\/th>\n      <th>Shannon<\/th>\n      <th>Simpson<\/th>\n      <th>InvSimpson<\/th>\n      <th>Fisher<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]}],"dom":"Blfrtip","pageLength":5,"lengthMenu":[5,10,50],"buttons":["csv","copy"],"scrollX":true,"scrollCollapse":true,"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-018d94714a706466b18f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-018d94714a706466b18f">{"x":{"filter":"none","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align:&#10;                                    left;\">\n  Table: \n  <em>Host-associated metadata &amp;\n                                                  microbial diversity<\/em>\n<\/caption>","data":[["AcCoe01","AcCoe02","AcCoe03","AcCoe04","AcCoe05","AcCoe06","AcCoe07","AcCoe08","AcTra01","AcTra02","AcTra03","AcTra04","AcTra05","AcTra06","AcTra07","AcTra08","AcTra09","ScTae01","ScTae02","ScTae03","ScTae04","ScTae05","ScTae06","ScTae07","ScTae08","ScTae09","SpAur01","SpAur02","SpAur03","SpAur04","SpAur05","SpAur06","SpAur07","SpAur08","SpAur09","SpAur10","SpAur11","SpAur12","SpAur13","SpVir01","SpVir02","SpVir03","SpVir04","SpVir05","SpVir06","SpVir07","SpVir08","SpVir09","SpVir10","SpVir11"],["Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Acanthurus","Scarus","Scarus","Scarus","Scarus","Scarus","Scarus","Scarus","Scarus","Scarus","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma","Sparisoma"],["coeruleus","coeruleus","coeruleus","coeruleus","coeruleus","coeruleus","coeruleus","coeruleus","tractus","tractus","tractus","tractus","tractus","tractus","tractus","tractus","tractus","taeniopterus","taeniopterus","taeniopterus","taeniopterus","taeniopterus","taeniopterus","taeniopterus","taeniopterus","taeniopterus","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","aurofrenatum","viride","viride","viride","viride","viride","viride","viride","viride","viride","viride","viride"],["blue tang surgeonfish","blue tang surgeonfish","blue tang surgeonfish","blue tang surgeonfish","blue tang surgeonfish","blue tang surgeonfish","blue tang surgeonfish","blue tang surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","fiveband surgeonfish","princess parrotfish","princess parrotfish","princess parrotfish","princess parrotfish","princess parrotfish","princess parrotfish","princess parrotfish","princess parrotfish","princess parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","redband parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish","stoplight parrotfish"],["157585","157585","157585","157585","157585","157585","157585","157585","1316013","1316013","1316013","1316013","1316013","1316013","1316013","1316013","1316013","544418","544418","544418","544418","544418","544418","544418","544418","544418","59663","59663","59663","59663","59663","59663","59663","59663","59663","59663","59663","59663","59663","59666","59666","59666","59666","59666","59666","59666","59666","59666","59666","59666"],["2016-7-15","2016-7-15","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-20","2016-7-20","2016-7-15","2016-7-19","2016-7-19","2016-7-19","2016-7-20","2016-7-20","2016-7-20","2016-7-20","2016-7-20","2016-7-15","2016-7-15","2016-7-15","2016-7-15","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-15","2016-7-15","2016-7-15","2016-7-15","2016-4-24","2016-4-24","2016-4-24","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-15","2016-7-15","2016-7-15","2016-7-15","2016-7-15","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-19","2016-7-19"],["large","large","large","large","large","large","large","juvenile","large","small","large","large","large","large","small","small","large","terminal","initial","terminal","terminal","terminal","terminal","initial","initial","initial","terminal","initial","terminal","initial","initial","initial","initial","terminal","initial","initial","juvenile","terminal","initial","initial","terminal","terminal","initial","initial","initial","initial","initial","initial","initial","initial"],[266,187.8,129.9,188.1,277.5,235.8,226,8,89.8,69,101.5,88.5,98,84,13,23,96,526,115,331,574,394.6,445.8,220.9,142.04,195.2,236,112,212,114,null,null,null,185.1,152.6,175.05,29.4,173.09,142.5,358,null,1124,408.41,564,552.8,310.1,300.45,645,243.5,150.5],[23.5,20,17.5,20.5,23,22.5,22,7,17.2,15,17,16.5,18.4,16,8.3,9.8,17.5,30.5,19,25.4,30.3,27.9,28.7,22,19.6,21.5,24.5,18,23.1,18.5,null,null,null,21.6,19.5,21.8,11.5,21,20,27,40,43,28.5,34,33.8,25.5,26,38,24.2,19.5],[17,9,7,9,15,10,14,4,7,10,10,null,4,null,3.5,5,5,11.5,7,8,19,10.5,10,9,4,8.5,11,9,7,5,null,null,null,8.8,9,10.5,3.1,7.2,6,10,16,null,11,null,12.5,12.8,10.7,13,6,null],[64,74,71,76,97,83,71,22,53,43,32,null,49,null,24,29,53,31.5,20,25,39,31.5,34.1,29,22,27,18,17,26,17,null,null,null,25.8,26.1,28.2,8.7,27.8,20.5,39,78,null,39,null,53,46,42.4,65.5,34,null],[9,12,4,7,7,5,7,4.5,6,3,4,null,3,null,3,4,4,5,1.5,3,4,5,3.5,2.6,3,4,4,2,3.5,5,null,null,null,3,3,3,0.7,2.6,3,3.5,10,null,5,null,4.8,2.5,4.3,4.7,3,null],[90,95,82,92,119,98,92,30.5,66,56,46,null,56,null,30.5,38,62,48,28.5,36,62,47,47.6,40.6,29,39.5,33,28,36.5,27,null,null,null,37.6,38.1,41.7,12.5,37.6,29.5,52.5,104,null,55,null,70.3,61.3,57.4,83.2,43,null],[64360,137180,105966,180159,58982,105859,78401,117863,31483,53448,47620,65285,88469,60784,48607,131146,57571,52898,36997,28642,80074,58809,53118,82019,42598,27312,42513,11686,43164,15359,45483,19398,37006,13220,28047,71679,26893,62031,87183,39112,71391,75561,19366,73304,20724,49961,44363,41082,74298,26522],[1148,630,702,461,827,789,475,402,534,194,793,1503,2031,1768,488,391,1516,795,771,676,1308,723,576,1022,297,786,175,154,153,332,187,612,257,96,486,592,198,915,350,470,1037,1548,418,598,666,594,665,634,572,108],[1175,642.5,704,469.2,841,795.8,476.3,405.9,552.2,197.5,815.2,1543.4,2090.7,1821.7,493,402,1544.6,813.3,801,704.6,1345.3,733,588.8,1036.5,297.9,809.3,175,154.2,153,334.4,188.2,628,264.6,101,500.6,601.1,198.7,929.6,357.3,472.3,1050.9,1604.4,422.8,604.4,672.2,600.5,684.8,639.4,575,109.5],[10.74,6.58,1.96,6.36,7.07,4.11,1.56,3.19,8.41,3.44,9.64,12.82,15.47,14.72,3.51,8.88,10.32,7.62,11.76,12.57,12.29,5.32,7.27,6.39,1.3,10.25,0.03,0.62,0.06,2.27,1.52,7.45,5.45,6.04,7.49,5.03,1.15,6.94,4.53,2.42,6.56,18.28,3.61,4.19,3.74,4.34,9.52,3.74,2.52,2.59],[1159.5,637.2,704.4,463.6,833.6,794.7,477.3,405.2,545.2,196.1,802.8,1523.5,2067.1,1799,492.8,393.1,1530.2,811.9,786.9,687.5,1332.3,731.2,581.4,1033.8,298.4,796.2,175.2,154.8,153.2,334.8,189.1,623.2,262.1,97.5,495.8,599.4,198.8,922.7,357,471.6,1046,1567.2,422,602.8,672.5,598.3,673.2,638.2,574.9,108.7],[16.74,12.43,12.84,10.36,14.26,13.89,9.96,9.9,11.49,6.88,13.97,18.86,21.73,20.66,11.01,9.8,19.02,13.65,13.55,12.76,17.15,13.14,11.94,15.67,8.59,13.79,6.57,6.11,6.13,9.01,6.43,12.19,7.85,4.55,10.81,12.09,6.96,15.03,9.33,10.59,15.91,18.94,10.18,12.09,12.79,12.05,12.79,12.38,11.92,4.63],[5.1,3.51,4.39,2.94,4,4,4.56,3.04,3.95,2.92,4.52,6.09,6.49,6.45,3.52,1.95,6.27,4.98,4.98,4.67,5.81,4.1,3.23,3.98,2.51,5.48,2.4,2.2,2.7,3.44,3.51,4.89,2.8,2.81,4.21,2.73,1.31,3.94,2.32,3.76,4.78,6.04,4.33,3.77,5.3,3.95,4.49,4.29,3.47,2.85],[0.968,0.927,0.973,0.821,0.866,0.947,0.971,0.882,0.912,0.882,0.955,0.993,0.995,0.995,0.898,0.577,0.993,0.962,0.963,0.937,0.987,0.924,0.838,0.845,0.776,0.983,0.792,0.625,0.854,0.849,0.929,0.942,0.805,0.878,0.952,0.725,0.354,0.852,0.714,0.887,0.972,0.987,0.964,0.942,0.979,0.929,0.97,0.943,0.932,0.877],[31.07,13.76,36.89,5.57,7.44,19.03,34.32,8.48,11.4,8.5,22.11,143.66,187.66,184.41,9.76,2.36,147.97,26.23,26.7,15.98,74.68,13.11,6.18,6.47,4.46,58.04,4.8,2.67,6.87,6.64,14.01,17.37,5.14,8.19,20.78,3.64,1.55,6.74,3.49,8.85,35.25,76.44,27.68,17.34,48.42,14.04,33.78,17.66,14.78,8.15],[198.5,85.3,100.9,57.2,136.2,115.7,67.3,52,91.4,25.3,135.2,274.5,370.7,340.7,75.4,49.6,285.4,132.7,137.8,124.1,222,116.1,90.3,164.5,43.1,151.1,23.3,25.1,19.9,59.8,24.9,120.2,37.2,14,83.5,88.4,29,152.2,46.4,75.1,171.9,275.6,75.3,89.1,131.4,94.7,111,106.4,84.3,14.4]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Sample ID<\/th>\n      <th>Host genus<\/th>\n      <th>Host species<\/th>\n      <th>Common name<\/th>\n      <th>NCBI tAxID<\/th>\n      <th>Collection date<\/th>\n      <th>Life phase<\/th>\n      <th>Weight (g)<\/th>\n      <th>Total length (cm)<\/th>\n      <th>Foregut length (cm)<\/th>\n      <th>Midgut length (cm)<\/th>\n      <th>Hindgut length (cm)<\/th>\n      <th>Total gut length (cm)<\/th>\n      <th>Total reads<\/th>\n      <th>Total ASVs<\/th>\n      <th>Chao1<\/th>\n      <th>Chao1 (se)<\/th>\n      <th>ACE<\/th>\n      <th>ACE (se)<\/th>\n      <th>Shannon<\/th>\n      <th>Simpson<\/th>\n      <th>InvSimpson<\/th>\n      <th>Fisher<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]}],"dom":"Blfrtip","pageLength":5,"lengthMenu":[5,10,50],"buttons":["csv","copy"],"scrollX":true,"scrollCollapse":true,"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p id="notice">
 This table also scrolls horizontally.
 </p>
@@ -818,7 +818,8 @@ summary(aov.shannon)</code></pre>
 ## Sp           4  19.13   4.782   3.906 0.00833 **
 ## Residuals   45  55.10   1.224                   
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Ok, the results of the ANOVA are significant. Here we use the Tukey’s HSD (honestly significant difference) post-hoc test to determine which pairwise comparisons are different.</p>
 <pre class="r"><code>TukeyHSD(aov.shannon)</code></pre>
 <pre><code>##   Tukey multiple comparisons of means
@@ -854,7 +855,8 @@ kruskal.test(InvSimpson ~ Sp, data = sampledataDF)</code></pre>
 ##  Kruskal-Wallis rank sum test
 ## 
 ## data:  InvSimpson by Sp
-## Kruskal-Wallis chi-squared = 13.779, df = 4, p-value = 0.008034</code></pre>
+## Kruskal-Wallis chi-squared = 13.779, df = 4, p-value
+## = 0.008034</code></pre>
 <p>Kruskal-Wallis of <strong>Chao1 richness</strong> estimator.</p>
 <pre class="r"><code>#dunnTest(Chao1 ~ Sp, data = sampledataDF, method=&quot;bh&quot;)
 kruskal.test(Chao1 ~ Sp, data = sampledataDF)</code></pre>
@@ -862,7 +864,8 @@ kruskal.test(Chao1 ~ Sp, data = sampledataDF)</code></pre>
 ##  Kruskal-Wallis rank sum test
 ## 
 ## data:  Chao1 by Sp
-## Kruskal-Wallis chi-squared = 13.992, df = 4, p-value = 0.007321</code></pre>
+## Kruskal-Wallis chi-squared = 13.992, df = 4, p-value
+## = 0.007321</code></pre>
 <p>Kruskal-Wallis of <strong>Observed ASV richness</strong> index.</p>
 <pre class="r"><code>#library(FSA)
 #dunnTest(Observed ~ Sp, data = sampledataDF, method=&quot;bh&quot;)
@@ -871,7 +874,8 @@ kruskal.test(Observed ~ Sp, data = sampledataDF)</code></pre>
 ##  Kruskal-Wallis rank sum test
 ## 
 ## data:  Observed by Sp
-## Kruskal-Wallis chi-squared = 14.153, df = 4, p-value = 0.006822</code></pre>
+## Kruskal-Wallis chi-squared = 14.153, df = 4, p-value
+## = 0.006822</code></pre>
 <p>For the inverse Simpson, Chao1, and Observed richness the results of the Kruskal-Wallis rank sum test are significant. So we can look at pairwise comparisons using Wilcoxon rank sum test for post-hoc analysis.</p>
 <p>Pairwise significance test for <strong>inverse Simpson</strong> index.</p>
 <pre class="r"><code>pairwise.wilcox.test(sampledataDF$InvSimpson, sampledataDF$Sp,
@@ -1121,26 +1125,42 @@ fish_adonis</code></pre>
 ## 
 ## Terms added sequentially (first to last)
 ## 
-##           Df SumsOfSqs MeanSqs F.Model      R2   Pr(&gt;F)    
-## Sp         4    4.4045 1.10113   16.52 0.59489 0.000999 ***
-## Residuals 45    2.9995 0.06665         0.40511             
-## Total     49    7.4040                 1.00000             
+##           Df SumsOfSqs MeanSqs F.Model      R2   Pr(&gt;F)
+## Sp         4    4.4045 1.10113   16.52 0.59489 0.000999
+## Residuals 45    2.9995 0.06665         0.40511         
+## Total     49    7.4040                 1.00000         
+##              
+## Sp        ***
+## Residuals    
+## Total        
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>These results indicate that centroids are significantly different across host species meaning that communities are different by host species.</p>
 <p>We can also use the <code>pairwiseAdonis</code> package for pair-wise PERMANOVA analysis.</p>
 <pre class="r"><code>pairwise.adonis(fish.jsd, factors = sampledf$Sp, p.adjust.m = &quot;bonferroni&quot;)</code></pre>
-<pre><code>##             pairs Df SumsOfSqs   F.Model        R2 p.value p.adjusted sig
-## 1  AcCoe vs AcTra  1 0.9511904  9.643336 0.3913162   0.002       0.02   .
-## 2  AcCoe vs ScTae  1 1.3507311 21.403824 0.5879554   0.001       0.01   *
-## 3  AcCoe vs SpAur  1 1.5267419 25.208974 0.5702230   0.001       0.01   *
-## 4  AcCoe vs SpVir  1 1.2852392 16.065426 0.4858678   0.001       0.01   *
-## 5  AcTra vs ScTae  1 0.7586873 10.699312 0.4007336   0.001       0.01   *
-## 6  AcTra vs SpAur  1 1.3229620 19.765485 0.4970513   0.001       0.01   *
-## 7  AcTra vs SpVir  1 0.9806215 11.402876 0.3878150   0.001       0.01   *
-## 8  ScTae vs SpAur  1 1.0351877 25.696356 0.5623283   0.001       0.01   *
-## 9  ScTae vs SpVir  1 1.0661860 18.907582 0.5122953   0.001       0.01   *
-## 10 SpAur vs SpVir  1 0.7558760 13.640523 0.3827251   0.001       0.01   *</code></pre>
+<pre><code>##             pairs Df SumsOfSqs   F.Model        R2 p.value
+## 1  AcCoe vs AcTra  1 0.9511904  9.643336 0.3913162   0.002
+## 2  AcCoe vs ScTae  1 1.3507311 21.403824 0.5879554   0.001
+## 3  AcCoe vs SpAur  1 1.5267419 25.208974 0.5702230   0.001
+## 4  AcCoe vs SpVir  1 1.2852392 16.065426 0.4858678   0.001
+## 5  AcTra vs ScTae  1 0.7586873 10.699312 0.4007336   0.001
+## 6  AcTra vs SpAur  1 1.3229620 19.765485 0.4970513   0.001
+## 7  AcTra vs SpVir  1 0.9806215 11.402876 0.3878150   0.001
+## 8  ScTae vs SpAur  1 1.0351877 25.696356 0.5623283   0.001
+## 9  ScTae vs SpVir  1 1.0661860 18.907582 0.5122953   0.001
+## 10 SpAur vs SpVir  1 0.7558760 13.640523 0.3827251   0.001
+##    p.adjusted sig
+## 1        0.02   .
+## 2        0.01   *
+## 3        0.01   *
+## 4        0.01   *
+## 5        0.01   *
+## 6        0.01   *
+## 7        0.01   *
+## 8        0.01   *
+## 9        0.01   *
+## 10       0.01   *</code></pre>
 <p>Here we see again we see that communities are different by host species.</p>
 <p>However, PERMANOVA assumes equal beta dispersion so we will use the <code>betadisper</code> function from the <code>vegan</code> package to calculate beta dispersion values.</p>
 <pre class="r"><code>beta_adonis &lt;- betadisper(fish.jsd, sampledf$Sp, bias.adjust = TRUE)
@@ -1148,7 +1168,8 @@ beta_adonis</code></pre>
 <pre><code>## 
 ##  Homogeneity of multivariate dispersions
 ## 
-## Call: betadisper(d = fish.jsd, group = sampledf$Sp, bias.adjust = TRUE)
+## Call: betadisper(d = fish.jsd, group = sampledf$Sp,
+## bias.adjust = TRUE)
 ## 
 ## No. of Positive Eigenvalues: 34
 ## No. of Negative Eigenvalues: 15
@@ -1164,7 +1185,8 @@ beta_adonis</code></pre>
 <p>And then a pair-wise Permutation test for homogeneity of multivariate dispersions using <code>permutest</code> (again from the <code>vegan</code> package).</p>
 <pre class="r"><code>permutest(beta_adonis, pairwise = TRUE, permutations = 1000)</code></pre>
 <pre><code>## 
-## Permutation test for homogeneity of multivariate dispersions
+## Permutation test for homogeneity of multivariate
+## dispersions
 ## Permutation: free
 ## Number of permutations: 1000
 ## 
@@ -1173,10 +1195,12 @@ beta_adonis</code></pre>
 ## Groups     4 0.14600 0.036500 4.1891   1000 0.007992 **
 ## Residuals 45 0.39209 0.008713                          
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Pairwise comparisons:
-## (Observed p-value below diagonal, permuted p-value above diagonal)
+## (Observed p-value below diagonal, permuted p-value
+## above diagonal)
 ##           AcCoe     AcTra     ScTae     SpAur  SpVir
 ## AcCoe           0.8051948 0.0029970 0.0119880 0.2797
 ## AcTra 0.8147277           0.0159840 0.0139860 0.2557
@@ -1224,9 +1248,25 @@ summary(fish_anosim)</code></pre>
 ## SpVir   13  95.00 177.0 273.00  584  55</code></pre>
 <p>And the AN0SIM result is significant meaning that host species influences microbial community composition.</p>
 <p></br></p>
-<div style="text-align:right">
-<p><span class="linkboxfont-sm"> <button class="favorite styled" type="button"> <a href="5_da_asv.html">N<sup><u>o</u></sup> 5. Differentially Abundant ASV -&gt;</a> </button> </span></p>
+<div class="post-nav">
+<div class="post-nav-item">
+<div class="meta-nav">
+Previous
 </div>
+<p><a href="3_data_prep.html" rel="next">N<sup><u>o</u></sup> 3. Data Preparation</a></p>
+</div>
+</div>
+<div class="post-nav">
+<div class="post-nav-item">
+<div class="meta-nav">
+Next
+</div>
+<p><a href="5_da_asv.html" rel="next">N<sup><u>o</u></sup> 5. Differentially Abundant ASVs</a></p>
+</div>
+</div>
+<p class="edit-page">
+<a href="https://github.com/projectdigest/web/blob/master/build/4_diversity.Rmd"> <i class="fas fa-pen pr-2"></i> Edit this page </a>
+</p>
 </div>
 </div>
 
@@ -1317,15 +1357,6 @@ $(document).ready(function ()  {
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

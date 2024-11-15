@@ -1,5 +1,5 @@
 /* Whole document: */
-@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow|PT+Serif|Roboto+Condensed|Nunito:300|Nunito+Sans:300|Lato:300|Roboto:300|Ropa+Sans');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow|PT+Serif|Lato:300|Roboto:300|Ropa+Sans|Source+Sans+Pro|Nunito+Sans');
 /* controls general properties of site*/
 body {
   font-family: "PT Serif", serif;
@@ -340,4 +340,96 @@ footer#site-footer::before {
 
 .footnotes {
   font-size: 0.8em;
+}
+
+.article-header {
+  position: relative; /* Required for caption positioning */
+  clear: both;
+}
+
+.article-banner {
+  width: 100%;
+  height: auto;
+  border: 0;
+}
+
+/*************************************************
+ *  FOOTER NAV ITEMS & EDIT.
+ **************************************************/
+
+div.post-nav > div:first-child::before {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.post-nav-item {
+  hyphens: auto;
+  word-wrap: break-word;
+  padding: 11px 0 12px;
+  width: 100%;
+}
+
+.post-nav-item a {
+  color: #337AB7;
+  line-height: 1.7;
+  text-transform: none;
+  font-family: "source sans pro";
+  font-size: 2rem;
+}
+
+.post-nav-item .meta-nav {
+  color: #767676;
+  font-weight: 900;
+  line-height: 2;
+  text-transform: uppercase;
+  font-family: "source sans pro";
+  font-size: 2rem;
+}
+
+p.edit-page > p:first-child::before {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.edit-page {
+  hyphens: auto;
+  word-wrap: break-word;
+  padding: 11px 0 12px;
+  width: 100%;
+}
+
+.edit-page a {
+  color: #337AB7;
+  line-height: 1.7;
+  text-transform: none;
+  font-family: "source sans pro";
+  font-size: 1.5rem;
+}
+div.alert-synopsis > div:first-child::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 0;
+  color: #ff3860;
+  content: '';
+}
+
+div.alert-synopsis > div {
+  margin-left: 1rem;
+}
+
+.alert-synopsis {
+	color: #141414;
+	font-family: 'Nunito Sans';
+  font-size: 1.1em;
+	background-color: #DDEEFF59;
+	border-color: #7c7c7cFF;
+	border-radius: 7px;
+	/*border-left-width: 30px;*/
+	margin-bottom: 2rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	padding-left: 2rem;
+  padding-right: 2rem;
+  border-width: 1px;
+  border-color: #141414;
+  border-style: solid;
 }

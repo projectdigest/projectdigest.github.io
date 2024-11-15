@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -239,6 +238,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -452,7 +452,7 @@ div.tocify {
   <a href="people.html">
     <span class="fa fa-user-friends"></span>
      
-    People
+    Authors
   </a>
 </li>
       </ul>
@@ -478,7 +478,7 @@ div.tocify {
 
 
 <p id="opennote">
-In this study, we looked at <span class="callout">intestinal microbial</span> communities from five <span class="callout">herbivorous fish</span> species across two families—<em>Sparisoma viride</em>, <em>Sparisoma aurofrenatum</em> and <em>Scarus taeniopterus</em> from the Labridae and <em>Acanthurus tractus</em> and <em>Acanthurus coeruleus</em> from the Acanthuridae.
+In this study, we looked at <span class="callout">intestinal microbial</span> communities from five <span class="callout">herbivorous fish</span> species across two families—<em>Sparisoma viride</em>, <em>Sparisoma aurofrenatum</em>, and <em>Scarus taeniopterus</em> from the Labridae and <em>Acanthurus tractus</em> and <em>Acanthurus coeruleus</em> from the Acanthuridae.
 </p>
 <div style="padding-top: 2em">
 
@@ -487,7 +487,7 @@ In this study, we looked at <span class="callout">intestinal microbial</span> co
 <h2>Definitions &amp; Abbreviations</h2>
 <ul>
 <li>
-<a href="https://www.nature.com/articles/ismej2017119" target="_new">Amplicon Sequence Variant</a> (<strong>ASV</strong>): Exact sequence variant—analogous to an OTU—but with single nucleotide resolution.
+Amplicon Sequence Variant (<strong>ASV</strong>): Exact sequence variant—analogous to an OTU—but with single nucleotide resolution.
 </li>
 <li>
 Differentially abundant (<strong>DA</strong>) feature: Taxa, ASV, etc. that is disproportionately abundant in a group of samples and statistically different than other groups.
@@ -662,9 +662,17 @@ cols(friend_pal)</code></pre>
 </li>
 </ul>
 <p></br></p>
-<div style="text-align:right">
-<p><span class="linkboxfont-sm"> <button class="favorite styled" type="button"> <a href="1_field_observations.html">N<sup><u>o</u></sup> 1. Field Observations -&gt;</a> </button> </span></p>
+<div class="post-nav">
+<div class="post-nav-item">
+<div class="meta-nav">
+Next
 </div>
+<p><a href="1_field_observations.html" rel="next">N<sup><u>o</u></sup> 1. Field Observations</a></p>
+</div>
+</div>
+<p class="edit-page">
+<a href="https://github.com/projectdigest/web/blob/master/build/0_pw_intro.Rmd"> <i class="fas fa-pen pr-2"></i> Edit this page </a>
+</p>
 </div>
 </div>
 
@@ -755,15 +763,6 @@ $(document).ready(function ()  {
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 
 </body>
 </html>
